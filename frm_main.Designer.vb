@@ -22,6 +22,7 @@ Partial Class frm_main
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_main))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -31,8 +32,10 @@ Partial Class frm_main
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.tsl_hover = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
+        Me.ts_time = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.tmr_time = New System.Windows.Forms.Timer(Me.components)
+        Me.tsb_char = New System.Windows.Forms.ToolStripButton()
+        Me.tsb_purchase = New System.Windows.Forms.ToolStripButton()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
@@ -40,9 +43,12 @@ Partial Class frm_main
         '
         'MenuStrip1
         '
+        Me.MenuStrip1.BackColor = System.Drawing.SystemColors.Menu
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.SettingsToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.MdiWindowListItem = Me.SettingsToolStripMenuItem
         Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
         Me.MenuStrip1.Size = New System.Drawing.Size(965, 24)
         Me.MenuStrip1.TabIndex = 1
         Me.MenuStrip1.Text = "MenuStrip1"
@@ -57,13 +63,13 @@ Partial Class frm_main
         'LoginAccountToolStripMenuItem
         '
         Me.LoginAccountToolStripMenuItem.Name = "LoginAccountToolStripMenuItem"
-        Me.LoginAccountToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
+        Me.LoginAccountToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.LoginAccountToolStripMenuItem.Text = "Login Account"
         '
         'ExitWorkstationToolStripMenuItem
         '
         Me.ExitWorkstationToolStripMenuItem.Name = "ExitWorkstationToolStripMenuItem"
-        Me.ExitWorkstationToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
+        Me.ExitWorkstationToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ExitWorkstationToolStripMenuItem.Text = "Exit Workstation"
         '
         'SettingsToolStripMenuItem
@@ -74,7 +80,7 @@ Partial Class frm_main
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsl_hover})
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsl_hover, Me.ts_time})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 585)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(965, 22)
@@ -90,30 +96,56 @@ Partial Class frm_main
         'ToolStrip1
         '
         Me.ToolStrip1.AutoSize = False
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton2})
+        Me.ToolStrip1.BackColor = System.Drawing.SystemColors.Control
+        Me.ToolStrip1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsb_char, Me.tsb_purchase})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 24)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(965, 65)
+        Me.ToolStrip1.Padding = New System.Windows.Forms.Padding(0)
+        Me.ToolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
+        Me.ToolStrip1.Size = New System.Drawing.Size(965, 97)
         Me.ToolStrip1.TabIndex = 3
         Me.ToolStrip1.Text = "ToolStrip1"
         '
-        'ToolStripButton1
+        'ts_time
         '
-        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(23, 62)
-        Me.ToolStripButton1.Text = "ToolStripButton1"
+        Me.ts_time.Name = "ts_time"
+        Me.ts_time.Size = New System.Drawing.Size(888, 17)
+        Me.ts_time.Spring = True
+        Me.ts_time.Text = "ts_time"
+        Me.ts_time.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'ToolStripButton2
+        'tmr_time
         '
-        Me.ToolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), System.Drawing.Image)
-        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton2.Name = "ToolStripButton2"
-        Me.ToolStripButton2.Size = New System.Drawing.Size(23, 62)
-        Me.ToolStripButton2.Text = "ToolStripButton2"
+        Me.tmr_time.Enabled = True
+        Me.tmr_time.Interval = 1000
+        '
+        'tsb_char
+        '
+        Me.tsb_char.AutoSize = False
+        Me.tsb_char.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tsb_char.Image = CType(resources.GetObject("tsb_char.Image"), System.Drawing.Image)
+        Me.tsb_char.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsb_char.Margin = New System.Windows.Forms.Padding(0)
+        Me.tsb_char.Name = "tsb_char"
+        Me.tsb_char.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never
+        Me.tsb_char.Size = New System.Drawing.Size(95, 95)
+        Me.tsb_char.Text = "WORKSTATION"
+        Me.tsb_char.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.tsb_char.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'tsb_purchase
+        '
+        Me.tsb_purchase.AutoSize = False
+        Me.tsb_purchase.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tsb_purchase.Image = CType(resources.GetObject("tsb_purchase.Image"), System.Drawing.Image)
+        Me.tsb_purchase.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsb_purchase.Name = "tsb_purchase"
+        Me.tsb_purchase.Size = New System.Drawing.Size(95, 95)
+        Me.tsb_purchase.Text = "PURCHASED PARTS"
+        Me.tsb_purchase.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.tsb_purchase.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'frm_main
         '
@@ -148,6 +180,8 @@ Partial Class frm_main
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents tsl_hover As ToolStripStatusLabel
     Friend WithEvents ToolStrip1 As ToolStrip
-    Friend WithEvents ToolStripButton1 As ToolStripButton
-    Friend WithEvents ToolStripButton2 As ToolStripButton
+    Friend WithEvents tsb_char As ToolStripButton
+    Friend WithEvents tsb_purchase As ToolStripButton
+    Friend WithEvents ts_time As ToolStripStatusLabel
+    Friend WithEvents tmr_time As Timer
 End Class

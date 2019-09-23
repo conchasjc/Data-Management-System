@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frm_login
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,14 +20,13 @@ Partial Class frm_login
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.GunaElipse1 = New Guna.UI.WinForms.GunaElipse(Me.components)
         Me.pnl_top = New Guna.UI.WinForms.GunaPanel()
-        Me.GunaControlBox1 = New Guna.UI.WinForms.GunaControlBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.pic_logo = New System.Windows.Forms.PictureBox()
+        Me.GunaControlBox1 = New Guna.UI.WinForms.GunaControlBox()
         Me.GunaDragControl1 = New Guna.UI.WinForms.GunaDragControl(Me.components)
         Me.lbl_user = New System.Windows.Forms.Label()
         Me.lbl_pass = New System.Windows.Forms.Label()
@@ -37,8 +36,12 @@ Partial Class frm_login
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.pic_logo = New System.Windows.Forms.PictureBox()
+        Me.pnl_load = New System.Windows.Forms.Panel()
+        Me.GunaWinCircleProgressIndicator1 = New Guna.UI.WinForms.GunaWinCircleProgressIndicator()
         Me.pnl_top.SuspendLayout()
         CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnl_load.SuspendLayout()
         Me.SuspendLayout()
         '
         'GunaElipse1
@@ -57,6 +60,17 @@ Partial Class frm_login
         Me.pnl_top.Size = New System.Drawing.Size(530, 35)
         Me.pnl_top.TabIndex = 0
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.LightCoral
+        Me.Label1.Location = New System.Drawing.Point(46, 3)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(119, 26)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "USER LOGIN"
+        '
         'GunaControlBox1
         '
         Me.GunaControlBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -72,27 +86,6 @@ Partial Class frm_login
         Me.GunaControlBox1.OnPressedColor = System.Drawing.Color.Black
         Me.GunaControlBox1.Size = New System.Drawing.Size(30, 30)
         Me.GunaControlBox1.TabIndex = 0
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.LightCoral
-        Me.Label1.Location = New System.Drawing.Point(46, 3)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(119, 26)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "USER LOGIN"
-        '
-        'pic_logo
-        '
-        Me.pic_logo.BackgroundImage = Global.kmtiworkstationvb.My.Resources.Resources.user
-        Me.pic_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pic_logo.Location = New System.Drawing.Point(12, 3)
-        Me.pic_logo.Name = "pic_logo"
-        Me.pic_logo.Size = New System.Drawing.Size(28, 28)
-        Me.pic_logo.TabIndex = 1
-        Me.pic_logo.TabStop = False
         '
         'GunaDragControl1
         '
@@ -174,11 +167,41 @@ Partial Class frm_login
         Me.Button2.Text = "EXIT"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'pic_logo
+        '
+        Me.pic_logo.BackgroundImage = Global.kmtiworkstationvb.My.Resources.Resources.user
+        Me.pic_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.pic_logo.Location = New System.Drawing.Point(12, 3)
+        Me.pic_logo.Name = "pic_logo"
+        Me.pic_logo.Size = New System.Drawing.Size(28, 28)
+        Me.pic_logo.TabIndex = 1
+        Me.pic_logo.TabStop = False
+        '
+        'pnl_load
+        '
+        Me.pnl_load.Controls.Add(Me.GunaWinCircleProgressIndicator1)
+        Me.pnl_load.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnl_load.Location = New System.Drawing.Point(0, 35)
+        Me.pnl_load.Name = "pnl_load"
+        Me.pnl_load.Size = New System.Drawing.Size(530, 184)
+        Me.pnl_load.TabIndex = 9
+        Me.pnl_load.Visible = False
+        '
+        'GunaWinCircleProgressIndicator1
+        '
+        Me.GunaWinCircleProgressIndicator1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.GunaWinCircleProgressIndicator1.Location = New System.Drawing.Point(230, 46)
+        Me.GunaWinCircleProgressIndicator1.Name = "GunaWinCircleProgressIndicator1"
+        Me.GunaWinCircleProgressIndicator1.ProgressColor = System.Drawing.Color.DarkRed
+        Me.GunaWinCircleProgressIndicator1.Size = New System.Drawing.Size(76, 72)
+        Me.GunaWinCircleProgressIndicator1.TabIndex = 0
+        '
         'frm_login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(530, 219)
+        Me.Controls.Add(Me.pnl_load)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel2)
@@ -195,6 +218,7 @@ Partial Class frm_login
         Me.pnl_top.ResumeLayout(False)
         Me.pnl_top.PerformLayout()
         CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnl_load.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -214,4 +238,6 @@ Partial Class frm_login
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents pnl_load As Panel
+    Friend WithEvents GunaWinCircleProgressIndicator1 As Guna.UI.WinForms.GunaWinCircleProgressIndicator
 End Class

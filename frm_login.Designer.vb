@@ -36,12 +36,12 @@ Partial Class frm_login
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.pic_logo = New System.Windows.Forms.PictureBox()
         Me.pnl_load = New System.Windows.Forms.Panel()
         Me.GunaWinCircleProgressIndicator1 = New Guna.UI.WinForms.GunaWinCircleProgressIndicator()
+        Me.pic_logo = New System.Windows.Forms.PictureBox()
         Me.pnl_top.SuspendLayout()
-        CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl_load.SuspendLayout()
+        CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GunaElipse1
@@ -167,23 +167,12 @@ Partial Class frm_login
         Me.Button2.Text = "EXIT"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'pic_logo
-        '
-        Me.pic_logo.BackgroundImage = Global.kmtiworkstationvb.My.Resources.Resources.user
-        Me.pic_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pic_logo.Location = New System.Drawing.Point(12, 3)
-        Me.pic_logo.Name = "pic_logo"
-        Me.pic_logo.Size = New System.Drawing.Size(28, 28)
-        Me.pic_logo.TabIndex = 1
-        Me.pic_logo.TabStop = False
-        '
         'pnl_load
         '
         Me.pnl_load.Controls.Add(Me.GunaWinCircleProgressIndicator1)
-        Me.pnl_load.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnl_load.Location = New System.Drawing.Point(0, 35)
         Me.pnl_load.Name = "pnl_load"
-        Me.pnl_load.Size = New System.Drawing.Size(530, 184)
+        Me.pnl_load.Size = New System.Drawing.Size(82, 25)
         Me.pnl_load.TabIndex = 9
         Me.pnl_load.Visible = False
         '
@@ -196,11 +185,22 @@ Partial Class frm_login
         Me.GunaWinCircleProgressIndicator1.Size = New System.Drawing.Size(76, 72)
         Me.GunaWinCircleProgressIndicator1.TabIndex = 0
         '
+        'pic_logo
+        '
+        Me.pic_logo.BackgroundImage = Global.kmtiworkstationvb.My.Resources.Resources.user
+        Me.pic_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.pic_logo.Location = New System.Drawing.Point(12, 3)
+        Me.pic_logo.Name = "pic_logo"
+        Me.pic_logo.Size = New System.Drawing.Size(28, 28)
+        Me.pic_logo.TabIndex = 1
+        Me.pic_logo.TabStop = False
+        '
         'frm_login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(530, 219)
+        Me.ControlBox = False
         Me.Controls.Add(Me.pnl_load)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
@@ -215,10 +215,11 @@ Partial Class frm_login
         Me.Name = "frm_login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frm_login"
+        Me.TopMost = True
         Me.pnl_top.ResumeLayout(False)
         Me.pnl_top.PerformLayout()
-        CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_load.ResumeLayout(False)
+        CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

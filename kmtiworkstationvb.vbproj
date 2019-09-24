@@ -86,6 +86,12 @@
     <Compile Include="frm_char.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm_desk.Designer.vb">
+      <DependentUpon>frm_desk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_desk.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_main.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,12 @@
       <DependentUpon>frm_login.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_purchase.Designer.vb">
+      <DependentUpon>frm_purchase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_purchase.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_settings.Designer.vb">
@@ -127,11 +139,17 @@
     <EmbeddedResource Include="frm_char.resx">
       <DependentUpon>frm_char.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_desk.resx">
+      <DependentUpon>frm_desk.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_login.resx">
       <DependentUpon>frm_login.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_main.resx">
       <DependentUpon>frm_main.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_purchase.resx">
+      <DependentUpon>frm_purchase.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_settings.resx">
       <DependentUpon>frm_settings.vb</DependentUpon>
@@ -157,6 +175,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="kmtioriglogo1.ico" />
+    <None Include="Resources\usericon.png" />
+    <None Include="Resources\purchparticon2.png" />
+    <None Include="Resources\purchparticon1.png" />
+    <None Include="Resources\purchparticon.png" />
+    <None Include="Resources\iconws3.png" />
+    <None Include="Resources\iconws2.png" />
+    <None Include="Resources\iconws1.png" />
+    <None Include="Resources\iconws.png" />
+    <None Include="Resources\forbidden.png" />
+    <None Include="Resources\kmtioriglogo.png" />
+    <None Include="Resources\kmtioriglogo1.png" />
+    <None Include="Resources\Untitled-13.png" />
+    <None Include="Resources\Untitled-12.png" />
+    <None Include="Resources\Untitled-11.png" />
+    <None Include="Resources\Untitled-1.png" />
     <None Include="Resources\database icon.png" />
     <None Include="Resources\setting.png" />
     <None Include="Resources\user.png" />

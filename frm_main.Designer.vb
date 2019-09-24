@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frm_main
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frm_main
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_main))
@@ -31,9 +31,12 @@ Partial Class frm_main
         Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.tsl_hover = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.ts_time = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.tmr_time = New System.Windows.Forms.Timer(Me.components)
+        Me.MdilistToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.timeworker = New System.ComponentModel.BackgroundWorker()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.tsb_char = New System.Windows.Forms.ToolStripButton()
         Me.tsb_purchase = New System.Windows.Forms.ToolStripButton()
         Me.MenuStrip1.SuspendLayout()
@@ -44,9 +47,9 @@ Partial Class frm_main
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.SystemColors.Menu
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.SettingsToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.SettingsToolStripMenuItem, Me.MdilistToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.MdiWindowListItem = Me.SettingsToolStripMenuItem
+        Me.MenuStrip1.MdiWindowListItem = Me.MdilistToolStripMenuItem
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
         Me.MenuStrip1.Size = New System.Drawing.Size(965, 24)
@@ -93,21 +96,6 @@ Partial Class frm_main
         Me.tsl_hover.Size = New System.Drawing.Size(62, 17)
         Me.tsl_hover.Text = "hover Text"
         '
-        'ToolStrip1
-        '
-        Me.ToolStrip1.AutoSize = False
-        Me.ToolStrip1.BackColor = System.Drawing.SystemColors.Control
-        Me.ToolStrip1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsb_char, Me.tsb_purchase})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 24)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Padding = New System.Windows.Forms.Padding(0)
-        Me.ToolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.ToolStrip1.Size = New System.Drawing.Size(965, 97)
-        Me.ToolStrip1.TabIndex = 3
-        Me.ToolStrip1.Text = "ToolStrip1"
-        '
         'ts_time
         '
         Me.ts_time.Name = "ts_time"
@@ -116,18 +104,51 @@ Partial Class frm_main
         Me.ts_time.Text = "ts_time"
         Me.ts_time.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'ToolStrip1
+        '
+        Me.ToolStrip1.AutoSize = False
+        Me.ToolStrip1.BackColor = System.Drawing.SystemColors.Control
+        Me.ToolStrip1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsb_char, Me.ToolStripSeparator1, Me.tsb_purchase})
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 24)
+        Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.ToolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
+        Me.ToolStrip1.Size = New System.Drawing.Size(965, 97)
+        Me.ToolStrip1.TabIndex = 3
+        Me.ToolStrip1.Text = "ToolStrip1"
+        '
         'tmr_time
         '
         Me.tmr_time.Enabled = True
         Me.tmr_time.Interval = 1000
         '
+        'MdilistToolStripMenuItem
+        '
+        Me.MdilistToolStripMenuItem.Name = "MdilistToolStripMenuItem"
+        Me.MdilistToolStripMenuItem.Size = New System.Drawing.Size(55, 20)
+        Me.MdilistToolStripMenuItem.Text = "mdilist"
+        Me.MdilistToolStripMenuItem.Visible = False
+        '
+        'timeworker
+        '
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 97)
+        '
         'tsb_char
         '
         Me.tsb_char.AutoSize = False
+        Me.tsb_char.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.tsb_char.CheckOnClick = True
         Me.tsb_char.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tsb_char.Image = CType(resources.GetObject("tsb_char.Image"), System.Drawing.Image)
+        Me.tsb_char.Image = Global.kmtiworkstationvb.My.Resources.Resources.iconws2
+        Me.tsb_char.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.tsb_char.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsb_char.Margin = New System.Windows.Forms.Padding(0)
+        Me.tsb_char.Margin = New System.Windows.Forms.Padding(0, 0, 5, 0)
         Me.tsb_char.Name = "tsb_char"
         Me.tsb_char.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never
         Me.tsb_char.Size = New System.Drawing.Size(95, 95)
@@ -138,9 +159,12 @@ Partial Class frm_main
         'tsb_purchase
         '
         Me.tsb_purchase.AutoSize = False
+        Me.tsb_purchase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.tsb_purchase.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tsb_purchase.Image = CType(resources.GetObject("tsb_purchase.Image"), System.Drawing.Image)
+        Me.tsb_purchase.Image = Global.kmtiworkstationvb.My.Resources.Resources.purchparticon2
+        Me.tsb_purchase.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.tsb_purchase.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsb_purchase.Margin = New System.Windows.Forms.Padding(5, 1, 0, 2)
         Me.tsb_purchase.Name = "tsb_purchase"
         Me.tsb_purchase.Size = New System.Drawing.Size(95, 95)
         Me.tsb_purchase.Text = "PURCHASED PARTS"
@@ -159,7 +183,7 @@ Partial Class frm_main
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frm_main"
-        Me.Text = "KMTI WORKSTATION DESKTOP APPLICATION"
+        Me.Text = "KMTI DATA MANAGEMENT SYSTEM"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
@@ -184,4 +208,7 @@ Partial Class frm_main
     Friend WithEvents tsb_purchase As ToolStripButton
     Friend WithEvents ts_time As ToolStripStatusLabel
     Friend WithEvents tmr_time As Timer
+    Friend WithEvents MdilistToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents timeworker As System.ComponentModel.BackgroundWorker
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
 End Class

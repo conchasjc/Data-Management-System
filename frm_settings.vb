@@ -20,4 +20,8 @@
         My.Settings.sett_dbPass = txt_dbPassword.Text
         My.Settings.Save()
     End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        testConnect()
+    End Sub
 End Class

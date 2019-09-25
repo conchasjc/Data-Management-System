@@ -46,6 +46,7 @@ Partial Class frm_settings
         Me.GunaLinePanel1 = New Guna.UI.WinForms.GunaLinePanel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.GunaPanel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -144,6 +145,7 @@ Partial Class frm_settings
         '
         'pnl_database
         '
+        Me.pnl_database.Controls.Add(Me.Button2)
         Me.pnl_database.Controls.Add(Me.txt_dbPassword)
         Me.pnl_database.Controls.Add(Me.Label9)
         Me.pnl_database.Controls.Add(Me.txt_dbUsername)
@@ -303,6 +305,15 @@ Partial Class frm_settings
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "DATABASE CONNECTION"
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(49, 566)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(154, 41)
+        Me.Button2.TabIndex = 13
+        Me.Button2.Text = "Test Connection"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'frm_settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -349,4 +360,5 @@ Partial Class frm_settings
     Friend WithEvents Label8 As Label
     Friend WithEvents txt_dbName As Guna.UI.WinForms.GunaLineTextBox
     Friend WithEvents Label7 As Label
+    Friend WithEvents Button2 As Button
 End Class

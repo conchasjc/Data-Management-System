@@ -2,6 +2,8 @@
     Private Sub Frm_char_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         frm_main.mts_logout.Visible = True
         frm_main.mts_login.Visible = False
+
+        getDbChar()
     End Sub
 
     Private Sub GunaCircleButton1_Click(sender As Object, e As EventArgs) Handles GunaCircleButton1.Click
@@ -26,5 +28,18 @@
 
     Private Sub GunaCircleButton6_Click(sender As Object, e As EventArgs) Handles GunaCircleButton6.Click
         Clipboard.SetText(GunaCircleButton6.Text)
+    End Sub
+
+    Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
+
+
+    End Sub
+
+    Private Sub GunaDataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles GunaDataGridView1.CellContentClick
+
+    End Sub
+
+    Private Sub GunaDataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles GunaDataGridView1.CellClick
+        Clipboard.SetText(GunaDataGridView1.CurrentCell.Value)
     End Sub
 End Class

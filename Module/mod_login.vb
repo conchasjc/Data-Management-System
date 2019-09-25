@@ -1,8 +1,21 @@
 ﻿Imports MySql.Data.MySqlClient
 Module mod_login
 
-    Dim conn As New MySqlConnection("host=" + My.Settings.sett_dbSource + "; user = " + My.Settings.sett_dbUsername + "; pass=" + My.Settings.sett_dbPass + "; database=" + My.Settings.sett_dbName + ";")
+    Dim conn As New MySqlConnection("host=" + My.Settings.sett_dbSource + "; username = " + My.Settings.sett_dbUsername + "; password=" + My.Settings.sett_dbPass + "; database=" + My.Settings.sett_dbName + ";")
+    Public Function testConnect()
+        Dim con As New MySqlConnection("host=" + frm_settings.txt_dbSource.Text + "; username = " + frm_settings.txt_dbUsername.Text + "; password=" + frm_settings.txt_dbPassword.Text + "; database=" + frm_settings.txt_dbName.Text + ";")
+        Try
+            con.Open()
+            MessageBox.Show("Database Connected Succesfully")
 
+            con.Close()
+        Catch ex As Exception
+
+            MessageBox.Show(ex.Message)
+
+        End Try
+        Return 0
+    End Function
     Public Function getDbConnect()
         Try
             conn.Open()
@@ -16,7 +29,28 @@ Module mod_login
         End Try
         Return 0
     End Function
+    Public Function getDbChar()
+        Dim sda As New MySqlDataAdapter
+        Dim dbDtaSet As New DataTable
+        Dim bSource As New BindingSource
+        Try
+            conn.OpenAsync()
+            Dim query As String
+            Dim com As MySqlCommand
+            query = "select engWord as English_Character,japWord as Japanese_Character from tbl_wordchar"
+            com = New MySqlCommand(query, conn)
+            sda.SelectCommand = com
+            sda.Fill(dbDtaSet)
+            bSource.DataSource = dbDtaSet
+            frm_char.GunaDataGridView1.DataSource = bSource
+            sda.Update(dbDtaSet)
+            conn.CloseAsync()
+        Catch ex As Exception
 
+            MessageBox.Show(ex.Message)
+        End Try
+        Return 0
+    End Function
 
 
 

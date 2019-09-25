@@ -29,8 +29,13 @@ Partial Class frm_desk
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.lbl_dbNotif = New System.Windows.Forms.Label()
+        Me.GunaCirclePictureBox1 = New Guna.UI.WinForms.GunaCirclePictureBox()
         Me.GunaWinCircleProgressIndicator1 = New Guna.UI.WinForms.GunaWinCircleProgressIndicator()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.GunaAdvenceButton2 = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.GunaAdvenceButton1 = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -42,14 +47,10 @@ Partial Class frm_desk
         Me.GunaElipse1 = New Guna.UI.WinForms.GunaElipse(Me.components)
         Me.GunaElipse2 = New Guna.UI.WinForms.GunaElipse(Me.components)
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.lbl_dbNotif = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.GunaCirclePictureBox1 = New Guna.UI.WinForms.GunaCirclePictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.GunaAdvenceButton2 = New Guna.UI.WinForms.GunaAdvenceButton()
+        Me.tmr_connStatus = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
         CType(Me.GunaCirclePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -111,6 +112,16 @@ Partial Class frm_desk
         Me.Label5.TabIndex = 5
         Me.Label5.Text = "KMTI"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImage = Global.kmtiworkstationvb.My.Resources.Resources.kmtioriglogo
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.Location = New System.Drawing.Point(20, 568)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(401, 340)
+        Me.PictureBox1.TabIndex = 4
+        Me.PictureBox1.TabStop = False
+        '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.LightSteelBlue
@@ -132,6 +143,28 @@ Partial Class frm_desk
         Me.Panel2.Size = New System.Drawing.Size(483, 549)
         Me.Panel2.TabIndex = 3
         '
+        'lbl_dbNotif
+        '
+        Me.lbl_dbNotif.AutoSize = True
+        Me.lbl_dbNotif.ForeColor = System.Drawing.Color.Black
+        Me.lbl_dbNotif.Location = New System.Drawing.Point(45, 518)
+        Me.lbl_dbNotif.Name = "lbl_dbNotif"
+        Me.lbl_dbNotif.Size = New System.Drawing.Size(166, 12)
+        Me.lbl_dbNotif.TabIndex = 10
+        Me.lbl_dbNotif.Text = "DATABASE NOT CONNECTED"
+        Me.lbl_dbNotif.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'GunaCirclePictureBox1
+        '
+        Me.GunaCirclePictureBox1.BaseColor = System.Drawing.Color.Red
+        Me.GunaCirclePictureBox1.Location = New System.Drawing.Point(14, 511)
+        Me.GunaCirclePictureBox1.Name = "GunaCirclePictureBox1"
+        Me.GunaCirclePictureBox1.Size = New System.Drawing.Size(25, 24)
+        Me.GunaCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.GunaCirclePictureBox1.TabIndex = 9
+        Me.GunaCirclePictureBox1.TabStop = False
+        Me.GunaCirclePictureBox1.UseTransfarantBackground = False
+        '
         'GunaWinCircleProgressIndicator1
         '
         Me.GunaWinCircleProgressIndicator1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
@@ -141,6 +174,47 @@ Partial Class frm_desk
         Me.GunaWinCircleProgressIndicator1.Size = New System.Drawing.Size(53, 48)
         Me.GunaWinCircleProgressIndicator1.TabIndex = 10
         Me.GunaWinCircleProgressIndicator1.Visible = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackgroundImage = Global.kmtiworkstationvb.My.Resources.Resources.usericon
+        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox2.Location = New System.Drawing.Point(15, 20)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(51, 50)
+        Me.PictureBox2.TabIndex = 9
+        Me.PictureBox2.TabStop = False
+        '
+        'GunaAdvenceButton2
+        '
+        Me.GunaAdvenceButton2.Animated = True
+        Me.GunaAdvenceButton2.AnimationHoverSpeed = 0.07!
+        Me.GunaAdvenceButton2.AnimationSpeed = 0.03!
+        Me.GunaAdvenceButton2.BaseColor = System.Drawing.Color.Firebrick
+        Me.GunaAdvenceButton2.BorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton2.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.GunaAdvenceButton2.CheckedBorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton2.CheckedForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton2.CheckedImage = CType(resources.GetObject("GunaAdvenceButton2.CheckedImage"), System.Drawing.Image)
+        Me.GunaAdvenceButton2.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.GunaAdvenceButton2.FocusedColor = System.Drawing.Color.Empty
+        Me.GunaAdvenceButton2.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaAdvenceButton2.ForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton2.Image = Nothing
+        Me.GunaAdvenceButton2.ImageSize = New System.Drawing.Size(20, 20)
+        Me.GunaAdvenceButton2.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.GunaAdvenceButton2.Location = New System.Drawing.Point(320, 432)
+        Me.GunaAdvenceButton2.Name = "GunaAdvenceButton2"
+        Me.GunaAdvenceButton2.OnHoverBaseColor = System.Drawing.Color.IndianRed
+        Me.GunaAdvenceButton2.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton2.OnHoverForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton2.OnHoverImage = Nothing
+        Me.GunaAdvenceButton2.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.GunaAdvenceButton2.OnPressedColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton2.Size = New System.Drawing.Size(142, 53)
+        Me.GunaAdvenceButton2.TabIndex = 8
+        Me.GunaAdvenceButton2.Text = "CLOSE"
+        Me.GunaAdvenceButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'GunaAdvenceButton1
         '
@@ -269,78 +343,9 @@ Partial Class frm_desk
         'BackgroundWorker1
         '
         '
-        'lbl_dbNotif
+        'tmr_connStatus
         '
-        Me.lbl_dbNotif.AutoSize = True
-        Me.lbl_dbNotif.ForeColor = System.Drawing.Color.Black
-        Me.lbl_dbNotif.Location = New System.Drawing.Point(45, 518)
-        Me.lbl_dbNotif.Name = "lbl_dbNotif"
-        Me.lbl_dbNotif.Size = New System.Drawing.Size(166, 12)
-        Me.lbl_dbNotif.TabIndex = 10
-        Me.lbl_dbNotif.Text = "DATABASE NOT CONNECTED"
-        Me.lbl_dbNotif.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackgroundImage = Global.kmtiworkstationvb.My.Resources.Resources.kmtioriglogo
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Location = New System.Drawing.Point(20, 568)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(401, 340)
-        Me.PictureBox1.TabIndex = 4
-        Me.PictureBox1.TabStop = False
-        '
-        'GunaCirclePictureBox1
-        '
-        Me.GunaCirclePictureBox1.BaseColor = System.Drawing.Color.Red
-        Me.GunaCirclePictureBox1.Location = New System.Drawing.Point(14, 511)
-        Me.GunaCirclePictureBox1.Name = "GunaCirclePictureBox1"
-        Me.GunaCirclePictureBox1.Size = New System.Drawing.Size(25, 24)
-        Me.GunaCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.GunaCirclePictureBox1.TabIndex = 9
-        Me.GunaCirclePictureBox1.TabStop = False
-        Me.GunaCirclePictureBox1.UseTransfarantBackground = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.BackgroundImage = Global.kmtiworkstationvb.My.Resources.Resources.usericon
-        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox2.Location = New System.Drawing.Point(15, 20)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(51, 50)
-        Me.PictureBox2.TabIndex = 9
-        Me.PictureBox2.TabStop = False
-        '
-        'GunaAdvenceButton2
-        '
-        Me.GunaAdvenceButton2.Animated = True
-        Me.GunaAdvenceButton2.AnimationHoverSpeed = 0.07!
-        Me.GunaAdvenceButton2.AnimationSpeed = 0.03!
-        Me.GunaAdvenceButton2.BaseColor = System.Drawing.Color.Firebrick
-        Me.GunaAdvenceButton2.BorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton2.CheckedBaseColor = System.Drawing.Color.Gray
-        Me.GunaAdvenceButton2.CheckedBorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton2.CheckedForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton2.CheckedImage = CType(resources.GetObject("GunaAdvenceButton2.CheckedImage"), System.Drawing.Image)
-        Me.GunaAdvenceButton2.CheckedLineColor = System.Drawing.Color.DimGray
-        Me.GunaAdvenceButton2.FocusedColor = System.Drawing.Color.Empty
-        Me.GunaAdvenceButton2.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GunaAdvenceButton2.ForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton2.Image = Nothing
-        Me.GunaAdvenceButton2.ImageSize = New System.Drawing.Size(20, 20)
-        Me.GunaAdvenceButton2.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.GunaAdvenceButton2.Location = New System.Drawing.Point(320, 432)
-        Me.GunaAdvenceButton2.Name = "GunaAdvenceButton2"
-        Me.GunaAdvenceButton2.OnHoverBaseColor = System.Drawing.Color.IndianRed
-        Me.GunaAdvenceButton2.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton2.OnHoverForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton2.OnHoverImage = Nothing
-        Me.GunaAdvenceButton2.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.GunaAdvenceButton2.OnPressedColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton2.Size = New System.Drawing.Size(142, 53)
-        Me.GunaAdvenceButton2.TabIndex = 8
-        Me.GunaAdvenceButton2.Text = "CLOSE"
-        Me.GunaAdvenceButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.tmr_connStatus.Enabled = True
         '
         'frm_desk
         '
@@ -356,9 +361,9 @@ Partial Class frm_desk
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GunaCirclePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -387,4 +392,5 @@ Partial Class frm_desk
     Friend WithEvents GunaCirclePictureBox1 As Guna.UI.WinForms.GunaCirclePictureBox
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents lbl_dbNotif As Label
+    Friend WithEvents tmr_connStatus As Timer
 End Class

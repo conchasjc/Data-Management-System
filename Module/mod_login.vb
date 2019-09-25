@@ -1,23 +1,23 @@
 ﻿Imports MySql.Data.MySqlClient
 Module mod_login
 
-    Dim conn As New MySqlConnection("host=localhost; user = root; pass=; database=kmtiworkstation;")
-    Dim stat As Boolean
-    Public Function getConnect()
+    Dim conn As New MySqlConnection("host=" + My.Settings.sett_dbSource + "; user = " + My.Settings.sett_dbUsername + "; pass=" + My.Settings.sett_dbPass + "; database=" + My.Settings.sett_dbName + ";")
+
+    Public Function getDbConnect()
         Try
             conn.Open()
-            stat = True
 
-
+            My.Settings.dbConnected = True
+            conn.Close()
         Catch ex As Exception
-            frm_desk.GunaCirclePictureBox1.BaseColor = Color.Red
 
-            stat = False
+            My.Settings.dbConnected = False
+
         End Try
         Return 0
     End Function
-    Public Function conStatus()
-        Return stat
-    End Function
+
+
+
 
 End Module

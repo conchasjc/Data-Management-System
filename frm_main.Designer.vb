@@ -26,19 +26,20 @@ Partial Class frm_main
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_main))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LoginAccountToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ExitWorkstationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mts_logout = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mts_login = New System.Windows.Forms.ToolStripMenuItem()
         Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MdilistToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.tsl_hover = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ts_time = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.tmr_time = New System.Windows.Forms.Timer(Me.components)
-        Me.MdilistToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.timeworker = New System.ComponentModel.BackgroundWorker()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.tsb_char = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.tsb_purchase = New System.Windows.Forms.ToolStripButton()
+        Me.tmr_time = New System.Windows.Forms.Timer(Me.components)
+        Me.timeworker = New System.ComponentModel.BackgroundWorker()
+        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
@@ -58,28 +59,35 @@ Partial Class frm_main
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoginAccountToolStripMenuItem, Me.ExitWorkstationToolStripMenuItem})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mts_logout, Me.mts_login, Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "&File"
         '
-        'LoginAccountToolStripMenuItem
+        'mts_logout
         '
-        Me.LoginAccountToolStripMenuItem.Name = "LoginAccountToolStripMenuItem"
-        Me.LoginAccountToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.LoginAccountToolStripMenuItem.Text = "Login Account"
+        Me.mts_logout.Name = "mts_logout"
+        Me.mts_logout.Size = New System.Drawing.Size(180, 22)
+        Me.mts_logout.Text = "Logout Account"
         '
-        'ExitWorkstationToolStripMenuItem
+        'mts_login
         '
-        Me.ExitWorkstationToolStripMenuItem.Name = "ExitWorkstationToolStripMenuItem"
-        Me.ExitWorkstationToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ExitWorkstationToolStripMenuItem.Text = "Exit Workstation"
+        Me.mts_login.Name = "mts_login"
+        Me.mts_login.Size = New System.Drawing.Size(180, 22)
+        Me.mts_login.Text = "Login Account"
         '
         'SettingsToolStripMenuItem
         '
         Me.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem"
         Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
         Me.SettingsToolStripMenuItem.Text = "&Settings"
+        '
+        'MdilistToolStripMenuItem
+        '
+        Me.MdilistToolStripMenuItem.Name = "MdilistToolStripMenuItem"
+        Me.MdilistToolStripMenuItem.Size = New System.Drawing.Size(55, 20)
+        Me.MdilistToolStripMenuItem.Text = "mdilist"
+        Me.MdilistToolStripMenuItem.Visible = False
         '
         'StatusStrip1
         '
@@ -119,31 +127,10 @@ Partial Class frm_main
         Me.ToolStrip1.TabIndex = 3
         Me.ToolStrip1.Text = "ToolStrip1"
         '
-        'tmr_time
-        '
-        Me.tmr_time.Enabled = True
-        Me.tmr_time.Interval = 1000
-        '
-        'MdilistToolStripMenuItem
-        '
-        Me.MdilistToolStripMenuItem.Name = "MdilistToolStripMenuItem"
-        Me.MdilistToolStripMenuItem.Size = New System.Drawing.Size(55, 20)
-        Me.MdilistToolStripMenuItem.Text = "mdilist"
-        Me.MdilistToolStripMenuItem.Visible = False
-        '
-        'timeworker
-        '
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 97)
-        '
         'tsb_char
         '
         Me.tsb_char.AutoSize = False
         Me.tsb_char.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.tsb_char.CheckOnClick = True
         Me.tsb_char.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tsb_char.Image = Global.kmtiworkstationvb.My.Resources.Resources.iconws2
         Me.tsb_char.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
@@ -155,6 +142,11 @@ Partial Class frm_main
         Me.tsb_char.Text = "WORKSTATION"
         Me.tsb_char.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.tsb_char.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 97)
         '
         'tsb_purchase
         '
@@ -170,6 +162,20 @@ Partial Class frm_main
         Me.tsb_purchase.Text = "PURCHASED PARTS"
         Me.tsb_purchase.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.tsb_purchase.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'tmr_time
+        '
+        Me.tmr_time.Enabled = True
+        Me.tmr_time.Interval = 1000
+        '
+        'timeworker
+        '
+        '
+        'ExitToolStripMenuItem
+        '
+        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'frm_main
         '
@@ -198,8 +204,8 @@ Partial Class frm_main
 
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents LoginAccountToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ExitWorkstationToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents mts_logout As ToolStripMenuItem
+    Friend WithEvents mts_login As ToolStripMenuItem
     Friend WithEvents SettingsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents tsl_hover As ToolStripStatusLabel
@@ -211,4 +217,5 @@ Partial Class frm_main
     Friend WithEvents MdilistToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents timeworker As System.ComponentModel.BackgroundWorker
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
 End Class

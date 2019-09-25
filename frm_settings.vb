@@ -12,4 +12,12 @@
     Private Sub Frm_settings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        My.Settings.sett_dbSource = txt_dbSource.Text
+        My.Settings.sett_dbName = txt_dbName.Text
+        My.Settings.sett_dbUsername = txt_dbUsername.Text
+        My.Settings.sett_dbPass = txt_dbPassword.Text
+        My.Settings.Save()
+    End Sub
 End Class

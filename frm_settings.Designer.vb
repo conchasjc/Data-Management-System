@@ -33,19 +33,19 @@ Partial Class frm_settings
         Me.GunaDragControl1 = New Guna.UI.WinForms.GunaDragControl(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.pnl_database = New System.Windows.Forms.Panel()
+        Me.txt_dbPassword = New Guna.UI.WinForms.GunaLineTextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.txt_dbUsername = New Guna.UI.WinForms.GunaLineTextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txt_dbName = New Guna.UI.WinForms.GunaLineTextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txt_dbSource = New Guna.UI.WinForms.GunaLineTextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.GunaLinePanel1 = New Guna.UI.WinForms.GunaLinePanel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.GunaLinePanel1 = New Guna.UI.WinForms.GunaLinePanel()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.GunaLineTextBox1 = New Guna.UI.WinForms.GunaLineTextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.GunaLineTextBox2 = New Guna.UI.WinForms.GunaLineTextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.GunaLineTextBox3 = New Guna.UI.WinForms.GunaLineTextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.GunaLineTextBox4 = New Guna.UI.WinForms.GunaLineTextBox()
         Me.GunaPanel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -144,14 +144,14 @@ Partial Class frm_settings
         '
         'pnl_database
         '
-        Me.pnl_database.Controls.Add(Me.GunaLineTextBox4)
+        Me.pnl_database.Controls.Add(Me.txt_dbPassword)
         Me.pnl_database.Controls.Add(Me.Label9)
-        Me.pnl_database.Controls.Add(Me.GunaLineTextBox3)
+        Me.pnl_database.Controls.Add(Me.txt_dbUsername)
         Me.pnl_database.Controls.Add(Me.Label8)
-        Me.pnl_database.Controls.Add(Me.GunaLineTextBox2)
+        Me.pnl_database.Controls.Add(Me.txt_dbName)
         Me.pnl_database.Controls.Add(Me.Label7)
         Me.pnl_database.Controls.Add(Me.Label6)
-        Me.pnl_database.Controls.Add(Me.GunaLineTextBox1)
+        Me.pnl_database.Controls.Add(Me.txt_dbSource)
         Me.pnl_database.Controls.Add(Me.Label5)
         Me.pnl_database.Controls.Add(Me.Label4)
         Me.pnl_database.Controls.Add(Me.GunaLinePanel1)
@@ -162,6 +162,127 @@ Partial Class frm_settings
         Me.pnl_database.Name = "pnl_database"
         Me.pnl_database.Size = New System.Drawing.Size(764, 632)
         Me.pnl_database.TabIndex = 0
+        '
+        'txt_dbPassword
+        '
+        Me.txt_dbPassword.BackColor = System.Drawing.Color.White
+        Me.txt_dbPassword.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_dbPassword.FocusedLineColor = System.Drawing.Color.LightCoral
+        Me.txt_dbPassword.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_dbPassword.LineColor = System.Drawing.Color.Gainsboro
+        Me.txt_dbPassword.Location = New System.Drawing.Point(49, 460)
+        Me.txt_dbPassword.Name = "txt_dbPassword"
+        Me.txt_dbPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_dbPassword.Size = New System.Drawing.Size(442, 32)
+        Me.txt_dbPassword.TabIndex = 12
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(45, 438)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(86, 19)
+        Me.Label9.TabIndex = 11
+        Me.Label9.Text = "Password"
+        '
+        'txt_dbUsername
+        '
+        Me.txt_dbUsername.BackColor = System.Drawing.Color.White
+        Me.txt_dbUsername.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_dbUsername.FocusedLineColor = System.Drawing.Color.LightCoral
+        Me.txt_dbUsername.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_dbUsername.LineColor = System.Drawing.Color.Gainsboro
+        Me.txt_dbUsername.Location = New System.Drawing.Point(49, 366)
+        Me.txt_dbUsername.Name = "txt_dbUsername"
+        Me.txt_dbUsername.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_dbUsername.Size = New System.Drawing.Size(442, 32)
+        Me.txt_dbUsername.TabIndex = 10
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(45, 344)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(87, 19)
+        Me.Label8.TabIndex = 9
+        Me.Label8.Text = "Username"
+        '
+        'txt_dbName
+        '
+        Me.txt_dbName.BackColor = System.Drawing.Color.White
+        Me.txt_dbName.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_dbName.FocusedLineColor = System.Drawing.Color.LightCoral
+        Me.txt_dbName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_dbName.LineColor = System.Drawing.Color.Gainsboro
+        Me.txt_dbName.Location = New System.Drawing.Point(49, 278)
+        Me.txt_dbName.Name = "txt_dbName"
+        Me.txt_dbName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_dbName.Size = New System.Drawing.Size(442, 32)
+        Me.txt_dbName.TabIndex = 8
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(45, 256)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(129, 19)
+        Me.Label7.TabIndex = 7
+        Me.Label7.Text = "Database Name"
+        '
+        'Label6
+        '
+        Me.Label6.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(139, 173)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(226, 24)
+        Me.Label6.TabIndex = 6
+        Me.Label6.Text = "(Eg. Localhost / Server Ip Address)"
+        '
+        'txt_dbSource
+        '
+        Me.txt_dbSource.BackColor = System.Drawing.Color.White
+        Me.txt_dbSource.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_dbSource.FocusedLineColor = System.Drawing.Color.LightCoral
+        Me.txt_dbSource.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_dbSource.LineColor = System.Drawing.Color.Gainsboro
+        Me.txt_dbSource.Location = New System.Drawing.Point(49, 197)
+        Me.txt_dbSource.Name = "txt_dbSource"
+        Me.txt_dbSource.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_dbSource.Size = New System.Drawing.Size(442, 32)
+        Me.txt_dbSource.TabIndex = 5
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(45, 175)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(99, 19)
+        Me.Label5.TabIndex = 4
+        Me.Label5.Text = "DataSource"
+        '
+        'Label4
+        '
+        Me.Label4.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(39, 110)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(605, 43)
+        Me.Label4.TabIndex = 3
+        Me.Label4.Text = "These is the database connection settings. Please enter the following information" &
+    " needed below for the connection request in the server."
+        '
+        'GunaLinePanel1
+        '
+        Me.GunaLinePanel1.BackColor = System.Drawing.Color.SeaGreen
+        Me.GunaLinePanel1.LineColor = System.Drawing.Color.Black
+        Me.GunaLinePanel1.LineStyle = System.Windows.Forms.BorderStyle.None
+        Me.GunaLinePanel1.Location = New System.Drawing.Point(36, 47)
+        Me.GunaLinePanel1.Name = "GunaLinePanel1"
+        Me.GunaLinePanel1.Size = New System.Drawing.Size(5, 37)
+        Me.GunaLinePanel1.TabIndex = 2
         '
         'Button1
         '
@@ -182,127 +303,6 @@ Partial Class frm_settings
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "DATABASE CONNECTION"
         '
-        'GunaLinePanel1
-        '
-        Me.GunaLinePanel1.BackColor = System.Drawing.Color.SeaGreen
-        Me.GunaLinePanel1.LineColor = System.Drawing.Color.Black
-        Me.GunaLinePanel1.LineStyle = System.Windows.Forms.BorderStyle.None
-        Me.GunaLinePanel1.Location = New System.Drawing.Point(36, 47)
-        Me.GunaLinePanel1.Name = "GunaLinePanel1"
-        Me.GunaLinePanel1.Size = New System.Drawing.Size(5, 37)
-        Me.GunaLinePanel1.TabIndex = 2
-        '
-        'Label4
-        '
-        Me.Label4.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(39, 110)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(605, 43)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "These is the database connection settings. Please enter the following information" &
-    " needed below for the connection request in the server."
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(45, 175)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(99, 19)
-        Me.Label5.TabIndex = 4
-        Me.Label5.Text = "DataSource"
-        '
-        'GunaLineTextBox1
-        '
-        Me.GunaLineTextBox1.BackColor = System.Drawing.Color.White
-        Me.GunaLineTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.GunaLineTextBox1.FocusedLineColor = System.Drawing.Color.LightCoral
-        Me.GunaLineTextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.GunaLineTextBox1.LineColor = System.Drawing.Color.Gainsboro
-        Me.GunaLineTextBox1.Location = New System.Drawing.Point(49, 197)
-        Me.GunaLineTextBox1.Name = "GunaLineTextBox1"
-        Me.GunaLineTextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.GunaLineTextBox1.Size = New System.Drawing.Size(442, 32)
-        Me.GunaLineTextBox1.TabIndex = 5
-        '
-        'Label6
-        '
-        Me.Label6.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(139, 173)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(226, 24)
-        Me.Label6.TabIndex = 6
-        Me.Label6.Text = "(Eg. Localhost / Server Ip Address)"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(45, 256)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(129, 19)
-        Me.Label7.TabIndex = 7
-        Me.Label7.Text = "Database Name"
-        '
-        'GunaLineTextBox2
-        '
-        Me.GunaLineTextBox2.BackColor = System.Drawing.Color.White
-        Me.GunaLineTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.GunaLineTextBox2.FocusedLineColor = System.Drawing.Color.LightCoral
-        Me.GunaLineTextBox2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.GunaLineTextBox2.LineColor = System.Drawing.Color.Gainsboro
-        Me.GunaLineTextBox2.Location = New System.Drawing.Point(49, 278)
-        Me.GunaLineTextBox2.Name = "GunaLineTextBox2"
-        Me.GunaLineTextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.GunaLineTextBox2.Size = New System.Drawing.Size(442, 32)
-        Me.GunaLineTextBox2.TabIndex = 8
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(45, 344)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(87, 19)
-        Me.Label8.TabIndex = 9
-        Me.Label8.Text = "Username"
-        '
-        'GunaLineTextBox3
-        '
-        Me.GunaLineTextBox3.BackColor = System.Drawing.Color.White
-        Me.GunaLineTextBox3.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.GunaLineTextBox3.FocusedLineColor = System.Drawing.Color.LightCoral
-        Me.GunaLineTextBox3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.GunaLineTextBox3.LineColor = System.Drawing.Color.Gainsboro
-        Me.GunaLineTextBox3.Location = New System.Drawing.Point(49, 366)
-        Me.GunaLineTextBox3.Name = "GunaLineTextBox3"
-        Me.GunaLineTextBox3.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.GunaLineTextBox3.Size = New System.Drawing.Size(442, 32)
-        Me.GunaLineTextBox3.TabIndex = 10
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(45, 438)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(86, 19)
-        Me.Label9.TabIndex = 11
-        Me.Label9.Text = "Password"
-        '
-        'GunaLineTextBox4
-        '
-        Me.GunaLineTextBox4.BackColor = System.Drawing.Color.White
-        Me.GunaLineTextBox4.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.GunaLineTextBox4.FocusedLineColor = System.Drawing.Color.LightCoral
-        Me.GunaLineTextBox4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.GunaLineTextBox4.LineColor = System.Drawing.Color.Gainsboro
-        Me.GunaLineTextBox4.Location = New System.Drawing.Point(49, 460)
-        Me.GunaLineTextBox4.Name = "GunaLineTextBox4"
-        Me.GunaLineTextBox4.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.GunaLineTextBox4.Size = New System.Drawing.Size(442, 32)
-        Me.GunaLineTextBox4.TabIndex = 12
-        '
         'frm_settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -315,6 +315,7 @@ Partial Class frm_settings
         Me.Name = "frm_settings"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frm_settings"
+        Me.TopMost = True
         Me.GunaPanel1.ResumeLayout(False)
         Me.GunaPanel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -338,14 +339,14 @@ Partial Class frm_settings
     Friend WithEvents Button1 As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents GunaLineTextBox1 As Guna.UI.WinForms.GunaLineTextBox
+    Friend WithEvents txt_dbSource As Guna.UI.WinForms.GunaLineTextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents GunaLinePanel1 As Guna.UI.WinForms.GunaLinePanel
-    Friend WithEvents GunaLineTextBox4 As Guna.UI.WinForms.GunaLineTextBox
+    Friend WithEvents txt_dbPassword As Guna.UI.WinForms.GunaLineTextBox
     Friend WithEvents Label9 As Label
-    Friend WithEvents GunaLineTextBox3 As Guna.UI.WinForms.GunaLineTextBox
+    Friend WithEvents txt_dbUsername As Guna.UI.WinForms.GunaLineTextBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents GunaLineTextBox2 As Guna.UI.WinForms.GunaLineTextBox
+    Friend WithEvents txt_dbName As Guna.UI.WinForms.GunaLineTextBox
     Friend WithEvents Label7 As Label
 End Class

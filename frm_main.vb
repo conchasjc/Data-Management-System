@@ -7,6 +7,7 @@ Public Class frm_main
         tsl_hover.Text = ""
         tsb_char.Text = "Work" + vbNewLine + "Station"
         tsb_purchase.Text = "Purchased" + vbNewLine + "Parts"
+
     End Sub
 
     Private Sub SettingsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SettingsToolStripMenuItem.Click
@@ -14,17 +15,19 @@ Public Class frm_main
     End Sub
 
     Private Sub Tmr_time_Tick(sender As Object, e As EventArgs) Handles tmr_time.Tick
-        timeworker.RunWorkerAsync()
 
+        ts_time.Text = Now.ToLongTimeString + " " + Now.ToLongDateString
     End Sub
 
     Private Sub Tsb_char_Click(sender As Object, e As EventArgs) Handles tsb_char.Click
         frm_char.MdiParent = Me
         frm_char.Show()
+        tsb_char.CheckState = CheckState.Checked
+        tsb_purchase.CheckState = CheckState.Unchecked
     End Sub
 
-    Private Sub LoginAccountToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LoginAccountToolStripMenuItem.Click
-        frm_desk.Close()
+    Private Sub LoginAccountToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles mts_logout.Click
+        frm_char.Close()
         frm_desk.MdiParent = Me
         frm_desk.Show()
 
@@ -32,7 +35,7 @@ Public Class frm_main
     End Sub
 
     Private Sub Timeworker_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles timeworker.DoWork
-        ts_time.Text = Now.ToLongTimeString + " " + Now.ToLongDateString
+
 
     End Sub
 
@@ -40,5 +43,7 @@ Public Class frm_main
         frm_char.Hide()
         frm_purchase.MdiParent = Me
         frm_purchase.Show()
+        tsb_purchase.CheckState = CheckState.Checked
+        tsb_char.CheckState = CheckState.Unchecked
     End Sub
 End Class

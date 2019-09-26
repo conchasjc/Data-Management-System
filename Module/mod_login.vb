@@ -29,15 +29,17 @@ Module mod_login
         End Try
         Return 0
     End Function
-    Public Function getDbChar()
+
+    Dim bSource As New BindingSource
+
+    Public Function getDbChar(material)
         Dim sda As New MySqlDataAdapter
         Dim dbDtaSet As New DataTable
-        Dim bSource As New BindingSource
         Try
             conn.OpenAsync()
             Dim query As String
             Dim com As MySqlCommand
-            query = "select engWord as English_Character,japWord as Japanese_Character from tbl_wordchar"
+            query = "select engWord as English_Character,japWord as Japanese_Character from tbl_wordchar where materialCategory='" + material + "'"
             com = New MySqlCommand(query, conn)
             sda.SelectCommand = com
             sda.Fill(dbDtaSet)
@@ -49,6 +51,11 @@ Module mod_login
 
             MessageBox.Show(ex.Message)
         End Try
+        Return 0
+    End Function
+
+    Public Function getFilter()
+        bSource.Filter = "English_Character like '%" & frm_char.GunaTextBox1.Text & "%' or Japanese_Character like '%" & frm_char.GunaTextBox1.Text & "%'"
         Return 0
     End Function
 

@@ -24,10 +24,10 @@ Partial Class frm_char
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_char))
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GunaPanel1 = New Guna.UI.WinForms.GunaPanel()
         Me.GunaLabel1 = New Guna.UI.WinForms.GunaLabel()
         Me.pnl_char = New Guna.UI.WinForms.GunaPanel()
@@ -65,11 +65,13 @@ Partial Class frm_char
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.elps_template = New Guna.UI.WinForms.GunaElipse(Me.components)
         Me.GunaPanel5 = New Guna.UI.WinForms.GunaPanel()
+        Me.GunaButton1 = New Guna.UI.WinForms.GunaButton()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.GunaPanel6 = New Guna.UI.WinForms.GunaPanel()
         Me.GunaLabel9 = New Guna.UI.WinForms.GunaLabel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.GunaElipse1 = New Guna.UI.WinForms.GunaElipse(Me.components)
+        Me.GunaButton2 = New Guna.UI.WinForms.GunaButton()
         Me.pnl_char.SuspendLayout()
         CType(Me.GunaDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GunaPanel2.SuspendLayout()
@@ -120,7 +122,7 @@ Partial Class frm_char
         Me.pnl_char.Controls.Add(Me.GunaLabel1)
         Me.pnl_char.Location = New System.Drawing.Point(12, 101)
         Me.pnl_char.Name = "pnl_char"
-        Me.pnl_char.Size = New System.Drawing.Size(811, 771)
+        Me.pnl_char.Size = New System.Drawing.Size(811, 758)
         Me.pnl_char.TabIndex = 5
         '
         'GunaAdvenceButton11
@@ -128,13 +130,14 @@ Partial Class frm_char
         Me.GunaAdvenceButton11.Animated = True
         Me.GunaAdvenceButton11.AnimationHoverSpeed = 0.07!
         Me.GunaAdvenceButton11.AnimationSpeed = 0.03!
-        Me.GunaAdvenceButton11.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton11.BaseColor = System.Drawing.Color.Brown
         Me.GunaAdvenceButton11.BorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton11.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.GunaAdvenceButton11.CheckedBaseColor = System.Drawing.Color.SteelBlue
         Me.GunaAdvenceButton11.CheckedBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton11.CheckedForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton11.CheckedImage = CType(resources.GetObject("GunaAdvenceButton11.CheckedImage"), System.Drawing.Image)
         Me.GunaAdvenceButton11.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.GunaAdvenceButton11.Cursor = System.Windows.Forms.Cursors.Hand
         Me.GunaAdvenceButton11.FocusedColor = System.Drawing.Color.Empty
         Me.GunaAdvenceButton11.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.GunaAdvenceButton11.ForeColor = System.Drawing.Color.White
@@ -143,7 +146,7 @@ Partial Class frm_char
         Me.GunaAdvenceButton11.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.GunaAdvenceButton11.Location = New System.Drawing.Point(632, 690)
         Me.GunaAdvenceButton11.Name = "GunaAdvenceButton11"
-        Me.GunaAdvenceButton11.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton11.OnHoverBaseColor = System.Drawing.Color.IndianRed
         Me.GunaAdvenceButton11.OnHoverBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton11.OnHoverForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton11.OnHoverImage = Nothing
@@ -159,13 +162,14 @@ Partial Class frm_char
         Me.GunaAdvenceButton12.Animated = True
         Me.GunaAdvenceButton12.AnimationHoverSpeed = 0.07!
         Me.GunaAdvenceButton12.AnimationSpeed = 0.03!
-        Me.GunaAdvenceButton12.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton12.BaseColor = System.Drawing.Color.Brown
         Me.GunaAdvenceButton12.BorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton12.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.GunaAdvenceButton12.CheckedBaseColor = System.Drawing.Color.SteelBlue
         Me.GunaAdvenceButton12.CheckedBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton12.CheckedForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton12.CheckedImage = CType(resources.GetObject("GunaAdvenceButton12.CheckedImage"), System.Drawing.Image)
         Me.GunaAdvenceButton12.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.GunaAdvenceButton12.Cursor = System.Windows.Forms.Cursors.Hand
         Me.GunaAdvenceButton12.FocusedColor = System.Drawing.Color.Empty
         Me.GunaAdvenceButton12.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.GunaAdvenceButton12.ForeColor = System.Drawing.Color.White
@@ -174,7 +178,7 @@ Partial Class frm_char
         Me.GunaAdvenceButton12.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.GunaAdvenceButton12.Location = New System.Drawing.Point(486, 690)
         Me.GunaAdvenceButton12.Name = "GunaAdvenceButton12"
-        Me.GunaAdvenceButton12.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton12.OnHoverBaseColor = System.Drawing.Color.IndianRed
         Me.GunaAdvenceButton12.OnHoverBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton12.OnHoverForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton12.OnHoverImage = Nothing
@@ -190,13 +194,14 @@ Partial Class frm_char
         Me.GunaAdvenceButton13.Animated = True
         Me.GunaAdvenceButton13.AnimationHoverSpeed = 0.07!
         Me.GunaAdvenceButton13.AnimationSpeed = 0.03!
-        Me.GunaAdvenceButton13.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton13.BaseColor = System.Drawing.Color.Brown
         Me.GunaAdvenceButton13.BorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton13.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.GunaAdvenceButton13.CheckedBaseColor = System.Drawing.Color.SteelBlue
         Me.GunaAdvenceButton13.CheckedBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton13.CheckedForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton13.CheckedImage = Nothing
         Me.GunaAdvenceButton13.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.GunaAdvenceButton13.Cursor = System.Windows.Forms.Cursors.Hand
         Me.GunaAdvenceButton13.FocusedColor = System.Drawing.Color.Empty
         Me.GunaAdvenceButton13.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.GunaAdvenceButton13.ForeColor = System.Drawing.Color.White
@@ -205,7 +210,7 @@ Partial Class frm_char
         Me.GunaAdvenceButton13.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.GunaAdvenceButton13.Location = New System.Drawing.Point(340, 690)
         Me.GunaAdvenceButton13.Name = "GunaAdvenceButton13"
-        Me.GunaAdvenceButton13.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton13.OnHoverBaseColor = System.Drawing.Color.IndianRed
         Me.GunaAdvenceButton13.OnHoverBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton13.OnHoverForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton13.OnHoverImage = Nothing
@@ -221,13 +226,14 @@ Partial Class frm_char
         Me.GunaAdvenceButton14.Animated = True
         Me.GunaAdvenceButton14.AnimationHoverSpeed = 0.07!
         Me.GunaAdvenceButton14.AnimationSpeed = 0.03!
-        Me.GunaAdvenceButton14.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton14.BaseColor = System.Drawing.Color.Brown
         Me.GunaAdvenceButton14.BorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton14.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.GunaAdvenceButton14.CheckedBaseColor = System.Drawing.Color.SteelBlue
         Me.GunaAdvenceButton14.CheckedBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton14.CheckedForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton14.CheckedImage = CType(resources.GetObject("GunaAdvenceButton14.CheckedImage"), System.Drawing.Image)
         Me.GunaAdvenceButton14.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.GunaAdvenceButton14.Cursor = System.Windows.Forms.Cursors.Hand
         Me.GunaAdvenceButton14.FocusedColor = System.Drawing.Color.Empty
         Me.GunaAdvenceButton14.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.GunaAdvenceButton14.ForeColor = System.Drawing.Color.White
@@ -236,7 +242,7 @@ Partial Class frm_char
         Me.GunaAdvenceButton14.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.GunaAdvenceButton14.Location = New System.Drawing.Point(194, 690)
         Me.GunaAdvenceButton14.Name = "GunaAdvenceButton14"
-        Me.GunaAdvenceButton14.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton14.OnHoverBaseColor = System.Drawing.Color.IndianRed
         Me.GunaAdvenceButton14.OnHoverBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton14.OnHoverForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton14.OnHoverImage = Nothing
@@ -252,13 +258,14 @@ Partial Class frm_char
         Me.GunaAdvenceButton15.Animated = True
         Me.GunaAdvenceButton15.AnimationHoverSpeed = 0.07!
         Me.GunaAdvenceButton15.AnimationSpeed = 0.03!
-        Me.GunaAdvenceButton15.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton15.BaseColor = System.Drawing.Color.Brown
         Me.GunaAdvenceButton15.BorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton15.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.GunaAdvenceButton15.CheckedBaseColor = System.Drawing.Color.SteelBlue
         Me.GunaAdvenceButton15.CheckedBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton15.CheckedForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton15.CheckedImage = CType(resources.GetObject("GunaAdvenceButton15.CheckedImage"), System.Drawing.Image)
         Me.GunaAdvenceButton15.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.GunaAdvenceButton15.Cursor = System.Windows.Forms.Cursors.Hand
         Me.GunaAdvenceButton15.FocusedColor = System.Drawing.Color.Empty
         Me.GunaAdvenceButton15.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.GunaAdvenceButton15.ForeColor = System.Drawing.Color.White
@@ -267,7 +274,7 @@ Partial Class frm_char
         Me.GunaAdvenceButton15.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.GunaAdvenceButton15.Location = New System.Drawing.Point(48, 690)
         Me.GunaAdvenceButton15.Name = "GunaAdvenceButton15"
-        Me.GunaAdvenceButton15.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton15.OnHoverBaseColor = System.Drawing.Color.IndianRed
         Me.GunaAdvenceButton15.OnHoverBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton15.OnHoverForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton15.OnHoverImage = Nothing
@@ -283,13 +290,14 @@ Partial Class frm_char
         Me.GunaAdvenceButton6.Animated = True
         Me.GunaAdvenceButton6.AnimationHoverSpeed = 0.07!
         Me.GunaAdvenceButton6.AnimationSpeed = 0.03!
-        Me.GunaAdvenceButton6.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton6.BaseColor = System.Drawing.Color.Brown
         Me.GunaAdvenceButton6.BorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton6.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.GunaAdvenceButton6.CheckedBaseColor = System.Drawing.Color.SteelBlue
         Me.GunaAdvenceButton6.CheckedBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton6.CheckedForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton6.CheckedImage = Nothing
         Me.GunaAdvenceButton6.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.GunaAdvenceButton6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.GunaAdvenceButton6.FocusedColor = System.Drawing.Color.Empty
         Me.GunaAdvenceButton6.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.GunaAdvenceButton6.ForeColor = System.Drawing.Color.White
@@ -298,7 +306,7 @@ Partial Class frm_char
         Me.GunaAdvenceButton6.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.GunaAdvenceButton6.Location = New System.Drawing.Point(632, 643)
         Me.GunaAdvenceButton6.Name = "GunaAdvenceButton6"
-        Me.GunaAdvenceButton6.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton6.OnHoverBaseColor = System.Drawing.Color.IndianRed
         Me.GunaAdvenceButton6.OnHoverBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton6.OnHoverForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton6.OnHoverImage = Nothing
@@ -314,13 +322,14 @@ Partial Class frm_char
         Me.GunaAdvenceButton7.Animated = True
         Me.GunaAdvenceButton7.AnimationHoverSpeed = 0.07!
         Me.GunaAdvenceButton7.AnimationSpeed = 0.03!
-        Me.GunaAdvenceButton7.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton7.BaseColor = System.Drawing.Color.Brown
         Me.GunaAdvenceButton7.BorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton7.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.GunaAdvenceButton7.CheckedBaseColor = System.Drawing.Color.SteelBlue
         Me.GunaAdvenceButton7.CheckedBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton7.CheckedForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton7.CheckedImage = CType(resources.GetObject("GunaAdvenceButton7.CheckedImage"), System.Drawing.Image)
         Me.GunaAdvenceButton7.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.GunaAdvenceButton7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.GunaAdvenceButton7.FocusedColor = System.Drawing.Color.Empty
         Me.GunaAdvenceButton7.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.GunaAdvenceButton7.ForeColor = System.Drawing.Color.White
@@ -329,7 +338,7 @@ Partial Class frm_char
         Me.GunaAdvenceButton7.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.GunaAdvenceButton7.Location = New System.Drawing.Point(486, 643)
         Me.GunaAdvenceButton7.Name = "GunaAdvenceButton7"
-        Me.GunaAdvenceButton7.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton7.OnHoverBaseColor = System.Drawing.Color.IndianRed
         Me.GunaAdvenceButton7.OnHoverBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton7.OnHoverForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton7.OnHoverImage = Nothing
@@ -345,13 +354,14 @@ Partial Class frm_char
         Me.GunaAdvenceButton8.Animated = True
         Me.GunaAdvenceButton8.AnimationHoverSpeed = 0.07!
         Me.GunaAdvenceButton8.AnimationSpeed = 0.03!
-        Me.GunaAdvenceButton8.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton8.BaseColor = System.Drawing.Color.Brown
         Me.GunaAdvenceButton8.BorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton8.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.GunaAdvenceButton8.CheckedBaseColor = System.Drawing.Color.SteelBlue
         Me.GunaAdvenceButton8.CheckedBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton8.CheckedForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton8.CheckedImage = CType(resources.GetObject("GunaAdvenceButton8.CheckedImage"), System.Drawing.Image)
         Me.GunaAdvenceButton8.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.GunaAdvenceButton8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.GunaAdvenceButton8.FocusedColor = System.Drawing.Color.Empty
         Me.GunaAdvenceButton8.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.GunaAdvenceButton8.ForeColor = System.Drawing.Color.White
@@ -360,7 +370,7 @@ Partial Class frm_char
         Me.GunaAdvenceButton8.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.GunaAdvenceButton8.Location = New System.Drawing.Point(340, 643)
         Me.GunaAdvenceButton8.Name = "GunaAdvenceButton8"
-        Me.GunaAdvenceButton8.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton8.OnHoverBaseColor = System.Drawing.Color.IndianRed
         Me.GunaAdvenceButton8.OnHoverBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton8.OnHoverForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton8.OnHoverImage = Nothing
@@ -376,13 +386,14 @@ Partial Class frm_char
         Me.GunaAdvenceButton9.Animated = True
         Me.GunaAdvenceButton9.AnimationHoverSpeed = 0.07!
         Me.GunaAdvenceButton9.AnimationSpeed = 0.03!
-        Me.GunaAdvenceButton9.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton9.BaseColor = System.Drawing.Color.Brown
         Me.GunaAdvenceButton9.BorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton9.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.GunaAdvenceButton9.CheckedBaseColor = System.Drawing.Color.SteelBlue
         Me.GunaAdvenceButton9.CheckedBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton9.CheckedForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton9.CheckedImage = CType(resources.GetObject("GunaAdvenceButton9.CheckedImage"), System.Drawing.Image)
         Me.GunaAdvenceButton9.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.GunaAdvenceButton9.Cursor = System.Windows.Forms.Cursors.Hand
         Me.GunaAdvenceButton9.FocusedColor = System.Drawing.Color.Empty
         Me.GunaAdvenceButton9.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.GunaAdvenceButton9.ForeColor = System.Drawing.Color.White
@@ -391,7 +402,7 @@ Partial Class frm_char
         Me.GunaAdvenceButton9.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.GunaAdvenceButton9.Location = New System.Drawing.Point(194, 643)
         Me.GunaAdvenceButton9.Name = "GunaAdvenceButton9"
-        Me.GunaAdvenceButton9.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton9.OnHoverBaseColor = System.Drawing.Color.IndianRed
         Me.GunaAdvenceButton9.OnHoverBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton9.OnHoverForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton9.OnHoverImage = Nothing
@@ -407,13 +418,14 @@ Partial Class frm_char
         Me.GunaAdvenceButton10.Animated = True
         Me.GunaAdvenceButton10.AnimationHoverSpeed = 0.07!
         Me.GunaAdvenceButton10.AnimationSpeed = 0.03!
-        Me.GunaAdvenceButton10.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton10.BaseColor = System.Drawing.Color.Brown
         Me.GunaAdvenceButton10.BorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton10.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.GunaAdvenceButton10.CheckedBaseColor = System.Drawing.Color.SteelBlue
         Me.GunaAdvenceButton10.CheckedBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton10.CheckedForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton10.CheckedImage = CType(resources.GetObject("GunaAdvenceButton10.CheckedImage"), System.Drawing.Image)
         Me.GunaAdvenceButton10.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.GunaAdvenceButton10.Cursor = System.Windows.Forms.Cursors.Hand
         Me.GunaAdvenceButton10.FocusedColor = System.Drawing.Color.Empty
         Me.GunaAdvenceButton10.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.GunaAdvenceButton10.ForeColor = System.Drawing.Color.White
@@ -422,7 +434,7 @@ Partial Class frm_char
         Me.GunaAdvenceButton10.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.GunaAdvenceButton10.Location = New System.Drawing.Point(48, 643)
         Me.GunaAdvenceButton10.Name = "GunaAdvenceButton10"
-        Me.GunaAdvenceButton10.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton10.OnHoverBaseColor = System.Drawing.Color.IndianRed
         Me.GunaAdvenceButton10.OnHoverBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton10.OnHoverForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton10.OnHoverImage = Nothing
@@ -438,13 +450,14 @@ Partial Class frm_char
         Me.GunaAdvenceButton5.Animated = True
         Me.GunaAdvenceButton5.AnimationHoverSpeed = 0.07!
         Me.GunaAdvenceButton5.AnimationSpeed = 0.03!
-        Me.GunaAdvenceButton5.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton5.BaseColor = System.Drawing.Color.Brown
         Me.GunaAdvenceButton5.BorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton5.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.GunaAdvenceButton5.CheckedBaseColor = System.Drawing.Color.SteelBlue
         Me.GunaAdvenceButton5.CheckedBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton5.CheckedForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton5.CheckedImage = CType(resources.GetObject("GunaAdvenceButton5.CheckedImage"), System.Drawing.Image)
         Me.GunaAdvenceButton5.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.GunaAdvenceButton5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.GunaAdvenceButton5.FocusedColor = System.Drawing.Color.Empty
         Me.GunaAdvenceButton5.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.GunaAdvenceButton5.ForeColor = System.Drawing.Color.White
@@ -453,7 +466,7 @@ Partial Class frm_char
         Me.GunaAdvenceButton5.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.GunaAdvenceButton5.Location = New System.Drawing.Point(632, 596)
         Me.GunaAdvenceButton5.Name = "GunaAdvenceButton5"
-        Me.GunaAdvenceButton5.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton5.OnHoverBaseColor = System.Drawing.Color.IndianRed
         Me.GunaAdvenceButton5.OnHoverBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton5.OnHoverForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton5.OnHoverImage = Nothing
@@ -469,13 +482,14 @@ Partial Class frm_char
         Me.GunaAdvenceButton4.Animated = True
         Me.GunaAdvenceButton4.AnimationHoverSpeed = 0.07!
         Me.GunaAdvenceButton4.AnimationSpeed = 0.03!
-        Me.GunaAdvenceButton4.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton4.BaseColor = System.Drawing.Color.Brown
         Me.GunaAdvenceButton4.BorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton4.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.GunaAdvenceButton4.CheckedBaseColor = System.Drawing.Color.SteelBlue
         Me.GunaAdvenceButton4.CheckedBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton4.CheckedForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton4.CheckedImage = CType(resources.GetObject("GunaAdvenceButton4.CheckedImage"), System.Drawing.Image)
         Me.GunaAdvenceButton4.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.GunaAdvenceButton4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.GunaAdvenceButton4.FocusedColor = System.Drawing.Color.Empty
         Me.GunaAdvenceButton4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.GunaAdvenceButton4.ForeColor = System.Drawing.Color.White
@@ -484,7 +498,7 @@ Partial Class frm_char
         Me.GunaAdvenceButton4.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.GunaAdvenceButton4.Location = New System.Drawing.Point(486, 596)
         Me.GunaAdvenceButton4.Name = "GunaAdvenceButton4"
-        Me.GunaAdvenceButton4.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton4.OnHoverBaseColor = System.Drawing.Color.IndianRed
         Me.GunaAdvenceButton4.OnHoverBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton4.OnHoverForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton4.OnHoverImage = Nothing
@@ -500,13 +514,14 @@ Partial Class frm_char
         Me.GunaAdvenceButton3.Animated = True
         Me.GunaAdvenceButton3.AnimationHoverSpeed = 0.07!
         Me.GunaAdvenceButton3.AnimationSpeed = 0.03!
-        Me.GunaAdvenceButton3.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton3.BaseColor = System.Drawing.Color.Brown
         Me.GunaAdvenceButton3.BorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton3.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.GunaAdvenceButton3.CheckedBaseColor = System.Drawing.Color.SteelBlue
         Me.GunaAdvenceButton3.CheckedBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton3.CheckedForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton3.CheckedImage = CType(resources.GetObject("GunaAdvenceButton3.CheckedImage"), System.Drawing.Image)
         Me.GunaAdvenceButton3.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.GunaAdvenceButton3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.GunaAdvenceButton3.FocusedColor = System.Drawing.Color.Empty
         Me.GunaAdvenceButton3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.GunaAdvenceButton3.ForeColor = System.Drawing.Color.White
@@ -515,7 +530,7 @@ Partial Class frm_char
         Me.GunaAdvenceButton3.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.GunaAdvenceButton3.Location = New System.Drawing.Point(340, 596)
         Me.GunaAdvenceButton3.Name = "GunaAdvenceButton3"
-        Me.GunaAdvenceButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton3.OnHoverBaseColor = System.Drawing.Color.IndianRed
         Me.GunaAdvenceButton3.OnHoverBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton3.OnHoverForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton3.OnHoverImage = Nothing
@@ -531,13 +546,14 @@ Partial Class frm_char
         Me.GunaAdvenceButton2.Animated = True
         Me.GunaAdvenceButton2.AnimationHoverSpeed = 0.07!
         Me.GunaAdvenceButton2.AnimationSpeed = 0.03!
-        Me.GunaAdvenceButton2.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton2.BaseColor = System.Drawing.Color.Brown
         Me.GunaAdvenceButton2.BorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton2.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.GunaAdvenceButton2.CheckedBaseColor = System.Drawing.Color.SteelBlue
         Me.GunaAdvenceButton2.CheckedBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton2.CheckedForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton2.CheckedImage = CType(resources.GetObject("GunaAdvenceButton2.CheckedImage"), System.Drawing.Image)
         Me.GunaAdvenceButton2.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.GunaAdvenceButton2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.GunaAdvenceButton2.FocusedColor = System.Drawing.Color.Empty
         Me.GunaAdvenceButton2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.GunaAdvenceButton2.ForeColor = System.Drawing.Color.White
@@ -546,7 +562,7 @@ Partial Class frm_char
         Me.GunaAdvenceButton2.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.GunaAdvenceButton2.Location = New System.Drawing.Point(194, 596)
         Me.GunaAdvenceButton2.Name = "GunaAdvenceButton2"
-        Me.GunaAdvenceButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton2.OnHoverBaseColor = System.Drawing.Color.IndianRed
         Me.GunaAdvenceButton2.OnHoverBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton2.OnHoverForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton2.OnHoverImage = Nothing
@@ -562,26 +578,27 @@ Partial Class frm_char
         Me.GunaAdvenceButton1.Animated = True
         Me.GunaAdvenceButton1.AnimationHoverSpeed = 0.07!
         Me.GunaAdvenceButton1.AnimationSpeed = 0.03!
-        Me.GunaAdvenceButton1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton1.BaseColor = System.Drawing.Color.Brown
         Me.GunaAdvenceButton1.BorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.GunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.SteelBlue
         Me.GunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton1.CheckedImage = CType(resources.GetObject("GunaAdvenceButton1.CheckedImage"), System.Drawing.Image)
-        Me.GunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.GunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.Gold
+        Me.GunaAdvenceButton1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.GunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty
         Me.GunaAdvenceButton1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.GunaAdvenceButton1.ForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton1.Image = Nothing
         Me.GunaAdvenceButton1.ImageSize = New System.Drawing.Size(20, 20)
-        Me.GunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.GunaAdvenceButton1.LineColor = System.Drawing.Color.Maroon
         Me.GunaAdvenceButton1.Location = New System.Drawing.Point(48, 596)
         Me.GunaAdvenceButton1.Name = "GunaAdvenceButton1"
-        Me.GunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.IndianRed
         Me.GunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton1.OnHoverImage = Nothing
-        Me.GunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.GunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.Gold
         Me.GunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton1.Size = New System.Drawing.Size(140, 41)
         Me.GunaAdvenceButton1.TabIndex = 8
@@ -594,46 +611,47 @@ Partial Class frm_char
         Me.GunaDataGridView1.AllowUserToDeleteRows = False
         Me.GunaDataGridView1.AllowUserToResizeColumns = False
         Me.GunaDataGridView1.AllowUserToResizeRows = False
-        DataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(195, Byte), Integer))
-        Me.GunaDataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle17
+        DataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(195, Byte), Integer))
+        Me.GunaDataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle21
         Me.GunaDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.GunaDataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
-        Me.GunaDataGridView1.BackgroundColor = System.Drawing.Color.White
+        Me.GunaDataGridView1.BackgroundColor = System.Drawing.Color.SlateGray
         Me.GunaDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.GunaDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.GunaDataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable
         Me.GunaDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(54, Byte), Integer))
-        DataGridViewCellStyle18.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle18.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.GunaDataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle18
+        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(54, Byte), Integer))
+        DataGridViewCellStyle22.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle22.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.GunaDataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle22
         Me.GunaDataGridView1.ColumnHeadersHeight = 40
-        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(215, Byte), Integer))
-        DataGridViewCellStyle19.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(121, Byte), Integer))
-        DataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.GunaDataGridView1.DefaultCellStyle = DataGridViewCellStyle19
+        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(215, Byte), Integer))
+        DataGridViewCellStyle23.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(121, Byte), Integer))
+        DataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.GunaDataGridView1.DefaultCellStyle = DataGridViewCellStyle23
         Me.GunaDataGridView1.EnableHeadersVisualStyles = False
         Me.GunaDataGridView1.GridColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(184, Byte), Integer))
         Me.GunaDataGridView1.Location = New System.Drawing.Point(48, 121)
         Me.GunaDataGridView1.MultiSelect = False
         Me.GunaDataGridView1.Name = "GunaDataGridView1"
-        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle20.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        DataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle20.Padding = New System.Windows.Forms.Padding(8)
-        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.GunaDataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle20
+        Me.GunaDataGridView1.ReadOnly = True
+        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle24.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        DataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle24.Padding = New System.Windows.Forms.Padding(8)
+        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.GunaDataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle24
         Me.GunaDataGridView1.RowHeadersVisible = False
         Me.GunaDataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
         Me.GunaDataGridView1.RowTemplate.Height = 21
@@ -646,7 +664,7 @@ Partial Class frm_char
         Me.GunaDataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
         Me.GunaDataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
         Me.GunaDataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
-        Me.GunaDataGridView1.ThemeStyle.BackColor = System.Drawing.Color.White
+        Me.GunaDataGridView1.ThemeStyle.BackColor = System.Drawing.Color.SlateGray
         Me.GunaDataGridView1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(184, Byte), Integer))
         Me.GunaDataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.GunaDataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -654,7 +672,7 @@ Partial Class frm_char
         Me.GunaDataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
         Me.GunaDataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.GunaDataGridView1.ThemeStyle.HeaderStyle.Height = 40
-        Me.GunaDataGridView1.ThemeStyle.ReadOnly = False
+        Me.GunaDataGridView1.ThemeStyle.ReadOnly = True
         Me.GunaDataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(215, Byte), Integer))
         Me.GunaDataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.GunaDataGridView1.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Segoe UI", 10.5!)
@@ -751,8 +769,9 @@ Partial Class frm_char
         Me.GunaCircleButton6.Animated = True
         Me.GunaCircleButton6.AnimationHoverSpeed = 0.07!
         Me.GunaCircleButton6.AnimationSpeed = 0.03!
-        Me.GunaCircleButton6.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaCircleButton6.BaseColor = System.Drawing.Color.Gray
         Me.GunaCircleButton6.BorderColor = System.Drawing.Color.Black
+        Me.GunaCircleButton6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.GunaCircleButton6.FocusedColor = System.Drawing.Color.Empty
         Me.GunaCircleButton6.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaCircleButton6.ForeColor = System.Drawing.Color.White
@@ -760,7 +779,7 @@ Partial Class frm_char
         Me.GunaCircleButton6.ImageSize = New System.Drawing.Size(52, 52)
         Me.GunaCircleButton6.Location = New System.Drawing.Point(321, 183)
         Me.GunaCircleButton6.Name = "GunaCircleButton6"
-        Me.GunaCircleButton6.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaCircleButton6.OnHoverBaseColor = System.Drawing.Color.DarkViolet
         Me.GunaCircleButton6.OnHoverBorderColor = System.Drawing.Color.Black
         Me.GunaCircleButton6.OnHoverForeColor = System.Drawing.Color.White
         Me.GunaCircleButton6.OnHoverImage = Nothing
@@ -774,8 +793,9 @@ Partial Class frm_char
         Me.GunaCircleButton5.Animated = True
         Me.GunaCircleButton5.AnimationHoverSpeed = 0.07!
         Me.GunaCircleButton5.AnimationSpeed = 0.03!
-        Me.GunaCircleButton5.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaCircleButton5.BaseColor = System.Drawing.Color.Gray
         Me.GunaCircleButton5.BorderColor = System.Drawing.Color.Black
+        Me.GunaCircleButton5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.GunaCircleButton5.FocusedColor = System.Drawing.Color.Empty
         Me.GunaCircleButton5.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaCircleButton5.ForeColor = System.Drawing.Color.White
@@ -783,7 +803,7 @@ Partial Class frm_char
         Me.GunaCircleButton5.ImageSize = New System.Drawing.Size(52, 52)
         Me.GunaCircleButton5.Location = New System.Drawing.Point(182, 183)
         Me.GunaCircleButton5.Name = "GunaCircleButton5"
-        Me.GunaCircleButton5.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaCircleButton5.OnHoverBaseColor = System.Drawing.Color.DarkCyan
         Me.GunaCircleButton5.OnHoverBorderColor = System.Drawing.Color.Black
         Me.GunaCircleButton5.OnHoverForeColor = System.Drawing.Color.White
         Me.GunaCircleButton5.OnHoverImage = Nothing
@@ -797,8 +817,9 @@ Partial Class frm_char
         Me.GunaCircleButton4.Animated = True
         Me.GunaCircleButton4.AnimationHoverSpeed = 0.07!
         Me.GunaCircleButton4.AnimationSpeed = 0.03!
-        Me.GunaCircleButton4.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaCircleButton4.BaseColor = System.Drawing.Color.Gray
         Me.GunaCircleButton4.BorderColor = System.Drawing.Color.Black
+        Me.GunaCircleButton4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.GunaCircleButton4.FocusedColor = System.Drawing.Color.Empty
         Me.GunaCircleButton4.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaCircleButton4.ForeColor = System.Drawing.Color.White
@@ -806,7 +827,7 @@ Partial Class frm_char
         Me.GunaCircleButton4.ImageSize = New System.Drawing.Size(52, 52)
         Me.GunaCircleButton4.Location = New System.Drawing.Point(42, 183)
         Me.GunaCircleButton4.Name = "GunaCircleButton4"
-        Me.GunaCircleButton4.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaCircleButton4.OnHoverBaseColor = System.Drawing.Color.DarkRed
         Me.GunaCircleButton4.OnHoverBorderColor = System.Drawing.Color.Black
         Me.GunaCircleButton4.OnHoverForeColor = System.Drawing.Color.White
         Me.GunaCircleButton4.OnHoverImage = Nothing
@@ -820,8 +841,9 @@ Partial Class frm_char
         Me.GunaCircleButton3.Animated = True
         Me.GunaCircleButton3.AnimationHoverSpeed = 0.07!
         Me.GunaCircleButton3.AnimationSpeed = 0.03!
-        Me.GunaCircleButton3.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaCircleButton3.BaseColor = System.Drawing.Color.Gray
         Me.GunaCircleButton3.BorderColor = System.Drawing.Color.Black
+        Me.GunaCircleButton3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.GunaCircleButton3.FocusedColor = System.Drawing.Color.Empty
         Me.GunaCircleButton3.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaCircleButton3.ForeColor = System.Drawing.Color.White
@@ -829,7 +851,7 @@ Partial Class frm_char
         Me.GunaCircleButton3.ImageSize = New System.Drawing.Size(52, 52)
         Me.GunaCircleButton3.Location = New System.Drawing.Point(321, 93)
         Me.GunaCircleButton3.Name = "GunaCircleButton3"
-        Me.GunaCircleButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaCircleButton3.OnHoverBaseColor = System.Drawing.Color.DarkOrange
         Me.GunaCircleButton3.OnHoverBorderColor = System.Drawing.Color.Black
         Me.GunaCircleButton3.OnHoverForeColor = System.Drawing.Color.White
         Me.GunaCircleButton3.OnHoverImage = Nothing
@@ -843,8 +865,9 @@ Partial Class frm_char
         Me.GunaCircleButton2.Animated = True
         Me.GunaCircleButton2.AnimationHoverSpeed = 0.07!
         Me.GunaCircleButton2.AnimationSpeed = 0.03!
-        Me.GunaCircleButton2.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaCircleButton2.BaseColor = System.Drawing.Color.Gray
         Me.GunaCircleButton2.BorderColor = System.Drawing.Color.Black
+        Me.GunaCircleButton2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.GunaCircleButton2.FocusedColor = System.Drawing.Color.Empty
         Me.GunaCircleButton2.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaCircleButton2.ForeColor = System.Drawing.Color.White
@@ -852,7 +875,7 @@ Partial Class frm_char
         Me.GunaCircleButton2.ImageSize = New System.Drawing.Size(52, 52)
         Me.GunaCircleButton2.Location = New System.Drawing.Point(182, 93)
         Me.GunaCircleButton2.Name = "GunaCircleButton2"
-        Me.GunaCircleButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaCircleButton2.OnHoverBaseColor = System.Drawing.Color.DarkGreen
         Me.GunaCircleButton2.OnHoverBorderColor = System.Drawing.Color.Black
         Me.GunaCircleButton2.OnHoverForeColor = System.Drawing.Color.White
         Me.GunaCircleButton2.OnHoverImage = Nothing
@@ -866,8 +889,10 @@ Partial Class frm_char
         Me.GunaCircleButton1.Animated = True
         Me.GunaCircleButton1.AnimationHoverSpeed = 0.07!
         Me.GunaCircleButton1.AnimationSpeed = 0.03!
-        Me.GunaCircleButton1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.GunaCircleButton1.BorderColor = System.Drawing.Color.Black
+        Me.GunaCircleButton1.BaseColor = System.Drawing.Color.Gray
+        Me.GunaCircleButton1.BorderColor = System.Drawing.Color.Gray
+        Me.GunaCircleButton1.BorderSize = 1
+        Me.GunaCircleButton1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.GunaCircleButton1.FocusedColor = System.Drawing.Color.Empty
         Me.GunaCircleButton1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaCircleButton1.ForeColor = System.Drawing.Color.White
@@ -875,7 +900,7 @@ Partial Class frm_char
         Me.GunaCircleButton1.ImageSize = New System.Drawing.Size(52, 52)
         Me.GunaCircleButton1.Location = New System.Drawing.Point(42, 93)
         Me.GunaCircleButton1.Name = "GunaCircleButton1"
-        Me.GunaCircleButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaCircleButton1.OnHoverBaseColor = System.Drawing.Color.DarkBlue
         Me.GunaCircleButton1.OnHoverBorderColor = System.Drawing.Color.Black
         Me.GunaCircleButton1.OnHoverForeColor = System.Drawing.Color.White
         Me.GunaCircleButton1.OnHoverImage = Nothing
@@ -912,14 +937,59 @@ Partial Class frm_char
         'GunaPanel5
         '
         Me.GunaPanel5.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.GunaPanel5.Controls.Add(Me.GunaButton2)
+        Me.GunaPanel5.Controls.Add(Me.GunaButton1)
         Me.GunaPanel5.Controls.Add(Me.TextBox2)
         Me.GunaPanel5.Controls.Add(Me.TextBox1)
         Me.GunaPanel5.Controls.Add(Me.GunaPanel6)
         Me.GunaPanel5.Controls.Add(Me.GunaLabel9)
         Me.GunaPanel5.Location = New System.Drawing.Point(849, 390)
         Me.GunaPanel5.Name = "GunaPanel5"
-        Me.GunaPanel5.Size = New System.Drawing.Size(448, 482)
+        Me.GunaPanel5.Size = New System.Drawing.Size(448, 469)
         Me.GunaPanel5.TabIndex = 7
+        '
+        'GunaButton1
+        '
+        Me.GunaButton1.Animated = True
+        Me.GunaButton1.AnimationHoverSpeed = 0.07!
+        Me.GunaButton1.AnimationSpeed = 0.03!
+        Me.GunaButton1.BaseColor = System.Drawing.Color.DarkGreen
+        Me.GunaButton1.BorderColor = System.Drawing.Color.DarkGreen
+        Me.GunaButton1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.GunaButton1.FocusedColor = System.Drawing.Color.Empty
+        Me.GunaButton1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.GunaButton1.ForeColor = System.Drawing.Color.White
+        Me.GunaButton1.Image = Nothing
+        Me.GunaButton1.ImageSize = New System.Drawing.Size(20, 20)
+        Me.GunaButton1.Location = New System.Drawing.Point(185, 423)
+        Me.GunaButton1.Name = "GunaButton1"
+        Me.GunaButton1.OnHoverBaseColor = System.Drawing.Color.Green
+        Me.GunaButton1.OnHoverBorderColor = System.Drawing.Color.PaleGreen
+        Me.GunaButton1.OnHoverForeColor = System.Drawing.Color.White
+        Me.GunaButton1.OnHoverImage = Nothing
+        Me.GunaButton1.OnPressedColor = System.Drawing.Color.Black
+        Me.GunaButton1.Size = New System.Drawing.Size(122, 34)
+        Me.GunaButton1.TabIndex = 7
+        Me.GunaButton1.Text = "Get Result"
+        Me.GunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(311, 94)
+        Me.TextBox2.Multiline = True
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(124, 301)
+        Me.TextBox2.TabIndex = 6
+        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(23, 94)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
+        Me.TextBox1.Size = New System.Drawing.Size(282, 301)
+        Me.TextBox1.TabIndex = 5
         '
         'GunaPanel6
         '
@@ -941,28 +1011,35 @@ Partial Class frm_char
         Me.GunaLabel9.TabIndex = 3
         Me.GunaLabel9.Text = "MATERIAL CALCULATOR"
         '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(23, 94)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TextBox1.Size = New System.Drawing.Size(282, 301)
-        Me.TextBox1.TabIndex = 5
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(311, 94)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TextBox2.Size = New System.Drawing.Size(124, 301)
-        Me.TextBox2.TabIndex = 6
-        '
         'GunaElipse1
         '
         Me.GunaElipse1.Radius = 5
         Me.GunaElipse1.TargetControl = Me.GunaPanel5
+        '
+        'GunaButton2
+        '
+        Me.GunaButton2.Animated = True
+        Me.GunaButton2.AnimationHoverSpeed = 0.07!
+        Me.GunaButton2.AnimationSpeed = 0.03!
+        Me.GunaButton2.BaseColor = System.Drawing.Color.Brown
+        Me.GunaButton2.BorderColor = System.Drawing.Color.Black
+        Me.GunaButton2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.GunaButton2.FocusedColor = System.Drawing.Color.Empty
+        Me.GunaButton2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.GunaButton2.ForeColor = System.Drawing.Color.White
+        Me.GunaButton2.Image = Nothing
+        Me.GunaButton2.ImageSize = New System.Drawing.Size(20, 20)
+        Me.GunaButton2.Location = New System.Drawing.Point(313, 423)
+        Me.GunaButton2.Name = "GunaButton2"
+        Me.GunaButton2.OnHoverBaseColor = System.Drawing.Color.IndianRed
+        Me.GunaButton2.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.GunaButton2.OnHoverForeColor = System.Drawing.Color.White
+        Me.GunaButton2.OnHoverImage = Nothing
+        Me.GunaButton2.OnPressedColor = System.Drawing.Color.Black
+        Me.GunaButton2.Size = New System.Drawing.Size(122, 34)
+        Me.GunaButton2.TabIndex = 8
+        Me.GunaButton2.Text = "Clear"
+        Me.GunaButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'frm_char
         '
@@ -1032,4 +1109,6 @@ Partial Class frm_char
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents GunaElipse1 As Guna.UI.WinForms.GunaElipse
+    Friend WithEvents GunaButton1 As Guna.UI.WinForms.GunaButton
+    Friend WithEvents GunaButton2 As Guna.UI.WinForms.GunaButton
 End Class

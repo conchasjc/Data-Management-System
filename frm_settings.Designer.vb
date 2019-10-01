@@ -25,6 +25,7 @@ Partial Class frm_settings
         Me.components = New System.ComponentModel.Container()
         Me.GunaElipse1 = New Guna.UI.WinForms.GunaElipse(Me.components)
         Me.GunaPanel1 = New Guna.UI.WinForms.GunaPanel()
+        Me.lbl_purch = New System.Windows.Forms.Label()
         Me.lbl_dtbase = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -33,6 +34,9 @@ Partial Class frm_settings
         Me.GunaDragControl1 = New Guna.UI.WinForms.GunaDragControl(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.pnl_database = New System.Windows.Forms.Panel()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.pb_showeye = New System.Windows.Forms.PictureBox()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.txt_dbPassword = New Guna.UI.WinForms.GunaLineTextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txt_dbUsername = New Guna.UI.WinForms.GunaLineTextBox()
@@ -46,11 +50,12 @@ Partial Class frm_settings
         Me.GunaLinePanel1 = New Guna.UI.WinForms.GunaLinePanel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.GunaPanel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.pnl_database.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_showeye, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GunaElipse1
@@ -60,6 +65,7 @@ Partial Class frm_settings
         'GunaPanel1
         '
         Me.GunaPanel1.BackColor = System.Drawing.Color.DarkRed
+        Me.GunaPanel1.Controls.Add(Me.lbl_purch)
         Me.GunaPanel1.Controls.Add(Me.lbl_dtbase)
         Me.GunaPanel1.Controls.Add(Me.PictureBox1)
         Me.GunaPanel1.Controls.Add(Me.Label2)
@@ -70,6 +76,19 @@ Partial Class frm_settings
         Me.GunaPanel1.Size = New System.Drawing.Size(310, 632)
         Me.GunaPanel1.TabIndex = 0
         '
+        'lbl_purch
+        '
+        Me.lbl_purch.AutoSize = True
+        Me.lbl_purch.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_purch.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.lbl_purch.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_purch.ForeColor = System.Drawing.Color.White
+        Me.lbl_purch.Location = New System.Drawing.Point(56, 234)
+        Me.lbl_purch.Name = "lbl_purch"
+        Me.lbl_purch.Size = New System.Drawing.Size(200, 30)
+        Me.lbl_purch.TabIndex = 4
+        Me.lbl_purch.Text = "Purchased Parts"
+        '
         'lbl_dtbase
         '
         Me.lbl_dtbase.AutoSize = True
@@ -77,7 +96,7 @@ Partial Class frm_settings
         Me.lbl_dtbase.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lbl_dtbase.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_dtbase.ForeColor = System.Drawing.Color.White
-        Me.lbl_dtbase.Location = New System.Drawing.Point(82, 164)
+        Me.lbl_dtbase.Location = New System.Drawing.Point(56, 164)
         Me.lbl_dtbase.Name = "lbl_dtbase"
         Me.lbl_dtbase.Size = New System.Drawing.Size(129, 30)
         Me.lbl_dtbase.TabIndex = 3
@@ -145,6 +164,8 @@ Partial Class frm_settings
         '
         'pnl_database
         '
+        Me.pnl_database.Controls.Add(Me.PictureBox2)
+        Me.pnl_database.Controls.Add(Me.pb_showeye)
         Me.pnl_database.Controls.Add(Me.Button2)
         Me.pnl_database.Controls.Add(Me.txt_dbPassword)
         Me.pnl_database.Controls.Add(Me.Label9)
@@ -159,11 +180,44 @@ Partial Class frm_settings
         Me.pnl_database.Controls.Add(Me.GunaLinePanel1)
         Me.pnl_database.Controls.Add(Me.Button1)
         Me.pnl_database.Controls.Add(Me.Label3)
+        Me.pnl_database.Cursor = System.Windows.Forms.Cursors.Default
         Me.pnl_database.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnl_database.Location = New System.Drawing.Point(0, 0)
         Me.pnl_database.Name = "pnl_database"
         Me.pnl_database.Size = New System.Drawing.Size(764, 632)
         Me.pnl_database.TabIndex = 0
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackgroundImage = Global.kmtiworkstationvb.My.Resources.Resources.view
+        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox2.Location = New System.Drawing.Point(497, 460)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(33, 32)
+        Me.PictureBox2.TabIndex = 15
+        Me.PictureBox2.TabStop = False
+        Me.PictureBox2.Visible = False
+        '
+        'pb_showeye
+        '
+        Me.pb_showeye.BackgroundImage = Global.kmtiworkstationvb.My.Resources.Resources.view_png_image_6
+        Me.pb_showeye.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.pb_showeye.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_showeye.Location = New System.Drawing.Point(497, 460)
+        Me.pb_showeye.Name = "pb_showeye"
+        Me.pb_showeye.Size = New System.Drawing.Size(33, 32)
+        Me.pb_showeye.TabIndex = 14
+        Me.pb_showeye.TabStop = False
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(49, 566)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(154, 41)
+        Me.Button2.TabIndex = 13
+        Me.Button2.Text = "Test Connection"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'txt_dbPassword
         '
@@ -174,7 +228,7 @@ Partial Class frm_settings
         Me.txt_dbPassword.LineColor = System.Drawing.Color.Gainsboro
         Me.txt_dbPassword.Location = New System.Drawing.Point(49, 460)
         Me.txt_dbPassword.Name = "txt_dbPassword"
-        Me.txt_dbPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_dbPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt_dbPassword.Size = New System.Drawing.Size(442, 32)
         Me.txt_dbPassword.TabIndex = 12
         '
@@ -305,15 +359,6 @@ Partial Class frm_settings
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "DATABASE CONNECTION"
         '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(49, 566)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(154, 41)
-        Me.Button2.TabIndex = 13
-        Me.Button2.Text = "Test Connection"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
         'frm_settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -333,6 +378,8 @@ Partial Class frm_settings
         Me.Panel1.ResumeLayout(False)
         Me.pnl_database.ResumeLayout(False)
         Me.pnl_database.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_showeye, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -361,4 +408,7 @@ Partial Class frm_settings
     Friend WithEvents txt_dbName As Guna.UI.WinForms.GunaLineTextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Button2 As Button
+    Friend WithEvents lbl_purch As Label
+    Friend WithEvents pb_showeye As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

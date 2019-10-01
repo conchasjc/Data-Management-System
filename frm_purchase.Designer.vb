@@ -22,15 +22,35 @@ Partial Class frm_purchase
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.TreeView1 = New System.Windows.Forms.TreeView()
         Me.SuspendLayout()
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Maroon
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(2080, 82)
+        Me.Panel1.TabIndex = 0
+        '
+        'TreeView1
+        '
+        Me.TreeView1.Location = New System.Drawing.Point(76, 120)
+        Me.TreeView1.Name = "TreeView1"
+        Me.TreeView1.Size = New System.Drawing.Size(344, 535)
+        Me.TreeView1.TabIndex = 1
         '
         'frm_purchase
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.IndianRed
-        Me.ClientSize = New System.Drawing.Size(1937, 921)
+        Me.BackColor = System.Drawing.Color.SlateGray
+        Me.ClientSize = New System.Drawing.Size(2080, 921)
         Me.ControlBox = False
+        Me.Controls.Add(Me.TreeView1)
+        Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frm_purchase"
         Me.Text = "Purchased Parts"
@@ -38,4 +58,7 @@ Partial Class frm_purchase
         Me.ResumeLayout(False)
 
     End Sub
+
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents TreeView1 As TreeView
 End Class

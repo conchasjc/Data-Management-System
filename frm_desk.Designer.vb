@@ -45,7 +45,6 @@ Partial Class frm_desk
         Me.GunaLineTextBox1 = New Guna.UI.WinForms.GunaLineTextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.GunaElipse1 = New Guna.UI.WinForms.GunaElipse(Me.components)
-        Me.GunaElipse2 = New Guna.UI.WinForms.GunaElipse(Me.components)
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.tmr_connStatus = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1.SuspendLayout()
@@ -335,11 +334,6 @@ Partial Class frm_desk
         Me.GunaElipse1.Radius = 10
         Me.GunaElipse1.TargetControl = Me.Panel2
         '
-        'GunaElipse2
-        '
-        Me.GunaElipse2.Radius = 20
-        Me.GunaElipse2.TargetControl = Me
-        '
         'BackgroundWorker1
         '
         '
@@ -388,7 +382,6 @@ Partial Class frm_desk
     Friend WithEvents Panel4 As Panel
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents GunaWinCircleProgressIndicator1 As Guna.UI.WinForms.GunaWinCircleProgressIndicator
-    Friend WithEvents GunaElipse2 As Guna.UI.WinForms.GunaElipse
     Friend WithEvents GunaCirclePictureBox1 As Guna.UI.WinForms.GunaCirclePictureBox
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents lbl_dbNotif As Label

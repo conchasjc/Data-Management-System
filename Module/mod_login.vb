@@ -1,25 +1,27 @@
 ﻿Imports MySql.Data.MySqlClient
 Module mod_login
 
-    Dim conn As New MySqlConnection("host=" + My.Settings.sett_dbSource + "; username = " + My.Settings.sett_dbUsername + "; password=" + My.Settings.sett_dbPass + "; database=" + My.Settings.sett_dbName + ";")
-    Public Function testConnect()
-        Dim con As New MySqlConnection("host=" + frm_settings.txt_dbSource.Text + "; username = " + frm_settings.txt_dbUsername.Text + "; password=" + frm_settings.txt_dbPassword.Text + "; database=" + frm_settings.txt_dbName.Text + ";")
+    ReadOnly conn As New MySqlConnection("host=" + My.Settings.sett_dbSource + "; username = " + My.Settings.sett_dbUsername + "; password=" + My.Settings.sett_dbPass + "; database=" + My.Settings.sett_dbName + ";character set=utf8;")
+    Public Function TestConnect()
+        Dim con As New MySqlConnection("host=" + frm_settings.txt_dbSource.Text + "; username = " + frm_settings.txt_dbUsername.Text + "; password=" + frm_settings.txt_dbPassword.Text + "; database=" + frm_settings.txt_dbName.Text + ";character set=utf8;")
         Try
             con.Open()
             MessageBox.Show("Database Connected Succesfully")
-
+            frm_settings.btn_save.Enabled = True
             con.Close()
         Catch ex As Exception
 
             MessageBox.Show(ex.Message)
+            frm_settings.btn_save.Enabled = False
+        Finally
 
         End Try
         Return 0
     End Function
-    Public Function getDbConnect()
-        Try
-            conn.Open()
 
+    Public Function GetDbConnect()
+        Try
+            conn.OpenAsync()
             My.Settings.dbConnected = True
             conn.Close()
         Catch ex As Exception
@@ -27,10 +29,12 @@ Module mod_login
             My.Settings.dbConnected = False
 
         End Try
+        conn.CloseAsync()
         Return 0
     End Function
 
     Dim bSource As New BindingSource
+
 
     Public Function getDbChar(material)
         Dim sda As New MySqlDataAdapter
@@ -39,7 +43,13 @@ Module mod_login
             conn.OpenAsync()
             Dim query As String
             Dim com As MySqlCommand
-            query = "select engWord as English_Character,japWord as Japanese_Character from tbl_wordchar where materialCategory='" + material + "'"
+            If material = "" Then
+                query = "select eng_char as English_Character,jp_char as Japanese_Character from char_search"
+            Else
+
+                query = "select eng_char as English_Character,jp_char as Japanese_Character from heat_trmnt where category='" + material + "'"
+
+            End If
             com = New MySqlCommand(query, conn)
             sda.SelectCommand = com
             sda.Fill(dbDtaSet)
@@ -54,7 +64,9 @@ Module mod_login
         Return 0
     End Function
 
-    Public Function getFilter()
+
+
+    Public Function getCharFilter()
         bSource.Filter = "English_Character like '%" & frm_char.GunaTextBox1.Text & "%' or Japanese_Character like '%" & frm_char.GunaTextBox1.Text & "%'"
         Return 0
     End Function

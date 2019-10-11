@@ -1,8 +1,8 @@
 ﻿Public Class frm_char
     Private Sub Frm_char_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        frm_main.mts_logout.Visible = True
-        frm_main.mts_login.Visible = False
-
+        Frm_Main.Mts_Logout.Visible = True
+        Frm_Main.Mts_Login.Visible = False
+        frm_desk.Close()
         getDbChar("")
     End Sub
 
@@ -39,15 +39,15 @@
     End Sub
 
     Private Sub GunaTextBox1_TextChanged(sender As Object, e As EventArgs) Handles GunaTextBox1.TextChanged
-        getFilter()
+        getCharFilter()
 
     End Sub
 
     Private Sub GunaAdvenceButton1_Click(sender As Object, e As EventArgs) Handles GunaAdvenceButton1.Click
         If GunaAdvenceButton1.Checked = True Then
             GunaAdvenceButton1.Checked = False
-
             getDbChar("")
+            GunaTextBox1.Text = ""
         Else
             GunaAdvenceButton1.Checked = True
             GunaAdvenceButton2.Checked = False
@@ -65,6 +65,7 @@
             GunaAdvenceButton14.Checked = False
             GunaAdvenceButton15.Checked = False
             getDbChar("S35C&S45C")
+            GunaTextBox1.Text = ""
         End If
 
     End Sub
@@ -73,6 +74,7 @@
         If GunaAdvenceButton2.Checked = True Then
             GunaAdvenceButton2.Checked = False
             getDbChar("")
+            GunaTextBox1.Text = ""
         Else
             GunaAdvenceButton1.Checked = False
             GunaAdvenceButton2.Checked = True
@@ -90,6 +92,7 @@
             GunaAdvenceButton14.Checked = False
             GunaAdvenceButton15.Checked = False
             getDbChar("S50C")
+            GunaTextBox1.Text = ""
         End If
     End Sub
 
@@ -97,6 +100,7 @@
         If GunaAdvenceButton3.Checked = True Then
             GunaAdvenceButton3.Checked = False
             getDbChar("")
+            GunaTextBox1.Text = ""
         Else
             GunaAdvenceButton1.Checked = False
             GunaAdvenceButton2.Checked = False
@@ -114,6 +118,7 @@
             GunaAdvenceButton14.Checked = False
             GunaAdvenceButton15.Checked = False
             getDbChar("S55C")
+            GunaTextBox1.Text = ""
         End If
     End Sub
 
@@ -121,6 +126,7 @@
         If GunaAdvenceButton4.Checked = True Then
             GunaAdvenceButton4.Checked = False
             getDbChar("")
+            GunaTextBox1.Text = ""
         Else
             GunaAdvenceButton1.Checked = False
             GunaAdvenceButton2.Checked = False
@@ -138,6 +144,7 @@
             GunaAdvenceButton14.Checked = False
             GunaAdvenceButton15.Checked = False
             getDbChar("SCM435")
+            GunaTextBox1.Text = ""
         End If
     End Sub
 
@@ -145,6 +152,7 @@
         If GunaAdvenceButton5.Checked = True Then
             GunaAdvenceButton5.Checked = False
             getDbChar("")
+            GunaTextBox1.Text = ""
         Else
             GunaAdvenceButton1.Checked = False
             GunaAdvenceButton2.Checked = False
@@ -162,6 +170,7 @@
             GunaAdvenceButton14.Checked = False
             GunaAdvenceButton15.Checked = False
             getDbChar("SCM440")
+            GunaTextBox1.Text = ""
         End If
     End Sub
 
@@ -169,6 +178,7 @@
         If GunaAdvenceButton10.Checked = True Then
             GunaAdvenceButton10.Checked = False
             getDbChar("")
+            GunaTextBox1.Text = ""
         Else
             GunaAdvenceButton1.Checked = False
             GunaAdvenceButton2.Checked = False
@@ -186,6 +196,7 @@
             GunaAdvenceButton14.Checked = False
             GunaAdvenceButton15.Checked = False
             getDbChar("SKD11")
+            GunaTextBox1.Text = ""
         End If
     End Sub
 
@@ -193,6 +204,7 @@
         If GunaAdvenceButton9.Checked = True Then
             GunaAdvenceButton9.Checked = False
             getDbChar("")
+            GunaTextBox1.Text = ""
         Else
             GunaAdvenceButton1.Checked = False
             GunaAdvenceButton2.Checked = False
@@ -210,6 +222,7 @@
             GunaAdvenceButton14.Checked = False
             GunaAdvenceButton15.Checked = False
             getDbChar("SNC631")
+            GunaTextBox1.Text = ""
         End If
     End Sub
 
@@ -217,6 +230,7 @@
         If GunaAdvenceButton8.Checked = True Then
             GunaAdvenceButton8.Checked = False
             getDbChar("")
+            GunaTextBox1.Text = ""
         Else
             GunaAdvenceButton1.Checked = False
             GunaAdvenceButton2.Checked = False
@@ -234,6 +248,7 @@
             GunaAdvenceButton14.Checked = False
             GunaAdvenceButton15.Checked = False
             getDbChar("SNCM439")
+            GunaTextBox1.Text = ""
         End If
     End Sub
 
@@ -241,6 +256,7 @@
         If GunaAdvenceButton7.Checked = True Then
             GunaAdvenceButton7.Checked = False
             getDbChar("")
+            GunaTextBox1.Text = ""
         Else
             GunaAdvenceButton1.Checked = False
             GunaAdvenceButton2.Checked = False
@@ -258,6 +274,7 @@
             GunaAdvenceButton14.Checked = False
             GunaAdvenceButton15.Checked = False
             getDbChar("SNCM447")
+            GunaTextBox1.Text = ""
         End If
     End Sub
 
@@ -265,6 +282,7 @@
         If GunaAdvenceButton6.Checked = True Then
             GunaAdvenceButton6.Checked = False
             getDbChar("")
+            GunaTextBox1.Text = ""
         Else
             GunaAdvenceButton1.Checked = False
             GunaAdvenceButton2.Checked = False
@@ -282,6 +300,7 @@
             GunaAdvenceButton14.Checked = False
             GunaAdvenceButton15.Checked = False
             getDbChar("SS400")
+            GunaTextBox1.Text = ""
         End If
     End Sub
 
@@ -289,6 +308,7 @@
         If GunaAdvenceButton15.Checked = True Then
             GunaAdvenceButton15.Checked = False
             getDbChar("")
+            GunaTextBox1.Text = ""
         Else
             GunaAdvenceButton1.Checked = False
             GunaAdvenceButton2.Checked = False
@@ -306,6 +326,7 @@
             GunaAdvenceButton14.Checked = False
             GunaAdvenceButton15.Checked = True
             getDbChar("SUJ2")
+            GunaTextBox1.Text = ""
         End If
     End Sub
 
@@ -313,6 +334,7 @@
         If GunaAdvenceButton14.Checked = True Then
             GunaAdvenceButton14.Checked = False
             getDbChar("")
+            GunaTextBox1.Text = ""
         Else
             GunaAdvenceButton1.Checked = False
             GunaAdvenceButton2.Checked = False
@@ -330,6 +352,7 @@
             GunaAdvenceButton14.Checked = True
             GunaAdvenceButton15.Checked = False
             getDbChar("SUS304")
+            GunaTextBox1.Text = ""
         End If
     End Sub
 
@@ -337,6 +360,7 @@
         If GunaAdvenceButton13.Checked = True Then
             GunaAdvenceButton13.Checked = False
             getDbChar("")
+            GunaTextBox1.Text = ""
         Else
             GunaAdvenceButton1.Checked = False
             GunaAdvenceButton2.Checked = False
@@ -354,6 +378,7 @@
             GunaAdvenceButton14.Checked = False
             GunaAdvenceButton15.Checked = False
             getDbChar("FCD500")
+            GunaTextBox1.Text = ""
         End If
     End Sub
 
@@ -361,6 +386,7 @@
         If GunaAdvenceButton12.Checked = True Then
             GunaAdvenceButton12.Checked = False
             getDbChar("")
+            GunaTextBox1.Text = ""
         Else
             GunaAdvenceButton1.Checked = False
             GunaAdvenceButton2.Checked = False
@@ -378,6 +404,7 @@
             GunaAdvenceButton14.Checked = False
             GunaAdvenceButton15.Checked = False
             getDbChar("MFGC")
+            GunaTextBox1.Text = ""
         End If
     End Sub
 
@@ -385,6 +412,7 @@
         If GunaAdvenceButton11.Checked = True Then
             GunaAdvenceButton11.Checked = False
             getDbChar("")
+            GunaTextBox1.Text = ""
         Else
             GunaAdvenceButton1.Checked = False
             GunaAdvenceButton2.Checked = False
@@ -402,11 +430,17 @@
             GunaAdvenceButton14.Checked = False
             GunaAdvenceButton15.Checked = False
             getDbChar("OTHER")
+            GunaTextBox1.Text = ""
         End If
     End Sub
 
     Private Sub GunaButton1_Click(sender As Object, e As EventArgs) Handles GunaButton1.Click
-        Clipboard.SetText(TextBox2.Text)
+        Try
+            Clipboard.SetText(TextBox2.Text)
+        Catch ex As Exception
+            MessageBox.Show("Result is Empty", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End Try
+
     End Sub
 
     Private Sub GunaButton2_Click(sender As Object, e As EventArgs) Handles GunaButton2.Click
@@ -414,4 +448,8 @@
         TextBox2.Text = ""
         Clipboard.Clear()
     End Sub
+
+
+
+
 End Class

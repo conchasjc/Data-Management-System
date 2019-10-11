@@ -143,6 +143,16 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property Papirus_Team_Papirus_Places_Folder_yellow_activities() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Papirus-Team-Papirus-Places-Folder-yellow-activities", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property purchparticon() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("purchparticon", resourceCulture)

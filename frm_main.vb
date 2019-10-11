@@ -1,12 +1,13 @@
-﻿Imports System.Threading
-Public Class frm_main
+﻿Imports System.ComponentModel
+Imports System.Threading
+Public Class Frm_Main
     Private Sub Frm_main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CheckForIllegalCrossThreadCalls = False
         frm_desk.MdiParent = Me
         frm_desk.Show()
-        tsl_hover.Text = ""
-        tsb_char.Text = "Work" + vbNewLine + "Station"
-        tsb_purchase.Text = "Purchased" + vbNewLine + "Parts"
+        Tsl_Hover.Text = ""
+        Tsb_Char.Text = "Work" + vbNewLine + "Station"
+        Tsb_Purchase.Text = "Purchased" + vbNewLine + "Parts"
 
     End Sub
 
@@ -14,19 +15,21 @@ Public Class frm_main
         frm_settings.Show()
     End Sub
 
-    Private Sub Tmr_time_Tick(sender As Object, e As EventArgs) Handles tmr_time.Tick
+    Private Sub Tmr_time_Tick(sender As Object, e As EventArgs) Handles Tmr_Time.Tick
 
-        ts_time.Text = Now.ToLongTimeString + " " + Now.ToLongDateString
+        Ts_Time.Text = Now.ToLongTimeString + " " + Now.ToLongDateString
+
     End Sub
 
-    Private Sub Tsb_char_Click(sender As Object, e As EventArgs) Handles tsb_char.Click
+    Private Sub Tsb_char_Click(sender As Object, e As EventArgs) Handles Tsb_Char.Click
         frm_char.MdiParent = Me
         frm_char.Show()
-        tsb_char.CheckState = CheckState.Checked
-        tsb_purchase.CheckState = CheckState.Unchecked
+
+        Tsb_Char.CheckState = CheckState.Checked
+        Tsb_Purchase.CheckState = CheckState.Unchecked
     End Sub
 
-    Private Sub LoginAccountToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles mts_logout.Click
+    Private Sub LoginAccountToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Mts_Logout.Click
         frm_char.Close()
         frm_desk.MdiParent = Me
         frm_desk.Show()
@@ -34,16 +37,31 @@ Public Class frm_main
 
     End Sub
 
-    Private Sub Timeworker_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles timeworker.DoWork
 
+    Private Sub Tsb_purchase_Click(sender As Object, e As EventArgs) Handles Tsb_Purchase.Click
+        frm_char.Close()
+        Frm_purchased.MdiParent = Me
+        Frm_purchased.Show()
+        Frm_purchased.WindowState = FormWindowState.Maximized
+        Tsb_Purchase.CheckState = CheckState.Checked
+        Tsb_Char.CheckState = CheckState.Unchecked
+    End Sub
+
+    Private Sub NotifyIcon1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles NotifyIcon1.MouseDoubleClick
+        Me.Visible = True
+        Me.WindowState = FormWindowState.Maximized
+    End Sub
+
+    Private Sub Frm_main_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
+        If Me.WindowState = FormWindowState.Minimized Then
+            Me.Visible = False
+            NotifyIcon1.Visible = True
+            NotifyIcon1.ShowBalloonTip(1, "KMTI DATA MANAGEMENT SYSTEM", "I am running minimized", ToolTipIcon.Info)
+        Else
+            NotifyIcon1.Visible = False
+        End If
 
     End Sub
 
-    Private Sub Tsb_purchase_Click(sender As Object, e As EventArgs) Handles tsb_purchase.Click
-        frm_char.Hide()
-        frm_purchase.MdiParent = Me
-        frm_purchase.Show()
-        tsb_purchase.CheckState = CheckState.Checked
-        tsb_char.CheckState = CheckState.Unchecked
-    End Sub
+
 End Class

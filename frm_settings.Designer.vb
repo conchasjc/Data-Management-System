@@ -32,11 +32,10 @@ Partial Class frm_settings
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GunaControlBox1 = New Guna.UI.WinForms.GunaControlBox()
         Me.GunaDragControl1 = New Guna.UI.WinForms.GunaDragControl(Me.components)
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.pnl_database = New System.Windows.Forms.Panel()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.pb_showeye = New System.Windows.Forms.PictureBox()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btn_test = New System.Windows.Forms.Button()
         Me.txt_dbPassword = New Guna.UI.WinForms.GunaLineTextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txt_dbUsername = New Guna.UI.WinForms.GunaLineTextBox()
@@ -48,14 +47,34 @@ Partial Class frm_settings
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GunaLinePanel1 = New Guna.UI.WinForms.GunaLinePanel()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btn_save = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.pnl_purchSett = New System.Windows.Forms.Panel()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.GunaCheckBox2 = New Guna.UI.WinForms.GunaCheckBox()
+        Me.GunaLineTextBox4 = New Guna.UI.WinForms.GunaLineTextBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.GunaLineTextBox5 = New Guna.UI.WinForms.GunaLineTextBox()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.GunaLinePanel3 = New Guna.UI.WinForms.GunaLinePanel()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.GunaDragControl2 = New Guna.UI.WinForms.GunaDragControl(Me.components)
+        Me.GunaDragControl3 = New Guna.UI.WinForms.GunaDragControl(Me.components)
         Me.GunaPanel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
         Me.pnl_database.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pb_showeye, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        Me.pnl_purchSett.SuspendLayout()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GunaElipse1
@@ -83,7 +102,7 @@ Partial Class frm_settings
         Me.lbl_purch.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lbl_purch.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_purch.ForeColor = System.Drawing.Color.White
-        Me.lbl_purch.Location = New System.Drawing.Point(56, 234)
+        Me.lbl_purch.Location = New System.Drawing.Point(31, 234)
         Me.lbl_purch.Name = "lbl_purch"
         Me.lbl_purch.Size = New System.Drawing.Size(200, 30)
         Me.lbl_purch.TabIndex = 4
@@ -96,7 +115,7 @@ Partial Class frm_settings
         Me.lbl_dtbase.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lbl_dtbase.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_dtbase.ForeColor = System.Drawing.Color.White
-        Me.lbl_dtbase.Location = New System.Drawing.Point(56, 164)
+        Me.lbl_dtbase.Location = New System.Drawing.Point(31, 164)
         Me.lbl_dtbase.Name = "lbl_dtbase"
         Me.lbl_dtbase.Size = New System.Drawing.Size(129, 30)
         Me.lbl_dtbase.TabIndex = 3
@@ -142,7 +161,7 @@ Partial Class frm_settings
         Me.GunaControlBox1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.GunaControlBox1.IconColor = System.Drawing.Color.Black
         Me.GunaControlBox1.IconSize = 15.0!
-        Me.GunaControlBox1.Location = New System.Drawing.Point(1039, 6)
+        Me.GunaControlBox1.Location = New System.Drawing.Point(736, 0)
         Me.GunaControlBox1.Name = "GunaControlBox1"
         Me.GunaControlBox1.OnHoverBackColor = System.Drawing.Color.Transparent
         Me.GunaControlBox1.OnHoverIconColor = System.Drawing.Color.DarkRed
@@ -154,19 +173,11 @@ Partial Class frm_settings
         '
         Me.GunaDragControl1.TargetControl = Me.GunaPanel1
         '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.pnl_database)
-        Me.Panel1.Location = New System.Drawing.Point(310, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(764, 632)
-        Me.Panel1.TabIndex = 2
-        '
         'pnl_database
         '
         Me.pnl_database.Controls.Add(Me.PictureBox2)
         Me.pnl_database.Controls.Add(Me.pb_showeye)
-        Me.pnl_database.Controls.Add(Me.Button2)
+        Me.pnl_database.Controls.Add(Me.btn_test)
         Me.pnl_database.Controls.Add(Me.txt_dbPassword)
         Me.pnl_database.Controls.Add(Me.Label9)
         Me.pnl_database.Controls.Add(Me.txt_dbUsername)
@@ -178,13 +189,12 @@ Partial Class frm_settings
         Me.pnl_database.Controls.Add(Me.Label5)
         Me.pnl_database.Controls.Add(Me.Label4)
         Me.pnl_database.Controls.Add(Me.GunaLinePanel1)
-        Me.pnl_database.Controls.Add(Me.Button1)
+        Me.pnl_database.Controls.Add(Me.btn_save)
         Me.pnl_database.Controls.Add(Me.Label3)
         Me.pnl_database.Cursor = System.Windows.Forms.Cursors.Default
-        Me.pnl_database.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.pnl_database.Location = New System.Drawing.Point(0, 0)
+        Me.pnl_database.Location = New System.Drawing.Point(18, 320)
         Me.pnl_database.Name = "pnl_database"
-        Me.pnl_database.Size = New System.Drawing.Size(764, 632)
+        Me.pnl_database.Size = New System.Drawing.Size(606, 447)
         Me.pnl_database.TabIndex = 0
         '
         'PictureBox2
@@ -210,14 +220,14 @@ Partial Class frm_settings
         Me.pb_showeye.TabIndex = 14
         Me.pb_showeye.TabStop = False
         '
-        'Button2
+        'btn_test
         '
-        Me.Button2.Location = New System.Drawing.Point(49, 566)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(154, 41)
-        Me.Button2.TabIndex = 13
-        Me.Button2.Text = "Test Connection"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btn_test.Location = New System.Drawing.Point(49, 566)
+        Me.btn_test.Name = "btn_test"
+        Me.btn_test.Size = New System.Drawing.Size(154, 41)
+        Me.btn_test.TabIndex = 13
+        Me.btn_test.Text = "Test Connection"
+        Me.btn_test.UseVisualStyleBackColor = True
         '
         'txt_dbPassword
         '
@@ -340,14 +350,14 @@ Partial Class frm_settings
         Me.GunaLinePanel1.Size = New System.Drawing.Size(5, 37)
         Me.GunaLinePanel1.TabIndex = 2
         '
-        'Button1
+        'btn_save
         '
-        Me.Button1.Location = New System.Drawing.Point(580, 566)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(154, 41)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "SAVE SETTINGS"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btn_save.Location = New System.Drawing.Point(580, 566)
+        Me.btn_save.Name = "btn_save"
+        Me.btn_save.Size = New System.Drawing.Size(154, 41)
+        Me.btn_save.TabIndex = 1
+        Me.btn_save.Text = "SAVE SETTINGS"
+        Me.btn_save.UseVisualStyleBackColor = True
         '
         'Label3
         '
@@ -359,12 +369,182 @@ Partial Class frm_settings
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "DATABASE CONNECTION"
         '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.GunaControlBox1)
+        Me.Panel1.Controls.Add(Me.pnl_purchSett)
+        Me.Panel1.Controls.Add(Me.pnl_database)
+        Me.Panel1.Location = New System.Drawing.Point(310, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(767, 632)
+        Me.Panel1.TabIndex = 3
+        '
+        'pnl_purchSett
+        '
+        Me.pnl_purchSett.Controls.Add(Me.PictureBox6)
+        Me.pnl_purchSett.Controls.Add(Me.PictureBox5)
+        Me.pnl_purchSett.Controls.Add(Me.Button3)
+        Me.pnl_purchSett.Controls.Add(Me.Button4)
+        Me.pnl_purchSett.Controls.Add(Me.GunaCheckBox2)
+        Me.pnl_purchSett.Controls.Add(Me.GunaLineTextBox4)
+        Me.pnl_purchSett.Controls.Add(Me.Label17)
+        Me.pnl_purchSett.Controls.Add(Me.Label18)
+        Me.pnl_purchSett.Controls.Add(Me.GunaLineTextBox5)
+        Me.pnl_purchSett.Controls.Add(Me.Label19)
+        Me.pnl_purchSett.Controls.Add(Me.Label20)
+        Me.pnl_purchSett.Controls.Add(Me.GunaLinePanel3)
+        Me.pnl_purchSett.Controls.Add(Me.Label23)
+        Me.pnl_purchSett.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnl_purchSett.Location = New System.Drawing.Point(0, 0)
+        Me.pnl_purchSett.Name = "pnl_purchSett"
+        Me.pnl_purchSett.Size = New System.Drawing.Size(767, 632)
+        Me.pnl_purchSett.TabIndex = 19
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox6.Image = Global.kmtiworkstationvb.My.Resources.Resources.Papirus_Team_Papirus_Places_Folder_yellow_activities
+        Me.PictureBox6.Location = New System.Drawing.Point(680, 388)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(37, 33)
+        Me.PictureBox6.TabIndex = 20
+        Me.PictureBox6.TabStop = False
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox5.Image = Global.kmtiworkstationvb.My.Resources.Resources.Papirus_Team_Papirus_Places_Folder_yellow_activities
+        Me.PictureBox5.Location = New System.Drawing.Point(673, 215)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(37, 33)
+        Me.PictureBox5.TabIndex = 19
+        Me.PictureBox5.TabStop = False
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(600, 555)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(154, 41)
+        Me.Button3.TabIndex = 17
+        Me.Button3.Text = "RESET"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(440, 555)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(154, 41)
+        Me.Button4.TabIndex = 16
+        Me.Button4.Text = "SAVE "
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'GunaCheckBox2
+        '
+        Me.GunaCheckBox2.BaseColor = System.Drawing.Color.White
+        Me.GunaCheckBox2.CheckedOffColor = System.Drawing.Color.Gray
+        Me.GunaCheckBox2.CheckedOnColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaCheckBox2.FillColor = System.Drawing.Color.White
+        Me.GunaCheckBox2.Location = New System.Drawing.Point(36, 460)
+        Me.GunaCheckBox2.Name = "GunaCheckBox2"
+        Me.GunaCheckBox2.Size = New System.Drawing.Size(332, 20)
+        Me.GunaCheckBox2.TabIndex = 15
+        Me.GunaCheckBox2.Text = "AUTOMATICALLY DELETE LOCAL DOWNLOAD FOLDER"
+        '
+        'GunaLineTextBox4
+        '
+        Me.GunaLineTextBox4.BackColor = System.Drawing.Color.White
+        Me.GunaLineTextBox4.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.GunaLineTextBox4.Enabled = False
+        Me.GunaLineTextBox4.FocusedLineColor = System.Drawing.Color.LightCoral
+        Me.GunaLineTextBox4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.GunaLineTextBox4.LineColor = System.Drawing.Color.Gainsboro
+        Me.GunaLineTextBox4.Location = New System.Drawing.Point(43, 389)
+        Me.GunaLineTextBox4.Name = "GunaLineTextBox4"
+        Me.GunaLineTextBox4.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.GunaLineTextBox4.Size = New System.Drawing.Size(631, 32)
+        Me.GunaLineTextBox4.TabIndex = 14
+        '
+        'Label17
+        '
+        Me.Label17.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(62, 348)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(605, 23)
+        Me.Label17.TabIndex = 13
+        Me.Label17.Text = "Browse the executable file (.exe) of ICAD Find Action."
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.Location = New System.Drawing.Point(39, 308)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(177, 19)
+        Me.Label18.TabIndex = 12
+        Me.Label18.Text = "ICAD Find Action Path"
+        '
+        'GunaLineTextBox5
+        '
+        Me.GunaLineTextBox5.BackColor = System.Drawing.Color.White
+        Me.GunaLineTextBox5.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.GunaLineTextBox5.Enabled = False
+        Me.GunaLineTextBox5.FocusedLineColor = System.Drawing.Color.LightCoral
+        Me.GunaLineTextBox5.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.GunaLineTextBox5.LineColor = System.Drawing.Color.Gainsboro
+        Me.GunaLineTextBox5.Location = New System.Drawing.Point(36, 217)
+        Me.GunaLineTextBox5.Name = "GunaLineTextBox5"
+        Me.GunaLineTextBox5.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.GunaLineTextBox5.Size = New System.Drawing.Size(631, 32)
+        Me.GunaLineTextBox5.TabIndex = 11
+        '
+        'Label19
+        '
+        Me.Label19.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Location = New System.Drawing.Point(55, 176)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(605, 23)
+        Me.Label19.TabIndex = 10
+        Me.Label19.Text = "Browse the location folder where you can place all downloaded purchased parts."
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Location = New System.Drawing.Point(32, 142)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(172, 19)
+        Me.Label20.TabIndex = 9
+        Me.Label20.Text = "Local Download Path"
+        '
+        'GunaLinePanel3
+        '
+        Me.GunaLinePanel3.BackColor = System.Drawing.Color.SeaGreen
+        Me.GunaLinePanel3.LineColor = System.Drawing.Color.Black
+        Me.GunaLinePanel3.LineStyle = System.Windows.Forms.BorderStyle.None
+        Me.GunaLinePanel3.Location = New System.Drawing.Point(36, 47)
+        Me.GunaLinePanel3.Name = "GunaLinePanel3"
+        Me.GunaLinePanel3.Size = New System.Drawing.Size(5, 37)
+        Me.GunaLinePanel3.TabIndex = 4
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Font = New System.Drawing.Font("MS UI Gothic", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Label23.Location = New System.Drawing.Point(36, 47)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(552, 37)
+        Me.Label23.TabIndex = 3
+        Me.Label23.Text = "PURCHASED PARTS SETTINGS"
+        '
+        'GunaDragControl3
+        '
+        Me.GunaDragControl3.TargetControl = Me.pnl_database
+        '
         'frm_settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1076, 632)
-        Me.Controls.Add(Me.GunaControlBox1)
         Me.Controls.Add(Me.GunaPanel1)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -375,11 +555,15 @@ Partial Class frm_settings
         Me.GunaPanel1.ResumeLayout(False)
         Me.GunaPanel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
         Me.pnl_database.ResumeLayout(False)
         Me.pnl_database.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pb_showeye, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.pnl_purchSett.ResumeLayout(False)
+        Me.pnl_purchSett.PerformLayout()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -392,9 +576,8 @@ Partial Class frm_settings
     Friend WithEvents Label1 As Label
     Friend WithEvents lbl_dtbase As Label
     Friend WithEvents GunaDragControl1 As Guna.UI.WinForms.GunaDragControl
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents pnl_database As Panel
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btn_save As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents txt_dbSource As Guna.UI.WinForms.GunaLineTextBox
@@ -407,8 +590,25 @@ Partial Class frm_settings
     Friend WithEvents Label8 As Label
     Friend WithEvents txt_dbName As Guna.UI.WinForms.GunaLineTextBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btn_test As Button
     Friend WithEvents lbl_purch As Label
     Friend WithEvents pb_showeye As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents GunaDragControl2 As Guna.UI.WinForms.GunaDragControl
+    Friend WithEvents GunaDragControl3 As Guna.UI.WinForms.GunaDragControl
+    Friend WithEvents pnl_purchSett As Panel
+    Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
+    Friend WithEvents GunaCheckBox2 As Guna.UI.WinForms.GunaCheckBox
+    Friend WithEvents GunaLineTextBox4 As Guna.UI.WinForms.GunaLineTextBox
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Label18 As Label
+    Friend WithEvents GunaLineTextBox5 As Guna.UI.WinForms.GunaLineTextBox
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Label20 As Label
+    Friend WithEvents GunaLinePanel3 As Guna.UI.WinForms.GunaLinePanel
+    Friend WithEvents Label23 As Label
 End Class

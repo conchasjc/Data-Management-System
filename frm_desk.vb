@@ -4,7 +4,7 @@
 
         GunaWinCircleProgressIndicator1.Visible = True
         Me.Close()
-        frm_char.MdiParent = frm_main
+        frm_char.MdiParent = Frm_Main
         frm_char.Show()
 
 
@@ -12,8 +12,8 @@
 
     Private Sub Frm_desk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        frm_main.mts_logout.Visible = False
-        frm_main.mts_login.Visible = False
+        Frm_Main.Mts_Logout.Visible = False
+        Frm_Main.Mts_Login.Visible = False
         BackgroundWorker1.RunWorkerAsync()
 
 

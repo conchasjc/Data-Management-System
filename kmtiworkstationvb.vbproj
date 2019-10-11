@@ -60,6 +60,7 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -100,16 +101,22 @@
       <DependentUpon>frm_main.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_login.Designer.vb">
-      <DependentUpon>frm_login.vb</DependentUpon>
+    <Compile Include="Frm_PurchAdd.Designer.vb">
+      <DependentUpon>Frm_PurchAdd.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_login.vb">
+    <Compile Include="Frm_PurchAdd.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_purchase.Designer.vb">
       <DependentUpon>frm_purchase.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_purchase.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_purchased.Designer.vb">
+      <DependentUpon>Frm_purchased.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_purchased.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_settings.Designer.vb">
@@ -119,7 +126,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Module\mod_login.vb" />
-    <Compile Include="Module\mod_main.vb" />
+    <Compile Include="Module\mod_purchase.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -143,14 +150,17 @@
     <EmbeddedResource Include="frm_desk.resx">
       <DependentUpon>frm_desk.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_login.resx">
-      <DependentUpon>frm_login.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm_main.resx">
       <DependentUpon>frm_main.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_PurchAdd.resx">
+      <DependentUpon>Frm_PurchAdd.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_purchase.resx">
       <DependentUpon>frm_purchase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_purchased.resx">
+      <DependentUpon>Frm_purchased.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_settings.resx">
       <DependentUpon>frm_settings.vb</DependentUpon>
@@ -176,6 +186,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="kmtioriglogo1.ico" />
+    <None Include="Resources\Papirus-Team-Papirus-Places-Folder-yellow-activities.ico" />
     <None Include="Resources\view.png" />
     <None Include="Resources\view-png-image-6.png" />
     <None Include="Resources\usericon.png" />

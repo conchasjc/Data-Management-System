@@ -108,15 +108,7 @@ Public Class Frm_purchased
         End Try
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
-
-        If (Not System.IO.Directory.Exists(My.Application.Info.DirectoryPath + "/Temp")) Then
-            System.IO.Directory.CreateDirectory(My.Application.Info.DirectoryPath + "/Temp")
-        End If
-
-        Timer3.Start()
-    End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
 
@@ -170,44 +162,6 @@ Public Class Frm_purchased
     End Sub
 
 
-    Private Sub BackgroundWorker3_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker3.DoWork
-
-        Try
-            previewFile(DataGrid_Files.CurrentCell.Value)
-
-
-        Catch
-
-        End Try
-    End Sub
-
-    Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
-
-        GunaLabel2.Text = "Opening File"
-        Panel1.Visible = True
-        GroupBox2.Enabled = False
-        GunaProgressBar1.Maximum = 100
-        Control.CheckForIllegalCrossThreadCalls = False
-
-        Frm_Main.ToolStripProgressBar1.Increment(1)
-        GunaProgressBar1.Value = Frm_Main.ToolStripProgressBar1.Value
-
-        If Frm_Main.ToolStripProgressBar1.Value = 10 Then
-            BackgroundWorker3.RunWorkerAsync()
-        End If
-
-        If Frm_Main.ToolStripProgressBar1.Value = 100 Then
-            Timer3.Stop()
-            GunaLabel2.Text = "Downloading File"
-            Frm_Main.ToolStripProgressBar1.Visible = False
-            Frm_Main.ToolStripProgressBar1.Value = 0
-
-            Panel1.Visible = False
-            GroupBox2.Enabled = True
-        End If
-
-    End Sub
-
     Private Sub Button3_KeyDown(sender As Object, e As KeyEventArgs) Handles Button3.KeyDown
 
     End Sub
@@ -221,4 +175,74 @@ Public Class Frm_purchased
             Button3.PerformClick()
         End If
     End Sub
+
+    '#################  PREVIEW FILE BUTTON FUNCTION ################
+
+    'Button Preview
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Btn_PrevFile.Click
+
+
+        If (Not System.IO.Directory.Exists(My.Application.Info.DirectoryPath + "/Temp")) Then
+            System.IO.Directory.CreateDirectory(My.Application.Info.DirectoryPath + "/Temp")
+        End If
+
+        Timer3.Start()
+    End Sub
+
+    'Preview Background Process
+    Private Sub BackgroundWorker3_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles Wrkr_PreviewFile.DoWork
+        Try
+            previewFile(DataGrid_Files.CurrentCell.Value)
+        Catch
+        End Try
+    End Sub
+
+    'Preview Loader
+    Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
+
+        GunaLabel2.Text = "Opening File"
+        Panel1.Visible = True
+        GroupBox2.Enabled = False
+        GunaProgressBar1.Maximum = 100
+        Control.CheckForIllegalCrossThreadCalls = False
+
+        Frm_Main.ToolStripProgressBar1.Increment(10)
+        GunaProgressBar1.Value = Frm_Main.ToolStripProgressBar1.Value
+
+        If Frm_Main.ToolStripProgressBar1.Value = 10 Then
+            Wrkr_PreviewFile.RunWorkerAsync()
+        End If
+
+        If Frm_Main.ToolStripProgressBar1.Value = 100 Then
+            Timer3.Stop()
+            GunaLabel2.Text = "Downloading File"
+            Frm_Main.ToolStripProgressBar1.Visible = False
+            Frm_Main.ToolStripProgressBar1.Value = 0
+            DataGrid_Files.Select()
+            Panel1.Visible = False
+            GroupBox2.Enabled = True
+        End If
+
+    End Sub
+    '##################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 End Class

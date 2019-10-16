@@ -119,6 +119,7 @@
     <Compile Include="frm_settings.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Module\loadPurchasedParts.vb" />
     <Compile Include="Module\mod_login.vb" />
     <Compile Include="Module\mod_purchase.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

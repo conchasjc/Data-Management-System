@@ -23,7 +23,7 @@ Public Class Frm_Main
             System.IO.Directory.CreateDirectory(My.Settings.sett_locpath + "/DownloadedParts")
 
         End If
-
+        Wrkr_LoadPurch.RunWorkerAsync()
 
     End Sub
 
@@ -84,5 +84,13 @@ Public Class Frm_Main
             System.IO.Directory.Delete(My.Application.Info.DirectoryPath + "/Temp", True)
         End If
 
+    End Sub
+
+    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
+        System.Diagnostics.Process.Start(My.Settings.sett_actpath)
+    End Sub
+
+    Private Sub Wrkr_LoadPurch_DoWork(sender As Object, e As DoWorkEventArgs) Handles Wrkr_LoadPurch.DoWork
+        loadDatabasePurchasedParts()
     End Sub
 End Class

@@ -151,7 +151,7 @@ Module mod_purchase
     End Function
 
 
-    Public Function previewFile(downloadFile)
+    Public Function previewFile3(downloadFile)
         Try
             Dim cmd As New MySqlCommand("select * from tblfile where file='" + downloadFile + "';", conn)
             Dim table As New DataTable
@@ -213,6 +213,33 @@ Module mod_purchase
         End Try
         Return 0
     End Function
+
+
+
+
+
+    ''Codes Under This Line Is for Speed Optimization
+
+
+
+
+
+
+
+    Dim command As MySqlCommand
+    Dim adapt As MySqlDataAdapter
+    Dim table As New DataTable
+    Public Function loadFile(dfile, dparts)
+        conn.Close()
+        conn.OpenAsync()
+        command = New MySqlCommand("select * from tblfile where Parts_Type='" + dparts + "';", conn)
+        adapt = New MySqlDataAdapter(command)
+        adapt.Fill(table)
+        conn.Close()
+        Return 0
+
+    End Function
+
 
 
 

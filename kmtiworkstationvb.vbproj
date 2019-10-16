@@ -107,12 +107,6 @@
     <Compile Include="Frm_PurchAdd.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_purchase.Designer.vb">
-      <DependentUpon>frm_purchase.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frm_purchase.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Frm_purchased.Designer.vb">
       <DependentUpon>Frm_purchased.vb</DependentUpon>
     </Compile>
@@ -156,9 +150,6 @@
     <EmbeddedResource Include="Frm_PurchAdd.resx">
       <DependentUpon>Frm_PurchAdd.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_purchase.resx">
-      <DependentUpon>frm_purchase.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Frm_purchased.resx">
       <DependentUpon>Frm_purchased.vb</DependentUpon>
     </EmbeddedResource>
@@ -186,6 +177,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="kmtioriglogo1.ico" />
+    <None Include="Resources\preview.png" />
+    <None Include="Resources\51iJjNPb07L.png" />
+    <None Include="Resources\Save-Button-PNG-Transparent-Background.png" />
     <None Include="Resources\Papirus-Team-Papirus-Places-Folder-yellow-activities.ico" />
     <None Include="Resources\view.png" />
     <None Include="Resources\view-png-image-6.png" />

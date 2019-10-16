@@ -56,16 +56,18 @@ Partial Class frm_settings
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.GunaCheckBox2 = New Guna.UI.WinForms.GunaCheckBox()
-        Me.GunaLineTextBox4 = New Guna.UI.WinForms.GunaLineTextBox()
+        Me.Txt_ActionPath = New Guna.UI.WinForms.GunaLineTextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
-        Me.GunaLineTextBox5 = New Guna.UI.WinForms.GunaLineTextBox()
+        Me.Txt_DownPath = New Guna.UI.WinForms.GunaLineTextBox()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.GunaLinePanel3 = New Guna.UI.WinForms.GunaLinePanel()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.GunaDragControl2 = New Guna.UI.WinForms.GunaDragControl(Me.components)
         Me.GunaDragControl3 = New Guna.UI.WinForms.GunaDragControl(Me.components)
+        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.GunaPanel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl_database.SuspendLayout()
@@ -386,10 +388,10 @@ Partial Class frm_settings
         Me.pnl_purchSett.Controls.Add(Me.Button3)
         Me.pnl_purchSett.Controls.Add(Me.Button4)
         Me.pnl_purchSett.Controls.Add(Me.GunaCheckBox2)
-        Me.pnl_purchSett.Controls.Add(Me.GunaLineTextBox4)
+        Me.pnl_purchSett.Controls.Add(Me.Txt_ActionPath)
         Me.pnl_purchSett.Controls.Add(Me.Label17)
         Me.pnl_purchSett.Controls.Add(Me.Label18)
-        Me.pnl_purchSett.Controls.Add(Me.GunaLineTextBox5)
+        Me.pnl_purchSett.Controls.Add(Me.Txt_DownPath)
         Me.pnl_purchSett.Controls.Add(Me.Label19)
         Me.pnl_purchSett.Controls.Add(Me.Label20)
         Me.pnl_purchSett.Controls.Add(Me.GunaLinePanel3)
@@ -404,7 +406,7 @@ Partial Class frm_settings
         '
         Me.PictureBox6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox6.Image = Global.kmtiworkstationvb.My.Resources.Resources.Papirus_Team_Papirus_Places_Folder_yellow_activities
-        Me.PictureBox6.Location = New System.Drawing.Point(680, 388)
+        Me.PictureBox6.Location = New System.Drawing.Point(673, 388)
         Me.PictureBox6.Name = "PictureBox6"
         Me.PictureBox6.Size = New System.Drawing.Size(37, 33)
         Me.PictureBox6.TabIndex = 20
@@ -450,19 +452,19 @@ Partial Class frm_settings
         Me.GunaCheckBox2.TabIndex = 15
         Me.GunaCheckBox2.Text = "AUTOMATICALLY DELETE LOCAL DOWNLOAD FOLDER"
         '
-        'GunaLineTextBox4
+        'Txt_ActionPath
         '
-        Me.GunaLineTextBox4.BackColor = System.Drawing.Color.White
-        Me.GunaLineTextBox4.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.GunaLineTextBox4.Enabled = False
-        Me.GunaLineTextBox4.FocusedLineColor = System.Drawing.Color.LightCoral
-        Me.GunaLineTextBox4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.GunaLineTextBox4.LineColor = System.Drawing.Color.Gainsboro
-        Me.GunaLineTextBox4.Location = New System.Drawing.Point(43, 389)
-        Me.GunaLineTextBox4.Name = "GunaLineTextBox4"
-        Me.GunaLineTextBox4.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.GunaLineTextBox4.Size = New System.Drawing.Size(631, 32)
-        Me.GunaLineTextBox4.TabIndex = 14
+        Me.Txt_ActionPath.BackColor = System.Drawing.Color.White
+        Me.Txt_ActionPath.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Txt_ActionPath.Enabled = False
+        Me.Txt_ActionPath.FocusedLineColor = System.Drawing.Color.LightCoral
+        Me.Txt_ActionPath.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Txt_ActionPath.LineColor = System.Drawing.Color.Gainsboro
+        Me.Txt_ActionPath.Location = New System.Drawing.Point(36, 389)
+        Me.Txt_ActionPath.Name = "Txt_ActionPath"
+        Me.Txt_ActionPath.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.Txt_ActionPath.Size = New System.Drawing.Size(631, 32)
+        Me.Txt_ActionPath.TabIndex = 14
         '
         'Label17
         '
@@ -483,19 +485,19 @@ Partial Class frm_settings
         Me.Label18.TabIndex = 12
         Me.Label18.Text = "ICAD Find Action Path"
         '
-        'GunaLineTextBox5
+        'Txt_DownPath
         '
-        Me.GunaLineTextBox5.BackColor = System.Drawing.Color.White
-        Me.GunaLineTextBox5.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.GunaLineTextBox5.Enabled = False
-        Me.GunaLineTextBox5.FocusedLineColor = System.Drawing.Color.LightCoral
-        Me.GunaLineTextBox5.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.GunaLineTextBox5.LineColor = System.Drawing.Color.Gainsboro
-        Me.GunaLineTextBox5.Location = New System.Drawing.Point(36, 217)
-        Me.GunaLineTextBox5.Name = "GunaLineTextBox5"
-        Me.GunaLineTextBox5.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.GunaLineTextBox5.Size = New System.Drawing.Size(631, 32)
-        Me.GunaLineTextBox5.TabIndex = 11
+        Me.Txt_DownPath.BackColor = System.Drawing.Color.White
+        Me.Txt_DownPath.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Txt_DownPath.Enabled = False
+        Me.Txt_DownPath.FocusedLineColor = System.Drawing.Color.LightCoral
+        Me.Txt_DownPath.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Txt_DownPath.LineColor = System.Drawing.Color.Gainsboro
+        Me.Txt_DownPath.Location = New System.Drawing.Point(36, 217)
+        Me.Txt_DownPath.Name = "Txt_DownPath"
+        Me.Txt_DownPath.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.Txt_DownPath.Size = New System.Drawing.Size(631, 32)
+        Me.Txt_DownPath.TabIndex = 11
         '
         'Label19
         '
@@ -536,9 +538,21 @@ Partial Class frm_settings
         Me.Label23.TabIndex = 3
         Me.Label23.Text = "PURCHASED PARTS SETTINGS"
         '
+        'GunaDragControl2
+        '
+        Me.GunaDragControl2.TargetControl = Nothing
+        '
         'GunaDragControl3
         '
         Me.GunaDragControl3.TargetControl = Me.pnl_database
+        '
+        'FolderBrowserDialog1
+        '
+        Me.FolderBrowserDialog1.SelectedPath = " "
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
         'frm_settings
         '
@@ -603,12 +617,14 @@ Partial Class frm_settings
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents GunaCheckBox2 As Guna.UI.WinForms.GunaCheckBox
-    Friend WithEvents GunaLineTextBox4 As Guna.UI.WinForms.GunaLineTextBox
+    Friend WithEvents Txt_ActionPath As Guna.UI.WinForms.GunaLineTextBox
     Friend WithEvents Label17 As Label
     Friend WithEvents Label18 As Label
-    Friend WithEvents GunaLineTextBox5 As Guna.UI.WinForms.GunaLineTextBox
+    Friend WithEvents Txt_DownPath As Guna.UI.WinForms.GunaLineTextBox
     Friend WithEvents Label19 As Label
     Friend WithEvents Label20 As Label
     Friend WithEvents GunaLinePanel3 As Guna.UI.WinForms.GunaLinePanel
     Friend WithEvents Label23 As Label
+    Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class

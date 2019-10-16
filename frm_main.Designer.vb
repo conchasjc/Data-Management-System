@@ -35,15 +35,16 @@ Partial Class Frm_Main
         Me.Tsl_Hover = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Ts_Time = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Ts_Menubar = New System.Windows.Forms.ToolStrip()
-        Me.Tsb_Char = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.Tsb_Purchase = New System.Windows.Forms.ToolStripButton()
         Me.Tmr_Time = New System.Windows.Forms.Timer(Me.components)
         Me.TimeWorker = New System.ComponentModel.BackgroundWorker()
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.Cms_Notify = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.MaximizedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripProgressBar1 = New System.Windows.Forms.ToolStripProgressBar()
+        Me.Tsb_Char = New System.Windows.Forms.ToolStripButton()
+        Me.Tsb_Purchase = New System.Windows.Forms.ToolStripButton()
         Me.Mst_Main.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.Ts_Menubar.SuspendLayout()
@@ -72,19 +73,19 @@ Partial Class Frm_Main
         'Mts_Logout
         '
         Me.Mts_Logout.Name = "Mts_Logout"
-        Me.Mts_Logout.Size = New System.Drawing.Size(180, 22)
+        Me.Mts_Logout.Size = New System.Drawing.Size(160, 22)
         Me.Mts_Logout.Text = "Logout Account"
         '
         'Mts_Login
         '
         Me.Mts_Login.Name = "Mts_Login"
-        Me.Mts_Login.Size = New System.Drawing.Size(180, 22)
+        Me.Mts_Login.Size = New System.Drawing.Size(160, 22)
         Me.Mts_Login.Text = "Login Account"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'SettingsToolStripMenuItem
@@ -102,7 +103,7 @@ Partial Class Frm_Main
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Tsl_Hover, Me.Ts_Time})
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Tsl_Hover, Me.ToolStripProgressBar1, Me.Ts_Time})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 585)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(965, 22)
@@ -138,41 +139,10 @@ Partial Class Frm_Main
         Me.Ts_Menubar.TabIndex = 3
         Me.Ts_Menubar.Text = "ToolStrip1"
         '
-        'Tsb_Char
-        '
-        Me.Tsb_Char.AutoSize = False
-        Me.Tsb_Char.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Tsb_Char.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tsb_Char.Image = Global.kmtiworkstationvb.My.Resources.Resources.iconws2
-        Me.Tsb_Char.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.Tsb_Char.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.Tsb_Char.Margin = New System.Windows.Forms.Padding(0, 0, 5, 0)
-        Me.Tsb_Char.Name = "Tsb_Char"
-        Me.Tsb_Char.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never
-        Me.Tsb_Char.Size = New System.Drawing.Size(95, 95)
-        Me.Tsb_Char.Text = "WORKSTATION"
-        Me.Tsb_Char.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Tsb_Char.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 97)
-        '
-        'Tsb_Purchase
-        '
-        Me.Tsb_Purchase.AutoSize = False
-        Me.Tsb_Purchase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.Tsb_Purchase.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tsb_Purchase.Image = Global.kmtiworkstationvb.My.Resources.Resources.purchparticon2
-        Me.Tsb_Purchase.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.Tsb_Purchase.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.Tsb_Purchase.Margin = New System.Windows.Forms.Padding(5, 1, 0, 2)
-        Me.Tsb_Purchase.Name = "Tsb_Purchase"
-        Me.Tsb_Purchase.Size = New System.Drawing.Size(95, 95)
-        Me.Tsb_Purchase.Text = "PURCHASED PARTS"
-        Me.Tsb_Purchase.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Tsb_Purchase.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'Tmr_Time
         '
@@ -205,6 +175,43 @@ Partial Class Frm_Main
         Me.ExitToolStripMenuItem1.Name = "ExitToolStripMenuItem1"
         Me.ExitToolStripMenuItem1.Size = New System.Drawing.Size(131, 22)
         Me.ExitToolStripMenuItem1.Text = "Exit"
+        '
+        'ToolStripProgressBar1
+        '
+        Me.ToolStripProgressBar1.Name = "ToolStripProgressBar1"
+        Me.ToolStripProgressBar1.Size = New System.Drawing.Size(100, 16)
+        Me.ToolStripProgressBar1.Visible = False
+        '
+        'Tsb_Char
+        '
+        Me.Tsb_Char.AutoSize = False
+        Me.Tsb_Char.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Tsb_Char.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tsb_Char.Image = Global.kmtiworkstationvb.My.Resources.Resources.iconws2
+        Me.Tsb_Char.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.Tsb_Char.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.Tsb_Char.Margin = New System.Windows.Forms.Padding(0, 0, 5, 0)
+        Me.Tsb_Char.Name = "Tsb_Char"
+        Me.Tsb_Char.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never
+        Me.Tsb_Char.Size = New System.Drawing.Size(95, 95)
+        Me.Tsb_Char.Text = "WORKSTATION"
+        Me.Tsb_Char.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Tsb_Char.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'Tsb_Purchase
+        '
+        Me.Tsb_Purchase.AutoSize = False
+        Me.Tsb_Purchase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.Tsb_Purchase.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tsb_Purchase.Image = Global.kmtiworkstationvb.My.Resources.Resources.purchparticon2
+        Me.Tsb_Purchase.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.Tsb_Purchase.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.Tsb_Purchase.Margin = New System.Windows.Forms.Padding(5, 1, 0, 2)
+        Me.Tsb_Purchase.Name = "Tsb_Purchase"
+        Me.Tsb_Purchase.Size = New System.Drawing.Size(95, 95)
+        Me.Tsb_Purchase.Text = "PURCHASED PARTS"
+        Me.Tsb_Purchase.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Tsb_Purchase.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'Frm_Main
         '
@@ -252,4 +259,5 @@ Partial Class Frm_Main
     Friend WithEvents Cms_Notify As ContextMenuStrip
     Friend WithEvents MaximizedToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ToolStripProgressBar1 As ToolStripProgressBar
 End Class

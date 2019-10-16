@@ -113,6 +113,42 @@ Namespace My
                 Me("sett_dbPass") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property sett_locpath() As String
+            Get
+                Return CType(Me("sett_locpath"),String)
+            End Get
+            Set
+                Me("sett_locpath") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property sett_actpath() As String
+            Get
+                Return CType(Me("sett_actpath"),String)
+            End Get
+            Set
+                Me("sett_actpath") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property sett_autoDel() As Boolean
+            Get
+                Return CType(Me("sett_autoDel"),Boolean)
+            End Get
+            Set
+                Me("sett_autoDel") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

@@ -1,9 +1,11 @@
-﻿Imports System.IO
+﻿
+Imports System.IO
 Imports MySql.Data.MySqlClient
 Module mod_purchase
     'CONNECTION OF DATABASE THROUGH SERVER
     Dim conn As New MySqlConnection("host=" + My.Settings.sett_dbSource + "; username = " + My.Settings.sett_dbUsername + "; password=" + My.Settings.sett_dbPass + "; database=" + My.Settings.sett_dbName + ";character set=utf8;")
-
+    Dim bSource As New BindingSource
+    Dim bSources As New BindingSource
 
     Public Function getAddPurchased(category, partsType)
         Dim sda As New MySqlDataAdapter
@@ -32,13 +34,19 @@ Module mod_purchase
     End Function
 
     Public Function getLoad(category)
-        Dim query = "select file as DRAWING_FILE from tblfile where Parts_type='" + category.ToString + "'"
-        Dim adapter As New MySqlDataAdapter(query, conn)
-        Dim ds As New DataTable
-        adapter.Fill(ds)
-        bSources.DataSource = ds
-        Frm_purchased.DataGrid_Files.DataSource = bSources
-        conn.Close()
+        Try
+            Dim query = "select file as DRAWING_FILE from tblfile where Parts_type='" + category.ToString + "'"
+
+            Dim adapter As New MySqlDataAdapter(query, conn)
+            Dim ds As New DataTable
+            adapter.Fill(ds)
+            bSources.DataSource = ds
+            Frm_purchased.DataGrid_Files.DataSource = bSources
+            conn.Close()
+        Catch ex As Exception
+
+
+        End Try
         Return 0
     End Function
 
@@ -70,8 +78,7 @@ Module mod_purchase
         Return 0
     End Function
 
-    Dim bSource As New BindingSource
-    Dim bSources As New BindingSource
+
 
     Public Function GetAllParts()
         Dim querys As String
@@ -113,32 +120,100 @@ Module mod_purchase
 
 
 
-    Public Function DownloadData()
-        Dim savedialog1 As New SaveFileDialog With {
-            .FileName = Frm_purchased.GunaDataGridView3.CurrentCell.Value,
-            .Filter = "ICAD FILE (*.icd) | *.icd"
-        }
-
-        Dim cmd As New MySqlCommand("select * from tblfile where file='" + Frm_purchased.GunaDataGridView3.CurrentCell.Value + "';", conn)
-        Dim adt As New MySqlDataAdapter(cmd)
-        Dim table As New DataTable
-        adt.Fill(table)
 
 
-        Dim MyData() As Byte
-        MyData = table.Rows(0)(1)
-        Dim K As Long
-        K = UBound(MyData)
+    Public Function QuickDownload(downloadFile)
         Try
+            Dim cmd As New MySqlCommand("select * from tblfile where file='" + downloadFile + "';", conn)
+            Dim sqL_adapter As New MySqlDataAdapter(cmd)
+            Dim table As New DataTable
+            Dim LineOfText As String
+            Dim filename() As String
+            Dim MyData() As Byte
+            Dim K As Long
+            sqL_adapter.Fill(table)
+            MyData = table.Rows(0)(3)
+            K = UBound(MyData)
 
-            Dim fs As New FileStream(savedialog1.FileName, FileMode.OpenOrCreate, FileAccess.Write)
-
+            filename = downloadFile.ToString.Split("/")
+            LineOfText = String.Join("-", filename)
+            Dim fs As New FileStream(My.Settings.sett_locpath + "/DownloadedParts/" + LineOfText, FileMode.OpenOrCreate, FileAccess.Write)
             fs.Write(MyData, 0, K)
+
             fs.Close()
 
+            LoadPartTypes()
         Catch ex As Exception
+            MessageBox.Show(ex.Message)
 
         End Try
-
+        Return 0
     End Function
+
+
+    Public Function previewFile(downloadFile)
+        Try
+            Dim cmd As New MySqlCommand("select * from tblfile where file='" + downloadFile + "';", conn)
+            Dim table As New DataTable
+
+            Dim sqL_adapters As New MySqlDataAdapter(cmd)
+            Dim LineOfText As String
+            Dim filename() As String
+            Dim MyData() As Byte
+            Dim K As Long
+
+
+            sqL_adapters.Fill(table)
+            MyData = table.Rows(0)(3)
+            K = UBound(MyData)
+
+            filename = downloadFile.ToString.Split("/")
+            LineOfText = String.Join("-", filename)
+            Dim fs As New FileStream(My.Application.Info.DirectoryPath + "/temp/" + LineOfText, FileMode.OpenOrCreate, FileAccess.Write)
+            fs.Write(MyData, 0, K)
+
+            fs.Close()
+            System.Diagnostics.Process.Start(My.Application.Info.DirectoryPath + "/temp/" + LineOfText)
+            LoadPartTypes()
+            Frm_purchased.Timer3.Stop()
+            Frm_purchased.Panel1.Visible = False
+            Frm_purchased.GunaProgressBar1.Style = Guna.UI.WinForms.ProgressBarStyle.Blocks
+            Frm_purchased.GunaLabel2.Text = "Downloading Files"
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            Frm_purchased.Panel1.Visible = False
+        End Try
+        Return 0
+    End Function
+
+
+    Public Function allFile(downloadFile)
+        Try
+            Dim cmd As New MySqlCommand("select * from tblfile where file='" + downloadFile + "';", conn)
+            Dim sqL_adapter As New MySqlDataAdapter(cmd)
+            Dim table As New DataTable
+            Dim LineOfText As String
+            Dim filename() As String
+            Dim MyData() As Byte
+            Dim K As Long
+            sqL_adapter.Fill(table)
+            MyData = table.Rows(0)(3)
+            K = UBound(MyData)
+            filename = downloadFile.ToString.Split("/")
+            LineOfText = String.Join("-", filename)
+            Dim fs As New FileStream(My.Settings.sett_locpath + "/DownloadedParts/" + LineOfText, FileMode.OpenOrCreate, FileAccess.Write)
+            fs.Write(MyData, 0, K)
+
+            fs.Close()
+
+            LoadPartTypes()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+        Return 0
+    End Function
+
+
+
 End Module

@@ -8,6 +8,22 @@ Public Class Frm_Main
         Tsl_Hover.Text = ""
         Tsb_Char.Text = "Work" + vbNewLine + "Station"
         Tsb_Purchase.Text = "Purchased" + vbNewLine + "Parts"
+        If (Not System.IO.Directory.Exists(My.Application.Info.DirectoryPath + "/Temp")) Then
+            System.IO.Directory.CreateDirectory(My.Application.Info.DirectoryPath + "/Temp")
+
+        End If
+        If (My.Settings.sett_autoDel = True And System.IO.Directory.Exists(My.Settings.sett_locpath + "/DownloadedParts")) Then
+            Try
+                System.IO.Directory.Delete(My.Settings.sett_locpath + "/DownloadedParts", True)
+            Catch ex As Exception
+            End Try
+
+        End If
+        If (Not System.IO.Directory.Exists(My.Settings.sett_locpath + "/DownloadedParts")) Then
+            System.IO.Directory.CreateDirectory(My.Settings.sett_locpath + "/DownloadedParts")
+
+        End If
+
 
     End Sub
 
@@ -63,5 +79,10 @@ Public Class Frm_Main
 
     End Sub
 
+    Private Sub Frm_Main_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        If (System.IO.Directory.Exists(My.Application.Info.DirectoryPath + "/Temp")) Then
+            System.IO.Directory.Delete(My.Application.Info.DirectoryPath + "/Temp", True)
+        End If
 
+    End Sub
 End Class

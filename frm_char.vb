@@ -6,29 +6,8 @@
         getDbChar("")
     End Sub
 
-    Private Sub GunaCircleButton1_Click(sender As Object, e As EventArgs) Handles GunaCircleButton1.Click
-        Clipboard.SetText(GunaCircleButton1.Text)
-    End Sub
 
-    Private Sub GunaCircleButton2_Click(sender As Object, e As EventArgs) Handles GunaCircleButton2.Click
-        Clipboard.SetText(GunaCircleButton2.Text)
-    End Sub
 
-    Private Sub GunaCircleButton3_Click(sender As Object, e As EventArgs) Handles GunaCircleButton3.Click
-        Clipboard.SetText(GunaCircleButton3.Text)
-    End Sub
-
-    Private Sub GunaCircleButton4_Click(sender As Object, e As EventArgs) Handles GunaCircleButton4.Click
-        Clipboard.SetText(GunaCircleButton4.Text)
-    End Sub
-
-    Private Sub GunaCircleButton5_Click(sender As Object, e As EventArgs) Handles GunaCircleButton5.Click
-        Clipboard.SetText(GunaCircleButton5.Text)
-    End Sub
-
-    Private Sub GunaCircleButton6_Click(sender As Object, e As EventArgs) Handles GunaCircleButton6.Click
-        Clipboard.SetText(GunaCircleButton6.Text)
-    End Sub
 
 
     Private Sub GunaDataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles GunaDataGridView1.CellClick
@@ -449,7 +428,28 @@
         Clipboard.Clear()
     End Sub
 
+    Private Sub GunaAdvenceButton16_Click(sender As Object, e As EventArgs) Handles GunaAdvenceButton16.Click
+        Clipboard.SetText(GunaAdvenceButton16.Text)
+    End Sub
+
+    Private Sub GunaAdvenceButton17_Click(sender As Object, e As EventArgs) Handles GunaAdvenceButton17.Click
+        Clipboard.SetText(GunaAdvenceButton17.Text)
+    End Sub
+
+    Private Sub GunaAdvenceButton18_Click(sender As Object, e As EventArgs) Handles GunaAdvenceButton18.Click
+        Clipboard.SetText(GunaAdvenceButton18.Text)
+    End Sub
 
 
+    Private Sub GunaAdvenceButton19_Click_1(sender As Object, e As EventArgs) Handles GunaAdvenceButton19.Click
+        Clipboard.SetText(GunaAdvenceButton19.Text)
+    End Sub
 
+    Private Sub GunaAdvenceButton20_Click_1(sender As Object, e As EventArgs) Handles GunaAdvenceButton20.Click
+        Clipboard.SetText(GunaAdvenceButton20.Text)
+    End Sub
+
+    Private Sub GunaAdvenceButton21_Click_1(sender As Object, e As EventArgs) Handles GunaAdvenceButton21.Click
+        Clipboard.SetText(GunaAdvenceButton21.Text)
+    End Sub
 End Class

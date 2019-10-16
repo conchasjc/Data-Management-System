@@ -12,7 +12,15 @@
         pnl_database.Visible = True
         pnl_database.Dock = DockStyle.Fill
         btn_save.Enabled = False
-
+        Txt_ActionPath.Text = My.Settings.sett_actpath
+        Txt_DownPath.Text = My.Settings.sett_locpath
+        If My.Settings.sett_autoDel = True Then
+            GunaCheckBox2.Checked = True
+        Else
+            GunaCheckBox2.Checked = False
+        End If
+        Me.TopMost = True
+        Frm_Main.Enabled = False
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_save.Click
@@ -64,5 +72,41 @@
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs)
 
+    End Sub
+
+    Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
+        If FolderBrowserDialog1.ShowDialog = DialogResult.OK Then
+            Txt_DownPath.Text = FolderBrowserDialog1.SelectedPath
+        End If
+    End Sub
+
+    Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles PictureBox6.Click
+        OpenFileDialog1.Filter = "ICAD FIND ACTION | *.exe"
+        OpenFileDialog1.FileName = "FindAction"
+        If OpenFileDialog1.ShowDialog = DialogResult.OK Then
+            Txt_ActionPath.Text = OpenFileDialog1.FileName
+        End If
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Dim dialogResult = MessageBox.Show("Apply Changes?", "Settings", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If dialogResult = DialogResult.Yes Then
+            My.Settings.sett_actpath = Txt_ActionPath.Text
+            My.Settings.sett_locpath = Txt_DownPath.Text
+            If GunaCheckBox2.Checked Then
+                My.Settings.sett_autoDel = True
+            Else
+                My.Settings.sett_autoDel = False
+            End If
+            My.Settings.Save()
+            MessageBox.Show("Settings Applied Successfully.", "Settings Applied", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Me.Close()
+            Application.Restart()
+        End If
+
+    End Sub
+
+    Private Sub Frm_settings_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        Frm_Main.Enabled = True
     End Sub
 End Class

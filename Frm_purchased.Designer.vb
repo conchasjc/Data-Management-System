@@ -38,6 +38,9 @@ Partial Class Frm_purchased
         Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_purchased))
         Me.pnl_purch = New Guna.UI.WinForms.GunaPanel()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.GunaLabel3 = New Guna.UI.WinForms.GunaLabel()
         Me.GunaDataGridView3 = New Guna.UI.WinForms.GunaDataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GunaPanel3 = New Guna.UI.WinForms.GunaPanel()
@@ -54,27 +57,70 @@ Partial Class Frm_purchased
         Me.Txt_TextSearch = New Guna.UI.WinForms.GunaTextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Cmb_Category = New System.Windows.Forms.ComboBox()
-        Me.GunaAdvenceButton1 = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.GunaPanel1 = New Guna.UI.WinForms.GunaPanel()
         Me.GunaElipse1 = New Guna.UI.WinForms.GunaElipse(Me.components)
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.BackgroundWorker2 = New System.ComponentModel.BackgroundWorker()
+        Me.GunaAdvenceButton1 = New Guna.UI.WinForms.GunaAdvenceButton()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.GunaLabel4 = New Guna.UI.WinForms.GunaLabel()
+        Me.GunaLabel2 = New Guna.UI.WinForms.GunaLabel()
+        Me.GunaProgressBar1 = New Guna.UI.WinForms.GunaProgressBar()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.BackgroundWorker3 = New System.ComponentModel.BackgroundWorker()
+        Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
+        Me.GunaAdvenceButton2 = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.pnl_purch.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         CType(Me.GunaDataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGrid_Parts, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGrid_Files, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnl_purch
         '
         Me.pnl_purch.BackColor = System.Drawing.Color.LightSteelBlue
-        Me.pnl_purch.Controls.Add(Me.GunaDataGridView3)
+        Me.pnl_purch.Controls.Add(Me.GroupBox1)
         Me.pnl_purch.Controls.Add(Me.GunaPanel3)
         Me.pnl_purch.Controls.Add(Me.GroupBox2)
         Me.pnl_purch.Location = New System.Drawing.Point(212, 78)
         Me.pnl_purch.Name = "pnl_purch"
         Me.pnl_purch.Size = New System.Drawing.Size(1516, 758)
         Me.pnl_purch.TabIndex = 6
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Button4)
+        Me.GroupBox1.Controls.Add(Me.GunaLabel3)
+        Me.GroupBox1.Controls.Add(Me.GunaDataGridView3)
+        Me.GroupBox1.Location = New System.Drawing.Point(926, 22)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(569, 720)
+        Me.GroupBox1.TabIndex = 15
+        Me.GroupBox1.TabStop = False
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(436, 663)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(113, 34)
+        Me.Button4.TabIndex = 14
+        Me.Button4.Text = "DOWNLOAD FILES"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'GunaLabel3
+        '
+        Me.GunaLabel3.AutoSize = True
+        Me.GunaLabel3.Font = New System.Drawing.Font("Franklin Gothic Medium Cond", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel3.ForeColor = System.Drawing.Color.Maroon
+        Me.GunaLabel3.Location = New System.Drawing.Point(7, 15)
+        Me.GunaLabel3.Name = "GunaLabel3"
+        Me.GunaLabel3.Size = New System.Drawing.Size(163, 37)
+        Me.GunaLabel3.TabIndex = 3
+        Me.GunaLabel3.Text = "Download List"
         '
         'GunaDataGridView3
         '
@@ -112,7 +158,7 @@ Partial Class Frm_purchased
         Me.GunaDataGridView3.DefaultCellStyle = DataGridViewCellStyle3
         Me.GunaDataGridView3.EnableHeadersVisualStyles = False
         Me.GunaDataGridView3.GridColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(184, Byte), Integer))
-        Me.GunaDataGridView3.Location = New System.Drawing.Point(957, 126)
+        Me.GunaDataGridView3.Location = New System.Drawing.Point(14, 93)
         Me.GunaDataGridView3.MultiSelect = False
         Me.GunaDataGridView3.Name = "GunaDataGridView3"
         Me.GunaDataGridView3.ReadOnly = True
@@ -130,7 +176,7 @@ Partial Class Frm_purchased
         Me.GunaDataGridView3.RowTemplate.Height = 21
         Me.GunaDataGridView3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.GunaDataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
-        Me.GunaDataGridView3.Size = New System.Drawing.Size(521, 557)
+        Me.GunaDataGridView3.Size = New System.Drawing.Size(535, 557)
         Me.GunaDataGridView3.TabIndex = 12
         Me.GunaDataGridView3.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Red
         Me.GunaDataGridView3.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(195, Byte), Integer))
@@ -192,29 +238,32 @@ Partial Class Frm_purchased
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(825, 668)
+        Me.Button3.BackgroundImage = Global.kmtiworkstationvb.My.Resources.Resources.Save_Button_PNG_Transparent_Background
+        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button3.Location = New System.Drawing.Point(825, 656)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(51, 46)
+        Me.Button3.Size = New System.Drawing.Size(51, 49)
         Me.Button3.TabIndex = 19
-        Me.Button3.Text = "Button3"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(825, 261)
+        Me.Button2.BackgroundImage = Global.kmtiworkstationvb.My.Resources.Resources.preview
+        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button2.Location = New System.Drawing.Point(825, 271)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(51, 46)
+        Me.Button2.Size = New System.Drawing.Size(51, 49)
         Me.Button2.TabIndex = 18
-        Me.Button2.Text = "Button2"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(825, 209)
+        Me.Button1.BackgroundImage = Global.kmtiworkstationvb.My.Resources.Resources._51iJjNPb07L
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.Location = New System.Drawing.Point(825, 216)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(51, 46)
+        Me.Button1.Size = New System.Drawing.Size(51, 49)
         Me.Button1.TabIndex = 17
-        Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'ComboBox1
@@ -453,35 +502,6 @@ Partial Class Frm_purchased
         Me.Cmb_Category.Sorted = True
         Me.Cmb_Category.TabIndex = 12
         '
-        'GunaAdvenceButton1
-        '
-        Me.GunaAdvenceButton1.AnimationHoverSpeed = 0.07!
-        Me.GunaAdvenceButton1.AnimationSpeed = 0.03!
-        Me.GunaAdvenceButton1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.GunaAdvenceButton1.BorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray
-        Me.GunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton1.CheckedImage = CType(resources.GetObject("GunaAdvenceButton1.CheckedImage"), System.Drawing.Image)
-        Me.GunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray
-        Me.GunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty
-        Me.GunaAdvenceButton1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.GunaAdvenceButton1.ForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton1.Image = CType(resources.GetObject("GunaAdvenceButton1.Image"), System.Drawing.Image)
-        Me.GunaAdvenceButton1.ImageSize = New System.Drawing.Size(20, 20)
-        Me.GunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.GunaAdvenceButton1.Location = New System.Drawing.Point(34, 152)
-        Me.GunaAdvenceButton1.Name = "GunaAdvenceButton1"
-        Me.GunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.GunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton1.OnHoverImage = Nothing
-        Me.GunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.GunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton1.Size = New System.Drawing.Size(131, 47)
-        Me.GunaAdvenceButton1.TabIndex = 11
-        Me.GunaAdvenceButton1.Text = "GunaAdvenceButton1"
-        '
         'GunaPanel1
         '
         Me.GunaPanel1.BackColor = System.Drawing.Color.DarkRed
@@ -496,6 +516,138 @@ Partial Class Frm_purchased
         Me.GunaElipse1.Radius = 5
         Me.GunaElipse1.TargetControl = Me.pnl_purch
         '
+        'BackgroundWorker1
+        '
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 70
+        '
+        'BackgroundWorker2
+        '
+        '
+        'GunaAdvenceButton1
+        '
+        Me.GunaAdvenceButton1.Animated = True
+        Me.GunaAdvenceButton1.AnimationHoverSpeed = 0.07!
+        Me.GunaAdvenceButton1.AnimationSpeed = 0.03!
+        Me.GunaAdvenceButton1.BaseColor = System.Drawing.Color.Maroon
+        Me.GunaAdvenceButton1.BorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.GunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton1.CheckedImage = CType(resources.GetObject("GunaAdvenceButton1.CheckedImage"), System.Drawing.Image)
+        Me.GunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.GunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty
+        Me.GunaAdvenceButton1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.GunaAdvenceButton1.ForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton1.Image = Nothing
+        Me.GunaAdvenceButton1.ImageSize = New System.Drawing.Size(20, 20)
+        Me.GunaAdvenceButton1.LineColor = System.Drawing.Color.Maroon
+        Me.GunaAdvenceButton1.Location = New System.Drawing.Point(30, 167)
+        Me.GunaAdvenceButton1.Name = "GunaAdvenceButton1"
+        Me.GunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.Firebrick
+        Me.GunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton1.OnHoverImage = Nothing
+        Me.GunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.Firebrick
+        Me.GunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton1.Size = New System.Drawing.Size(167, 90)
+        Me.GunaAdvenceButton1.TabIndex = 11
+        Me.GunaAdvenceButton1.Text = "ADD PARTS"
+        Me.GunaAdvenceButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.LightSlateGray
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.GunaLabel4)
+        Me.Panel1.Controls.Add(Me.GunaLabel2)
+        Me.Panel1.Controls.Add(Me.GunaProgressBar1)
+        Me.Panel1.Location = New System.Drawing.Point(771, 350)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(548, 108)
+        Me.Panel1.TabIndex = 12
+        Me.Panel1.Visible = False
+        '
+        'GunaLabel4
+        '
+        Me.GunaLabel4.Font = New System.Drawing.Font("Franklin Gothic Medium Cond", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel4.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.GunaLabel4.Location = New System.Drawing.Point(156, 64)
+        Me.GunaLabel4.Name = "GunaLabel4"
+        Me.GunaLabel4.Size = New System.Drawing.Size(352, 21)
+        Me.GunaLabel4.TabIndex = 5
+        Me.GunaLabel4.Text = "Downloading File"
+        Me.GunaLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.GunaLabel4.Visible = False
+        '
+        'GunaLabel2
+        '
+        Me.GunaLabel2.AutoSize = True
+        Me.GunaLabel2.Font = New System.Drawing.Font("Franklin Gothic Medium Cond", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel2.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.GunaLabel2.Location = New System.Drawing.Point(39, 64)
+        Me.GunaLabel2.Name = "GunaLabel2"
+        Me.GunaLabel2.Size = New System.Drawing.Size(111, 21)
+        Me.GunaLabel2.TabIndex = 4
+        Me.GunaLabel2.Text = "Downloading File"
+        '
+        'GunaProgressBar1
+        '
+        Me.GunaProgressBar1.BorderColor = System.Drawing.Color.Black
+        Me.GunaProgressBar1.ColorStyle = Guna.UI.WinForms.ColorStyle.[Default]
+        Me.GunaProgressBar1.IdleColor = System.Drawing.Color.Gainsboro
+        Me.GunaProgressBar1.Location = New System.Drawing.Point(43, 29)
+        Me.GunaProgressBar1.Name = "GunaProgressBar1"
+        Me.GunaProgressBar1.ProgressMaxColor = System.Drawing.Color.LightCoral
+        Me.GunaProgressBar1.ProgressMinColor = System.Drawing.Color.Maroon
+        Me.GunaProgressBar1.Radius = 5
+        Me.GunaProgressBar1.Size = New System.Drawing.Size(465, 22)
+        Me.GunaProgressBar1.TabIndex = 0
+        '
+        'Timer2
+        '
+        Me.Timer2.Interval = 200
+        '
+        'BackgroundWorker3
+        '
+        '
+        'Timer3
+        '
+        Me.Timer3.Interval = 60
+        '
+        'GunaAdvenceButton2
+        '
+        Me.GunaAdvenceButton2.Animated = True
+        Me.GunaAdvenceButton2.AnimationHoverSpeed = 0.07!
+        Me.GunaAdvenceButton2.AnimationSpeed = 0.03!
+        Me.GunaAdvenceButton2.BaseColor = System.Drawing.Color.Maroon
+        Me.GunaAdvenceButton2.BorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton2.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.GunaAdvenceButton2.CheckedBorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton2.CheckedForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton2.CheckedImage = CType(resources.GetObject("GunaAdvenceButton2.CheckedImage"), System.Drawing.Image)
+        Me.GunaAdvenceButton2.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.GunaAdvenceButton2.FocusedColor = System.Drawing.Color.Empty
+        Me.GunaAdvenceButton2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.GunaAdvenceButton2.ForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton2.Image = Nothing
+        Me.GunaAdvenceButton2.ImageSize = New System.Drawing.Size(20, 20)
+        Me.GunaAdvenceButton2.LineColor = System.Drawing.Color.Maroon
+        Me.GunaAdvenceButton2.Location = New System.Drawing.Point(30, 275)
+        Me.GunaAdvenceButton2.Name = "GunaAdvenceButton2"
+        Me.GunaAdvenceButton2.OnHoverBaseColor = System.Drawing.Color.Firebrick
+        Me.GunaAdvenceButton2.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton2.OnHoverForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton2.OnHoverImage = Nothing
+        Me.GunaAdvenceButton2.OnHoverLineColor = System.Drawing.Color.Firebrick
+        Me.GunaAdvenceButton2.OnPressedColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton2.Size = New System.Drawing.Size(167, 90)
+        Me.GunaAdvenceButton2.TabIndex = 13
+        Me.GunaAdvenceButton2.Text = "DELETE PARTS"
+        Me.GunaAdvenceButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'Frm_purchased
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -503,6 +655,8 @@ Partial Class Frm_purchased
         Me.BackColor = System.Drawing.Color.SlateGray
         Me.ClientSize = New System.Drawing.Size(1897, 918)
         Me.ControlBox = False
+        Me.Controls.Add(Me.GunaAdvenceButton2)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GunaPanel1)
         Me.Controls.Add(Me.GunaAdvenceButton1)
         Me.Controls.Add(Me.pnl_purch)
@@ -510,11 +664,15 @@ Partial Class Frm_purchased
         Me.Name = "Frm_purchased"
         Me.Text = "Purchased Parts"
         Me.pnl_purch.ResumeLayout(False)
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         CType(Me.GunaDataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.DataGrid_Parts, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGrid_Files, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -540,4 +698,17 @@ Partial Class Frm_purchased
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents BackgroundWorker2 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents GunaProgressBar1 As Guna.UI.WinForms.GunaProgressBar
+    Friend WithEvents GunaLabel2 As Guna.UI.WinForms.GunaLabel
+    Friend WithEvents Timer2 As Timer
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents GunaLabel3 As Guna.UI.WinForms.GunaLabel
+    Friend WithEvents GunaLabel4 As Guna.UI.WinForms.GunaLabel
+    Friend WithEvents BackgroundWorker3 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents Timer3 As Timer
+    Friend WithEvents GunaAdvenceButton2 As Guna.UI.WinForms.GunaAdvenceButton
 End Class

@@ -2,18 +2,19 @@
 Imports MySql.Data.MySqlClient
 '#################################################### MODULE FOR PURCHASED PARTS FUNCTION #################################################################
 Module loadPurchasedParts
-    Dim conn As New MySqlConnection("host=" + My.Settings.sett_dbSource + "; username = " + My.Settings.sett_dbUsername + "; password=" + My.Settings.sett_dbPass + "; database=" + My.Settings.sett_dbName + ";character set=utf8;")
-    Dim command As MySqlCommand
-    Dim sql_adapter As MySqlDataAdapter
-    Dim table As New DataTable
+
+
     Dim DataFileBinary() As Byte
     Dim machinesource As New BindingSource
 
-    Public Function loadDatabasePurchasedParts()
+    Public Function loadMachinePurchasedParts()
+        Dim conn As New MySqlConnection("host=" + My.Settings.sett_dbSource + "; username = " + My.Settings.sett_dbUsername + "; password=" + My.Settings.sett_dbPass + "; database=" + My.Settings.sett_dbName + ";character set=utf8;")
         Try
             conn.Open()
-
-            command = New MySqlCommand("select * from tblfile ", conn)
+            Dim command As MySqlCommand
+            Dim sql_adapter As MySqlDataAdapter
+            Dim table As New DataTable
+            command = New MySqlCommand("select * from tblfile where category='Machine Purchased Parts' ", conn)
             command.CommandTimeout = 0
             sql_adapter = New MySqlDataAdapter(command)
             sql_adapter.Fill(table)
@@ -26,7 +27,25 @@ Module loadPurchasedParts
         Return 0
     End Function
 
+    Public Function loadOutfittingPurchasedParts()
+        Try
+            Dim conn As New MySqlConnection("host=" + My.Settings.sett_dbSource + "; username = " + My.Settings.sett_dbUsername + "; password=" + My.Settings.sett_dbPass + "; database=" + My.Settings.sett_dbName + ";character set=utf8;")
+            conn.Open()
+            Dim command As MySqlCommand
+            Dim sql_adapter As MySqlDataAdapter
+            Dim table As New DataTable
+            command = New MySqlCommand("select * from tblfile where category='Outfitting Purchased Parts'", conn)
+            command.CommandTimeout = 0
+            sql_adapter = New MySqlDataAdapter(command)
+            sql_adapter.Fill(table)
+            machinesource.DataSource = table
+            conn.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End Try
 
+        Return 0
+    End Function
     Public Function previewFile(downloadFile)
 
         Try

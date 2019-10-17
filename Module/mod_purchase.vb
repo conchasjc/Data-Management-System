@@ -35,11 +35,12 @@ Module mod_purchase
 
     Public Function getLoad(category)
         Try
-            Dim query = "select file as DRAWING_FILE from tblfile where Parts_type='" + category.ToString + "'"
+            Dim query = "select file as DRAWINGFILE from tblfile where Parts_type='" + category.ToString + "'"
 
             Dim adapter As New MySqlDataAdapter(query, conn)
             Dim ds As New DataTable
             adapter.Fill(ds)
+            ds.Columns(0).Caption = "PURCHASED PARTS FILE"
             bSources.DataSource = ds
             Frm_purchased.DataGrid_Files.DataSource = bSources
             conn.Close()
@@ -213,20 +214,5 @@ Module mod_purchase
         End Try
         Return 0
     End Function
-
-
-
-
-
-    ''Codes Under This Line Is for Speed Optimization
-
-
-
-
-
-
-
-
-
 
 End Module

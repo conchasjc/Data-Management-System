@@ -43,14 +43,10 @@ Partial Class Frm_Main
         Me.Tmr_Time = New System.Windows.Forms.Timer(Me.components)
         Me.TimeWorker = New System.ComponentModel.BackgroundWorker()
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
-        Me.Cms_Notify = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.MaximizedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Wrkr_LoadPurch = New System.ComponentModel.BackgroundWorker()
         Me.Mst_Main.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.Ts_Menubar.SuspendLayout()
-        Me.Cms_Notify.SuspendLayout()
         Me.SuspendLayout()
         '
         'Mst_Main
@@ -61,7 +57,7 @@ Partial Class Frm_Main
         Me.Mst_Main.MdiWindowListItem = Me.MdilistToolStripMenuItem
         Me.Mst_Main.Name = "Mst_Main"
         Me.Mst_Main.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
-        Me.Mst_Main.Size = New System.Drawing.Size(965, 24)
+        Me.Mst_Main.Size = New System.Drawing.Size(971, 24)
         Me.Mst_Main.TabIndex = 1
         Me.Mst_Main.Text = "MenuStrip1"
         '
@@ -87,8 +83,9 @@ Partial Class Frm_Main
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(165, 22)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.ToolStripMenuItem1.Text = "ICAD Find Action"
+        Me.ToolStripMenuItem1.Visible = False
         '
         'ExitToolStripMenuItem
         '
@@ -114,7 +111,7 @@ Partial Class Frm_Main
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Tsl_Hover, Me.ToolStripProgressBar1, Me.Ts_Time})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 585)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(965, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(971, 22)
         Me.StatusStrip1.TabIndex = 2
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -133,7 +130,7 @@ Partial Class Frm_Main
         'Ts_Time
         '
         Me.Ts_Time.Name = "Ts_Time"
-        Me.Ts_Time.Size = New System.Drawing.Size(888, 17)
+        Me.Ts_Time.Size = New System.Drawing.Size(894, 17)
         Me.Ts_Time.Spring = True
         Me.Ts_Time.Text = "ts_time"
         Me.Ts_Time.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -149,7 +146,7 @@ Partial Class Frm_Main
         Me.Ts_Menubar.Name = "Ts_Menubar"
         Me.Ts_Menubar.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.Ts_Menubar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.Ts_Menubar.Size = New System.Drawing.Size(965, 97)
+        Me.Ts_Menubar.Size = New System.Drawing.Size(971, 97)
         Me.Ts_Menubar.TabIndex = 3
         Me.Ts_Menubar.Text = "ToolStrip1"
         '
@@ -157,6 +154,7 @@ Partial Class Frm_Main
         '
         Me.Tsb_Char.AutoSize = False
         Me.Tsb_Char.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Tsb_Char.Enabled = False
         Me.Tsb_Char.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Tsb_Char.Image = Global.kmtiworkstationvb.My.Resources.Resources.iconws2
         Me.Tsb_Char.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
@@ -178,6 +176,7 @@ Partial Class Frm_Main
         '
         Me.Tsb_Purchase.AutoSize = False
         Me.Tsb_Purchase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.Tsb_Purchase.Enabled = False
         Me.Tsb_Purchase.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Tsb_Purchase.Image = Global.kmtiworkstationvb.My.Resources.Resources.purchparticon2
         Me.Tsb_Purchase.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
@@ -199,36 +198,14 @@ Partial Class Frm_Main
         Me.NotifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info
         Me.NotifyIcon1.BalloonTipText = "I am running minimized"
         Me.NotifyIcon1.BalloonTipTitle = "KMTI DATA  MANAGEMENT SYSTEM"
-        Me.NotifyIcon1.ContextMenuStrip = Me.Cms_Notify
         Me.NotifyIcon1.Icon = CType(resources.GetObject("NotifyIcon1.Icon"), System.Drawing.Icon)
         Me.NotifyIcon1.Text = "KMTI DATA MANAGEMENT SYSTEM"
-        '
-        'Cms_Notify
-        '
-        Me.Cms_Notify.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MaximizedToolStripMenuItem, Me.ExitToolStripMenuItem1})
-        Me.Cms_Notify.Name = "cms_notify"
-        Me.Cms_Notify.Size = New System.Drawing.Size(132, 48)
-        '
-        'MaximizedToolStripMenuItem
-        '
-        Me.MaximizedToolStripMenuItem.Name = "MaximizedToolStripMenuItem"
-        Me.MaximizedToolStripMenuItem.Size = New System.Drawing.Size(131, 22)
-        Me.MaximizedToolStripMenuItem.Text = "Maximized"
-        '
-        'ExitToolStripMenuItem1
-        '
-        Me.ExitToolStripMenuItem1.Name = "ExitToolStripMenuItem1"
-        Me.ExitToolStripMenuItem1.Size = New System.Drawing.Size(131, 22)
-        Me.ExitToolStripMenuItem1.Text = "Exit"
-        '
-        'Wrkr_LoadPurch
-        '
         '
         'Frm_Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(965, 607)
+        Me.ClientSize = New System.Drawing.Size(971, 607)
         Me.Controls.Add(Me.Ts_Menubar)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Mst_Main)
@@ -244,7 +221,6 @@ Partial Class Frm_Main
         Me.StatusStrip1.PerformLayout()
         Me.Ts_Menubar.ResumeLayout(False)
         Me.Ts_Menubar.PerformLayout()
-        Me.Cms_Notify.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -267,9 +243,6 @@ Partial Class Frm_Main
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Tsb_Purchase As ToolStripButton
     Friend WithEvents NotifyIcon1 As NotifyIcon
-    Friend WithEvents Cms_Notify As ContextMenuStrip
-    Friend WithEvents MaximizedToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ExitToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ToolStripProgressBar1 As ToolStripProgressBar
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents Wrkr_LoadPurch As System.ComponentModel.BackgroundWorker

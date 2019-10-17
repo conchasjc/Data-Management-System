@@ -4,6 +4,9 @@
         Frm_Main.Mts_Login.Visible = False
         frm_desk.Close()
         getDbChar("")
+        Frm_Main.ToolStripMenuItem1.Visible = True
+        Frm_Main.Tsb_Char.Enabled = True
+        Frm_Main.Tsb_Purchase.Enabled = True
     End Sub
 
 

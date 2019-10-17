@@ -3,11 +3,19 @@
         CheckForIllegalCrossThreadCalls = False
 
         GunaWinCircleProgressIndicator1.Visible = True
-        Me.Close()
-        frm_char.MdiParent = Frm_Main
-        frm_char.Show()
+        BackgroundWorker2.RunWorkerAsync()
 
+        If Txt_User.Text = "User" And Txt_Pass.Text = "1234" Then
+            MessageBox.Show("Login Successful", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            frm_char.MdiParent = Frm_Main
+            frm_char.Show()
 
+        Else
+            Txt_Pass.Text = ""
+            Txt_User.Text = ""
+
+            MessageBox.Show("Invalid User Account", "TRY AGAIN", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        End If
     End Sub
 
     Private Sub Frm_desk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -34,4 +42,13 @@
             lbl_dbNotif.Text = "DATABASE NOT CONNECTED"
         End If
     End Sub
+
+
+
+    Private Sub BackgroundWorker2_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker2.DoWork
+        System.Threading.Thread.Sleep(100)
+
+    End Sub
+
+
 End Class

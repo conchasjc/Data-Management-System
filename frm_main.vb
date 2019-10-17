@@ -23,8 +23,7 @@ Public Class Frm_Main
             System.IO.Directory.CreateDirectory(My.Settings.sett_locpath + "/DownloadedParts")
 
         End If
-        Wrkr_LoadPurch.RunWorkerAsync()
-
+        frm_splash.NotifyIcon3.Visible = False
     End Sub
 
     Private Sub SettingsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SettingsToolStripMenuItem.Click
@@ -64,25 +63,16 @@ Public Class Frm_Main
     End Sub
 
     Private Sub NotifyIcon1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles NotifyIcon1.MouseDoubleClick
-        Me.Visible = True
-        Me.WindowState = FormWindowState.Maximized
-    End Sub
-
-    Private Sub Frm_main_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
-        If Me.WindowState = FormWindowState.Minimized Then
-            Me.Visible = False
-            NotifyIcon1.Visible = True
-            NotifyIcon1.ShowBalloonTip(1, "KMTI DATA MANAGEMENT SYSTEM", "I am running minimized", ToolTipIcon.Info)
-        Else
-            NotifyIcon1.Visible = False
-        End If
 
     End Sub
+
 
     Private Sub Frm_Main_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         If (System.IO.Directory.Exists(My.Application.Info.DirectoryPath + "/Temp")) Then
             System.IO.Directory.Delete(My.Application.Info.DirectoryPath + "/Temp", True)
         End If
+        frm_splash.NotifyIcon3.Visible = True
+
 
     End Sub
 
@@ -90,7 +80,4 @@ Public Class Frm_Main
         System.Diagnostics.Process.Start(My.Settings.sett_actpath)
     End Sub
 
-    Private Sub Wrkr_LoadPurch_DoWork(sender As Object, e As DoWorkEventArgs) Handles Wrkr_LoadPurch.DoWork
-        loadDatabasePurchasedParts()
-    End Sub
 End Class

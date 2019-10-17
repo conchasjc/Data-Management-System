@@ -45,9 +45,6 @@ Partial Class Frm_purchased
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GunaPanel3 = New Guna.UI.WinForms.GunaPanel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Btn_QuickDownload = New System.Windows.Forms.Button()
-        Me.Btn_PrevFile = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.DataGrid_Parts = New Guna.UI.WinForms.GunaDataGridView()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -62,7 +59,6 @@ Partial Class Frm_purchased
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.Tmr_QuickDownload = New System.Windows.Forms.Timer(Me.components)
         Me.BackgroundWorker2 = New System.ComponentModel.BackgroundWorker()
-        Me.GunaAdvenceButton1 = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GunaLabel4 = New Guna.UI.WinForms.GunaLabel()
         Me.GunaLabel2 = New Guna.UI.WinForms.GunaLabel()
@@ -71,6 +67,10 @@ Partial Class Frm_purchased
         Me.Wrkr_PreviewFile = New System.ComponentModel.BackgroundWorker()
         Me.Tmr_PreviewFile = New System.Windows.Forms.Timer(Me.components)
         Me.GunaAdvenceButton2 = New Guna.UI.WinForms.GunaAdvenceButton()
+        Me.GunaAdvenceButton1 = New Guna.UI.WinForms.GunaAdvenceButton()
+        Me.Btn_QuickDownload = New System.Windows.Forms.Button()
+        Me.Btn_PrevFile = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.pnl_purch.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.GunaDataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -235,36 +235,6 @@ Partial Class Frm_purchased
         Me.GroupBox2.Size = New System.Drawing.Size(897, 720)
         Me.GroupBox2.TabIndex = 13
         Me.GroupBox2.TabStop = False
-        '
-        'Btn_QuickDownload
-        '
-        Me.Btn_QuickDownload.BackgroundImage = Global.kmtiworkstationvb.My.Resources.Resources.Save_Button_PNG_Transparent_Background
-        Me.Btn_QuickDownload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Btn_QuickDownload.Location = New System.Drawing.Point(825, 656)
-        Me.Btn_QuickDownload.Name = "Btn_QuickDownload"
-        Me.Btn_QuickDownload.Size = New System.Drawing.Size(51, 49)
-        Me.Btn_QuickDownload.TabIndex = 19
-        Me.Btn_QuickDownload.UseVisualStyleBackColor = True
-        '
-        'Btn_PrevFile
-        '
-        Me.Btn_PrevFile.BackgroundImage = Global.kmtiworkstationvb.My.Resources.Resources.preview
-        Me.Btn_PrevFile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Btn_PrevFile.Location = New System.Drawing.Point(825, 271)
-        Me.Btn_PrevFile.Name = "Btn_PrevFile"
-        Me.Btn_PrevFile.Size = New System.Drawing.Size(51, 49)
-        Me.Btn_PrevFile.TabIndex = 18
-        Me.Btn_PrevFile.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.BackgroundImage = Global.kmtiworkstationvb.My.Resources.Resources._51iJjNPb07L
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.Location = New System.Drawing.Point(825, 216)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(51, 49)
-        Me.Button1.TabIndex = 17
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'ComboBox1
         '
@@ -526,37 +496,6 @@ Partial Class Frm_purchased
         'BackgroundWorker2
         '
         '
-        'GunaAdvenceButton1
-        '
-        Me.GunaAdvenceButton1.Animated = True
-        Me.GunaAdvenceButton1.AnimationHoverSpeed = 0.07!
-        Me.GunaAdvenceButton1.AnimationSpeed = 0.03!
-        Me.GunaAdvenceButton1.BaseColor = System.Drawing.Color.Maroon
-        Me.GunaAdvenceButton1.BorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray
-        Me.GunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton1.CheckedImage = CType(resources.GetObject("GunaAdvenceButton1.CheckedImage"), System.Drawing.Image)
-        Me.GunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray
-        Me.GunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty
-        Me.GunaAdvenceButton1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.GunaAdvenceButton1.ForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton1.Image = Nothing
-        Me.GunaAdvenceButton1.ImageSize = New System.Drawing.Size(20, 20)
-        Me.GunaAdvenceButton1.LineColor = System.Drawing.Color.Maroon
-        Me.GunaAdvenceButton1.Location = New System.Drawing.Point(30, 167)
-        Me.GunaAdvenceButton1.Name = "GunaAdvenceButton1"
-        Me.GunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.Firebrick
-        Me.GunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton1.OnHoverImage = Nothing
-        Me.GunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.Firebrick
-        Me.GunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton1.Size = New System.Drawing.Size(167, 90)
-        Me.GunaAdvenceButton1.TabIndex = 11
-        Me.GunaAdvenceButton1.Text = "ADD PARTS"
-        Me.GunaAdvenceButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.LightSlateGray
@@ -647,6 +586,69 @@ Partial Class Frm_purchased
         Me.GunaAdvenceButton2.TabIndex = 13
         Me.GunaAdvenceButton2.Text = "DELETE PARTS"
         Me.GunaAdvenceButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.GunaAdvenceButton2.Visible = False
+        '
+        'GunaAdvenceButton1
+        '
+        Me.GunaAdvenceButton1.Animated = True
+        Me.GunaAdvenceButton1.AnimationHoverSpeed = 0.07!
+        Me.GunaAdvenceButton1.AnimationSpeed = 0.03!
+        Me.GunaAdvenceButton1.BaseColor = System.Drawing.Color.Maroon
+        Me.GunaAdvenceButton1.BorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.GunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton1.CheckedImage = CType(resources.GetObject("GunaAdvenceButton1.CheckedImage"), System.Drawing.Image)
+        Me.GunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.GunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty
+        Me.GunaAdvenceButton1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.GunaAdvenceButton1.ForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton1.Image = Nothing
+        Me.GunaAdvenceButton1.ImageSize = New System.Drawing.Size(20, 20)
+        Me.GunaAdvenceButton1.LineColor = System.Drawing.Color.Maroon
+        Me.GunaAdvenceButton1.Location = New System.Drawing.Point(30, 167)
+        Me.GunaAdvenceButton1.Name = "GunaAdvenceButton1"
+        Me.GunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.Firebrick
+        Me.GunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton1.OnHoverImage = Nothing
+        Me.GunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.Firebrick
+        Me.GunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton1.Size = New System.Drawing.Size(167, 90)
+        Me.GunaAdvenceButton1.TabIndex = 11
+        Me.GunaAdvenceButton1.Text = "ADD PARTS"
+        Me.GunaAdvenceButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.GunaAdvenceButton1.Visible = False
+        '
+        'Btn_QuickDownload
+        '
+        Me.Btn_QuickDownload.BackgroundImage = Global.kmtiworkstationvb.My.Resources.Resources.Save_Button_PNG_Transparent_Background
+        Me.Btn_QuickDownload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Btn_QuickDownload.Location = New System.Drawing.Point(825, 656)
+        Me.Btn_QuickDownload.Name = "Btn_QuickDownload"
+        Me.Btn_QuickDownload.Size = New System.Drawing.Size(51, 49)
+        Me.Btn_QuickDownload.TabIndex = 19
+        Me.Btn_QuickDownload.UseVisualStyleBackColor = True
+        '
+        'Btn_PrevFile
+        '
+        Me.Btn_PrevFile.BackgroundImage = Global.kmtiworkstationvb.My.Resources.Resources.preview
+        Me.Btn_PrevFile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Btn_PrevFile.Location = New System.Drawing.Point(825, 271)
+        Me.Btn_PrevFile.Name = "Btn_PrevFile"
+        Me.Btn_PrevFile.Size = New System.Drawing.Size(51, 49)
+        Me.Btn_PrevFile.TabIndex = 18
+        Me.Btn_PrevFile.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.BackgroundImage = Global.kmtiworkstationvb.My.Resources.Resources._51iJjNPb07L
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.Location = New System.Drawing.Point(825, 216)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(51, 49)
+        Me.Button1.TabIndex = 17
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Frm_purchased
         '

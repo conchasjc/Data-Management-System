@@ -122,7 +122,7 @@ Module mod_purchase
 
 
 
-    Public Function QuickDownload(downloadFile)
+    Public Function QuickDownload2(downloadFile)
         Try
             Dim cmd As New MySqlCommand("select * from tblfile where file='" + downloadFile + "';", conn)
             Dim sqL_adapter As New MySqlDataAdapter(cmd)
@@ -175,7 +175,7 @@ Module mod_purchase
             fs.Close()
             System.Diagnostics.Process.Start(My.Application.Info.DirectoryPath + "/temp/" + LineOfText)
             LoadPartTypes()
-            Frm_purchased.Timer3.Stop()
+            Frm_purchased.Tmr_PreviewFile.Stop()
             Frm_purchased.Panel1.Visible = False
             Frm_purchased.GunaProgressBar1.Style = Guna.UI.WinForms.ProgressBarStyle.Blocks
             Frm_purchased.GunaLabel2.Text = "Downloading Files"
@@ -188,7 +188,7 @@ Module mod_purchase
     End Function
 
 
-    Public Function allFile(downloadFile)
+    Public Function allFile2(downloadFile)
         Try
             Dim cmd As New MySqlCommand("select * from tblfile where file='" + downloadFile + "';", conn)
             Dim sqL_adapter As New MySqlDataAdapter(cmd)
@@ -225,20 +225,6 @@ Module mod_purchase
 
 
 
-
-    Dim command As MySqlCommand
-    Dim adapt As MySqlDataAdapter
-    Dim table As New DataTable
-    Public Function loadFile(dfile, dparts)
-        conn.Close()
-        conn.OpenAsync()
-        command = New MySqlCommand("select * from tblfile where Parts_Type='" + dparts + "';", conn)
-        adapt = New MySqlDataAdapter(command)
-        adapt.Fill(table)
-        conn.Close()
-        Return 0
-
-    End Function
 
 
 

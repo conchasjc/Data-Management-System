@@ -1,6 +1,6 @@
 ﻿Imports System.IO
 Imports MySql.Data.MySqlClient
-
+'#################################################### MODULE FOR PURCHASED PARTS FUNCTION #################################################################
 Module loadPurchasedParts
     Dim conn As New MySqlConnection("host=" + My.Settings.sett_dbSource + "; username = " + My.Settings.sett_dbUsername + "; password=" + My.Settings.sett_dbPass + "; database=" + My.Settings.sett_dbName + ";character set=utf8;")
     Dim command As MySqlCommand
@@ -38,7 +38,7 @@ Module loadPurchasedParts
             DataFileBinary = machinesource(0)(3)
             K = UBound(DataFileBinary)
             filename = downloadFile.ToString.Split("/")
-            LineOfText = String.Join("-", filename)
+            LineOfText = String.Join("／", filename)
 
             Dim fs As New FileStream(My.Application.Info.DirectoryPath + "/temp/" + LineOfText, FileMode.OpenOrCreate, FileAccess.Write)
 
@@ -53,4 +53,66 @@ Module loadPurchasedParts
         End Try
         Return 0
     End Function
+
+    Public Function QuickDownload(downloadFile)
+
+        Try
+            machinesource.Filter = "file like '" + downloadFile + "'"
+            Dim LineOfText As String
+            Dim filename() As String
+            Dim K As Long
+
+            DataFileBinary = machinesource(0)(3)
+            K = UBound(DataFileBinary)
+            filename = downloadFile.ToString.Split("/")
+            LineOfText = String.Join("／", filename)
+
+            Dim fs As New FileStream(My.Settings.sett_locpath + "/DownloadedParts/" + LineOfText, FileMode.OpenOrCreate, FileAccess.Write)
+
+            fs.Write(DataFileBinary, 0, K)
+            fs.Close()
+
+
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+        Return 0
+    End Function
+
+
+    Public Function allFile(downloadFile)
+        Try
+            machinesource.Filter = "file like '" + downloadFile + "'"
+            Dim LineOfText As String
+            Dim filename() As String
+            Dim K As Long
+
+            DataFileBinary = machinesource(0)(3)
+            K = UBound(DataFileBinary)
+            filename = downloadFile.ToString.Split("/")
+            LineOfText = String.Join("／", filename)
+
+            Dim fs As New FileStream(My.Settings.sett_locpath + "/DownloadedParts/" + LineOfText, FileMode.OpenOrCreate, FileAccess.Write)
+
+            fs.Write(DataFileBinary, 0, K)
+            fs.Close()
+
+
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+        Return 0
+    End Function
+
+
+
+
+
+
 End Module
+
+'###################################################################################################################################################

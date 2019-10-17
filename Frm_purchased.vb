@@ -59,57 +59,27 @@ Public Class Frm_purchased
 
 
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Timer1.Start()
-    End Sub
-
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        Button3.Enabled = False
-        Panel1.Visible = True
-        GroupBox2.Enabled = False
-        GunaProgressBar1.Maximum = 100
-        Control.CheckForIllegalCrossThreadCalls = False
-
-        Frm_Main.ToolStripProgressBar1.Increment(2)
-        GunaProgressBar1.Value = Frm_Main.ToolStripProgressBar1.Value
-        If Frm_Main.ToolStripProgressBar1.Value >= 90 Then
-            Frm_Main.Tsl_Hover.Text = "Writing File"
-        Else
-            Frm_Main.Tsl_Hover.Text = "Downloading File"
-        End If
-        If Frm_Main.ToolStripProgressBar1.Value = 20 Then
-            Try
-                BackgroundWorker1.RunWorkerAsync()
-            Catch
 
 
-            End Try
 
-        End If
-
-        If Frm_Main.ToolStripProgressBar1.Value = 100 Then
-            Timer1.Stop()
-            MessageBox.Show("File Downloaded Successfully.", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Frm_Main.ToolStripProgressBar1.Visible = False
-            Frm_Main.ToolStripProgressBar1.Value = 0
-            Frm_Main.Tsl_Hover.Visible = False
-            Button3.Enabled = True
-            Panel1.Visible = False
-            GroupBox2.Enabled = True
+    Private Sub Frm_purchased_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        If e.Control AndAlso (e.KeyCode = Keys.D) Then
+            Btn_QuickDownload.PerformClick()
         End If
     End Sub
 
-    Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
-        Try
-            QuickDownload(DataGrid_Files.CurrentCell.Value)
-
-        Catch
-
-        End Try
-    End Sub
 
 
 
+
+
+
+
+
+
+
+
+    '#################  DOWNLOAD ALL BUTTON FUNCTION ################
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
 
 
@@ -128,9 +98,9 @@ Public Class Frm_purchased
         GunaLabel4.Visible = True
         Control.CheckForIllegalCrossThreadCalls = False
 
-        GunaProgressBar1.Value += 1
+        GunaProgressBar1.Value += 10
 
-        Timer2.Interval = max * 70
+        Timer2.Interval = max * 40
 
 
         If GunaProgressBar1.Value = 100 Then
@@ -162,19 +132,67 @@ Public Class Frm_purchased
     End Sub
 
 
-    Private Sub Button3_KeyDown(sender As Object, e As KeyEventArgs) Handles Button3.KeyDown
 
+
+
+
+
+
+    '##################################################################
+
+
+    '#################  QUICK DOWNLOAD BUTTON FUNCTION ################
+
+    Private Sub Btn_QuickDownload_Click(sender As Object, e As EventArgs) Handles Btn_QuickDownload.Click
+        Tmr_QuickDownload.Start()
     End Sub
 
-    Private Sub Button3_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Button3.KeyPress
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Tmr_QuickDownload.Tick
+        Btn_QuickDownload.Enabled = False
+        Panel1.Visible = True
+        GroupBox2.Enabled = False
+        GunaProgressBar1.Maximum = 100
+        Control.CheckForIllegalCrossThreadCalls = False
 
-    End Sub
+        Frm_Main.ToolStripProgressBar1.Increment(10)
+        GunaProgressBar1.Value = Frm_Main.ToolStripProgressBar1.Value
+        If Frm_Main.ToolStripProgressBar1.Value >= 90 Then
+            Frm_Main.Tsl_Hover.Text = "Writing File"
+        Else
+            Frm_Main.Tsl_Hover.Text = "Downloading File"
+        End If
+        If Frm_Main.ToolStripProgressBar1.Value = 10 Then
+            Try
+                BackgroundWorker1.RunWorkerAsync()
+            Catch
 
-    Private Sub Frm_purchased_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
-        If e.Control AndAlso (e.KeyCode = Keys.D) Then
-            Button3.PerformClick()
+
+            End Try
+
+        End If
+
+        If Frm_Main.ToolStripProgressBar1.Value = 100 Then
+            Tmr_QuickDownload.Stop()
+            MessageBox.Show("File Downloaded Successfully.", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Frm_Main.ToolStripProgressBar1.Visible = False
+            Frm_Main.ToolStripProgressBar1.Value = 0
+            Frm_Main.Tsl_Hover.Visible = False
+            Btn_QuickDownload.Enabled = True
+            Panel1.Visible = False
+            GroupBox2.Enabled = True
         End If
     End Sub
+
+    Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
+        Try
+            QuickDownload(DataGrid_Files.CurrentCell.Value)
+        Catch
+        End Try
+    End Sub
+
+    '###############################################################
+
+
 
     '#################  PREVIEW FILE BUTTON FUNCTION ################
 
@@ -186,7 +204,7 @@ Public Class Frm_purchased
             System.IO.Directory.CreateDirectory(My.Application.Info.DirectoryPath + "/Temp")
         End If
 
-        Timer3.Start()
+        Tmr_PreviewFile.Start()
     End Sub
 
     'Preview Background Process
@@ -198,7 +216,7 @@ Public Class Frm_purchased
     End Sub
 
     'Preview Loader
-    Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
+    Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Tmr_PreviewFile.Tick
 
         GunaLabel2.Text = "Opening File"
         Panel1.Visible = True
@@ -214,7 +232,7 @@ Public Class Frm_purchased
         End If
 
         If Frm_Main.ToolStripProgressBar1.Value = 100 Then
-            Timer3.Stop()
+            Tmr_PreviewFile.Stop()
             GunaLabel2.Text = "Downloading File"
             Frm_Main.ToolStripProgressBar1.Visible = False
             Frm_Main.ToolStripProgressBar1.Value = 0

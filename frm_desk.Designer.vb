@@ -343,12 +343,6 @@ Partial Class frm_desk
         '
         Me.tmr_connStatus.Enabled = True
         '
-        'BackgroundWorker2
-        '
-        '
-        'Timer1
-        '
-        '
         'frm_desk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)

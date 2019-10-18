@@ -19,7 +19,7 @@
             Lbl_SplashNotifier.Text = "Starting Application"
         ElseIf ProgressBar1.Value < 30 Then
             ProgressBar1.Increment(1)
-            Lbl_SplashNotifier.Text = "Importing Database"
+            Lbl_SplashNotifier.Text = "Connecting Database"
             System.Threading.Thread.Sleep(1000)
         ElseIf ProgressBar1.Value < 60 Then
             ProgressBar1.Increment(1)

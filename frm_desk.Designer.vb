@@ -40,13 +40,15 @@ Partial Class frm_desk
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.GunaLineTextBox2 = New Guna.UI.WinForms.GunaLineTextBox()
+        Me.Txt_Pass = New Guna.UI.WinForms.GunaLineTextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.GunaLineTextBox1 = New Guna.UI.WinForms.GunaLineTextBox()
+        Me.Txt_User = New Guna.UI.WinForms.GunaLineTextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.GunaElipse1 = New Guna.UI.WinForms.GunaElipse(Me.components)
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.tmr_connStatus = New System.Windows.Forms.Timer(Me.components)
+        Me.BackgroundWorker2 = New System.ComponentModel.BackgroundWorker()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -133,9 +135,9 @@ Partial Class frm_desk
         Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Controls.Add(Me.GunaLineTextBox2)
+        Me.Panel2.Controls.Add(Me.Txt_Pass)
         Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Controls.Add(Me.GunaLineTextBox1)
+        Me.Panel2.Controls.Add(Me.Txt_User)
         Me.Panel2.Controls.Add(Me.Panel3)
         Me.Panel2.Location = New System.Drawing.Point(1414, 141)
         Me.Panel2.Name = "Panel2"
@@ -279,20 +281,20 @@ Partial Class frm_desk
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Enter the following information needed for KMTI Data Management System"
         '
-        'GunaLineTextBox2
+        'Txt_Pass
         '
-        Me.GunaLineTextBox2.Animated = True
-        Me.GunaLineTextBox2.BackColor = System.Drawing.Color.White
-        Me.GunaLineTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.GunaLineTextBox2.FocusedLineColor = System.Drawing.Color.Salmon
-        Me.GunaLineTextBox2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.GunaLineTextBox2.LineColor = System.Drawing.Color.Gainsboro
-        Me.GunaLineTextBox2.Location = New System.Drawing.Point(15, 339)
-        Me.GunaLineTextBox2.Name = "GunaLineTextBox2"
-        Me.GunaLineTextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.GunaLineTextBox2.Size = New System.Drawing.Size(447, 33)
-        Me.GunaLineTextBox2.TabIndex = 3
-        Me.GunaLineTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Txt_Pass.Animated = True
+        Me.Txt_Pass.BackColor = System.Drawing.Color.White
+        Me.Txt_Pass.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Txt_Pass.FocusedLineColor = System.Drawing.Color.Salmon
+        Me.Txt_Pass.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Txt_Pass.LineColor = System.Drawing.Color.Gainsboro
+        Me.Txt_Pass.Location = New System.Drawing.Point(15, 339)
+        Me.Txt_Pass.Name = "Txt_Pass"
+        Me.Txt_Pass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.Txt_Pass.Size = New System.Drawing.Size(447, 33)
+        Me.Txt_Pass.TabIndex = 3
+        Me.Txt_Pass.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1
         '
@@ -305,20 +307,20 @@ Partial Class frm_desk
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "USER LOGIN"
         '
-        'GunaLineTextBox1
+        'Txt_User
         '
-        Me.GunaLineTextBox1.Animated = True
-        Me.GunaLineTextBox1.BackColor = System.Drawing.Color.White
-        Me.GunaLineTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.GunaLineTextBox1.FocusedLineColor = System.Drawing.Color.Salmon
-        Me.GunaLineTextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.GunaLineTextBox1.LineColor = System.Drawing.Color.Gainsboro
-        Me.GunaLineTextBox1.Location = New System.Drawing.Point(15, 232)
-        Me.GunaLineTextBox1.Name = "GunaLineTextBox1"
-        Me.GunaLineTextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.GunaLineTextBox1.Size = New System.Drawing.Size(447, 33)
-        Me.GunaLineTextBox1.TabIndex = 1
-        Me.GunaLineTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Txt_User.Animated = True
+        Me.Txt_User.BackColor = System.Drawing.Color.White
+        Me.Txt_User.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Txt_User.FocusedLineColor = System.Drawing.Color.Salmon
+        Me.Txt_User.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Txt_User.LineColor = System.Drawing.Color.Gainsboro
+        Me.Txt_User.Location = New System.Drawing.Point(15, 232)
+        Me.Txt_User.Name = "Txt_User"
+        Me.Txt_User.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.Txt_User.Size = New System.Drawing.Size(447, 33)
+        Me.Txt_User.TabIndex = 1
+        Me.Txt_User.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Panel3
         '
@@ -367,9 +369,9 @@ Partial Class frm_desk
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel3 As Panel
     Friend WithEvents GunaElipse1 As Guna.UI.WinForms.GunaElipse
-    Friend WithEvents GunaLineTextBox2 As Guna.UI.WinForms.GunaLineTextBox
+    Friend WithEvents Txt_Pass As Guna.UI.WinForms.GunaLineTextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents GunaLineTextBox1 As Guna.UI.WinForms.GunaLineTextBox
+    Friend WithEvents Txt_User As Guna.UI.WinForms.GunaLineTextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
@@ -386,4 +388,6 @@ Partial Class frm_desk
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents lbl_dbNotif As Label
     Friend WithEvents tmr_connStatus As Timer
+    Friend WithEvents BackgroundWorker2 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents Timer1 As Timer
 End Class

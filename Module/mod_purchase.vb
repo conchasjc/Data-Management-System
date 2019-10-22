@@ -35,11 +35,12 @@ Module mod_purchase
 
     Public Function getLoad(category)
         Try
-            Dim query = "select file as DRAWING_FILE from tblfile where Parts_type='" + category.ToString + "'"
+            Dim query = "select file as DRAWINGFILE from tblfile where Parts_type='" + category.ToString + "'"
 
             Dim adapter As New MySqlDataAdapter(query, conn)
             Dim ds As New DataTable
             adapter.Fill(ds)
+            ds.Columns(0).Caption = "PURCHASED PARTS FILE"
             bSources.DataSource = ds
             Frm_purchased.DataGrid_Files.DataSource = bSources
             conn.Close()
@@ -50,179 +51,54 @@ Module mod_purchase
         Return 0
     End Function
 
-    Public Function getloadCategory()
-        Dim query = "select distinct Category from tblfile"
-        Dim adapter As New MySqlDataAdapter(query, conn)
-        Dim ds As New DataSet
-        adapter.Fill(ds)
-        Frm_purchased.Cmb_Category.DataSource = ds.Tables(0)
-        Frm_purchased.Cmb_Category.DisplayMember = "Category"
-        Frm_PurchAdd.ComboBox1.DataSource = ds.Tables(0)
-        Frm_PurchAdd.ComboBox1.DisplayMember = "Category"
-        conn.Close()
-        Return 0
-    End Function
 
-    Public Function LoadPartTypes()
+
+    Public Function LoadPartTypes(category)
         Dim query As String
-        query = "select distinct Parts_type as PARTS_TYPE from tblfile where category='" + Frm_purchased.Cmb_Category.Text + "' order by Parts_type"
+        query = "select distinct Parts_type as PARTS_TYPE from tblfile where category='" + category + "' order by Parts_type"
         Dim adapter As New MySqlDataAdapter(query, conn)
         Dim ds As New DataSet
         adapter.Fill(ds)
 
         Frm_purchased.DataGrid_Parts.DataSource = ds.Tables(0)
-        Frm_PurchAdd.ComboBox2.DataSource = ds.Tables(0)
-        Frm_PurchAdd.ComboBox2.DisplayMember = "Parts_type"
-        Frm_PurchAdd.ComboBox1.DataSource = ds.Tables(0)
+
         conn.Close()
         Return 0
     End Function
-
-
-
-    Public Function GetAllParts()
+    Dim AllFile As New BindingSource
+    Public Function LoadAll()
+        Dim conn As New MySqlConnection("host=" + My.Settings.sett_dbSource + "; username = " + My.Settings.sett_dbUsername + "; password=" + My.Settings.sett_dbPass + "; database=" + My.Settings.sett_dbName + ";character set=utf8;")
         Dim querys As String
-        querys = "select distinct Parts_type as PARTS_TYPE from tblfile "
+        querys = "select file as DRAWINGFILE from tblfile "
         Dim adapters As New MySqlDataAdapter(querys, conn)
         Dim dss As New DataTable
+
+
+
         adapters.Fill(dss)
 
-        bSource.DataSource = dss
-
-        Frm_purchased.DataGrid_Parts.DataSource = bSource
-
+        AllFile.DataSource = dss
+        Frm_purchased.DataGrid_Files.DataSource = AllFile
         conn.Close()
+        adapters.Dispose()
         Return 0
     End Function
-
-    Public Function GetAllfiles()
-        Dim querys As String
-        querys = "select file as DRAWING_FILE from tblfile "
-        Dim adapters As New MySqlDataAdapter(querys, conn)
-        Dim dss As New DataTable
-        adapters.Fill(dss)
-        bSources.DataSource = dss
-        Frm_purchased.DataGrid_Files.DataSource = bSources
-        conn.Close()
-        Return 0
-    End Function
-
-    Public Function FilterParts()
-        If Frm_purchased.ComboBox1.SelectedIndex = 0 Then
-            bSource.Filter = "PARTS_TYPE like '%" & Frm_purchased.Txt_TextSearch.Text & "%'"
-        ElseIf Frm_purchased.ComboBox1.SelectedIndex = 1 Then
-            bSources.Filter = "DRAWING_FILE like '%" & Frm_purchased.Txt_TextSearch.Text & "%'"
+    Public Function FileFilter(cat)
+        If Frm_purchased.CheckBox1.Checked = True Then
+            AllFile.RemoveFilter()
+            AllFile.Filter = "DRAWINGFILE like '%" & Frm_purchased.Txt_TextSearch.Text & "%'"
         Else
-            bSources.Filter = "DRAWING_FILE like '%" & Frm_purchased.Txt_TextSearch.Text & "%'"
+            If cat = True Then
+                bSources.RemoveFilter()
+                bSources.Filter = "DRAWINGFILE like '%" & Frm_purchased.Txt_TextSearch.Text & "%'"
+            Else
+                bSources.RemoveFilter()
+                bSources.Filter = "DRAWINGFILE like '%" & Frm_purchased.Txt_TextSearch.Text & "%'"
+
+            End If
         End If
         Return 0
     End Function
-
-
-
-
-
-    Public Function QuickDownload2(downloadFile)
-        Try
-            Dim cmd As New MySqlCommand("select * from tblfile where file='" + downloadFile + "';", conn)
-            Dim sqL_adapter As New MySqlDataAdapter(cmd)
-            Dim table As New DataTable
-            Dim LineOfText As String
-            Dim filename() As String
-            Dim MyData() As Byte
-            Dim K As Long
-            sqL_adapter.Fill(table)
-            MyData = table.Rows(0)(3)
-            K = UBound(MyData)
-
-            filename = downloadFile.ToString.Split("/")
-            LineOfText = String.Join("-", filename)
-            Dim fs As New FileStream(My.Settings.sett_locpath + "/DownloadedParts/" + LineOfText, FileMode.OpenOrCreate, FileAccess.Write)
-            fs.Write(MyData, 0, K)
-
-            fs.Close()
-
-            LoadPartTypes()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-
-        End Try
-        Return 0
-    End Function
-
-
-    Public Function previewFile3(downloadFile)
-        Try
-            Dim cmd As New MySqlCommand("select * from tblfile where file='" + downloadFile + "';", conn)
-            Dim table As New DataTable
-
-            Dim sqL_adapters As New MySqlDataAdapter(cmd)
-            Dim LineOfText As String
-            Dim filename() As String
-            Dim MyData() As Byte
-            Dim K As Long
-
-
-            sqL_adapters.Fill(table)
-            MyData = table.Rows(0)(3)
-            K = UBound(MyData)
-
-            filename = downloadFile.ToString.Split("/")
-            LineOfText = String.Join("-", filename)
-            Dim fs As New FileStream(My.Application.Info.DirectoryPath + "/temp/" + LineOfText, FileMode.OpenOrCreate, FileAccess.Write)
-            fs.Write(MyData, 0, K)
-
-            fs.Close()
-            System.Diagnostics.Process.Start(My.Application.Info.DirectoryPath + "/temp/" + LineOfText)
-            LoadPartTypes()
-            Frm_purchased.Tmr_PreviewFile.Stop()
-            Frm_purchased.Panel1.Visible = False
-            Frm_purchased.GunaProgressBar1.Style = Guna.UI.WinForms.ProgressBarStyle.Blocks
-            Frm_purchased.GunaLabel2.Text = "Downloading Files"
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        Finally
-            Frm_purchased.Panel1.Visible = False
-        End Try
-        Return 0
-    End Function
-
-
-    Public Function allFile2(downloadFile)
-        Try
-            Dim cmd As New MySqlCommand("select * from tblfile where file='" + downloadFile + "';", conn)
-            Dim sqL_adapter As New MySqlDataAdapter(cmd)
-            Dim table As New DataTable
-            Dim LineOfText As String
-            Dim filename() As String
-            Dim MyData() As Byte
-            Dim K As Long
-            sqL_adapter.Fill(table)
-            MyData = table.Rows(0)(3)
-            K = UBound(MyData)
-            filename = downloadFile.ToString.Split("/")
-            LineOfText = String.Join("-", filename)
-            Dim fs As New FileStream(My.Settings.sett_locpath + "/DownloadedParts/" + LineOfText, FileMode.OpenOrCreate, FileAccess.Write)
-            fs.Write(MyData, 0, K)
-
-            fs.Close()
-
-            LoadPartTypes()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
-        Return 0
-    End Function
-
-
-
-
-
-    ''Codes Under This Line Is for Speed Optimization
-
-
-
-
 
 
 

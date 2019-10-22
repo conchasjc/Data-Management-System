@@ -37,7 +37,7 @@
 
     End Sub
 
-    Private Sub frm_splash_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Frm_Splash_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Start()
         Lbl_SplashNotifier.Text = "Starting Application"
     End Sub
@@ -63,6 +63,7 @@
         Dim res = MessageBox.Show("Exit Program?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If res = vbYes Then
             Me.Close()
+            My.Settings.Login_Status = "offline"
         End If
     End Sub
 End Class

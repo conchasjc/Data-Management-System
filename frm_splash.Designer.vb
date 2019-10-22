@@ -33,10 +33,10 @@ Partial Class frm_splash
         Me.GunaWinCircleProgressIndicator1 = New Guna.UI.WinForms.GunaWinCircleProgressIndicator()
         Me.BackgroundWorker3 = New System.ComponentModel.BackgroundWorker()
         Me.NotifyIcon3 = New System.Windows.Forms.NotifyIcon(Me.components)
-        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Cms_Notify = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.MaximizedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Cms_Notify.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -49,6 +49,7 @@ Partial Class frm_splash
         Me.ProgressBar1.Location = New System.Drawing.Point(0, 351)
         Me.ProgressBar1.Name = "ProgressBar1"
         Me.ProgressBar1.Size = New System.Drawing.Size(777, 24)
+        Me.ProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous
         Me.ProgressBar1.TabIndex = 1
         '
         'BackgroundWorker1
@@ -106,18 +107,18 @@ Partial Class frm_splash
         '
         Me.Cms_Notify.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MaximizedToolStripMenuItem, Me.ExitToolStripMenuItem1})
         Me.Cms_Notify.Name = "cms_notify"
-        Me.Cms_Notify.Size = New System.Drawing.Size(181, 70)
+        Me.Cms_Notify.Size = New System.Drawing.Size(132, 48)
         '
         'MaximizedToolStripMenuItem
         '
         Me.MaximizedToolStripMenuItem.Name = "MaximizedToolStripMenuItem"
-        Me.MaximizedToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.MaximizedToolStripMenuItem.Size = New System.Drawing.Size(131, 22)
         Me.MaximizedToolStripMenuItem.Text = "Maximized"
         '
         'ExitToolStripMenuItem1
         '
         Me.ExitToolStripMenuItem1.Name = "ExitToolStripMenuItem1"
-        Me.ExitToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.ExitToolStripMenuItem1.Size = New System.Drawing.Size(131, 22)
         Me.ExitToolStripMenuItem1.Text = "Exit"
         '
         'frm_splash
@@ -133,6 +134,7 @@ Partial Class frm_splash
         Me.Controls.Add(Me.ProgressBar1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frm_splash"
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frm_splash"
         Me.Cms_Notify.ResumeLayout(False)

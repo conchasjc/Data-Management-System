@@ -36,7 +36,7 @@ Module mod_login
     Dim bSource As New BindingSource
 
 
-    Public Function getDbChar(material)
+    Public Function GetDbChar(material)
         Dim sda As New MySqlDataAdapter
         Dim dbDtaSet As New DataTable
         Try
@@ -54,7 +54,7 @@ Module mod_login
             sda.SelectCommand = com
             sda.Fill(dbDtaSet)
             bSource.DataSource = dbDtaSet
-            frm_char.GunaDataGridView1.DataSource = bSource
+            Frm_Char.GunaDataGridView1.DataSource = bSource
             sda.Update(dbDtaSet)
             conn.CloseAsync()
         Catch ex As Exception
@@ -66,8 +66,8 @@ Module mod_login
 
 
 
-    Public Function getCharFilter()
-        bSource.Filter = "English_Character like '%" & frm_char.GunaTextBox1.Text & "%' or Japanese_Character like '%" & frm_char.GunaTextBox1.Text & "%'"
+    Public Function GetCharFilter()
+        bSource.Filter = "English_Character like '%" & Frm_Char.GunaTextBox1.Text & "%' or Japanese_Character like '%" & Frm_Char.GunaTextBox1.Text & "%'"
         Return 0
     End Function
 

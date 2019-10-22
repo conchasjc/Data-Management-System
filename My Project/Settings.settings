@@ -26,5 +26,8 @@
     <Setting Name="sett_autoDel" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="Login_Status" Type="System.String" Scope="User">
+      <Value Profile="(Default)">offline</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

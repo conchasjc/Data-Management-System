@@ -3,8 +3,13 @@ Imports System.Threading
 Public Class Frm_Main
     Private Sub Frm_main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CheckForIllegalCrossThreadCalls = False
-        frm_desk.MdiParent = Me
-        frm_desk.Show()
+        If My.Settings.Login_Status = "offline" Then
+            frm_desk.MdiParent = Me
+            frm_desk.Show()
+        Else
+            frm_char.MdiParent = Me
+            frm_char.Show()
+        End If
         Tsl_Hover.Text = ""
         Tsb_Char.Text = "Work" + vbNewLine + "Station"
         Tsb_Purchase.Text = "Purchased" + vbNewLine + "Parts"
@@ -48,7 +53,7 @@ Public Class Frm_Main
         frm_char.Close()
         frm_desk.MdiParent = Me
         frm_desk.Show()
-
+        My.Settings.Login_Status = "offline"
 
     End Sub
 

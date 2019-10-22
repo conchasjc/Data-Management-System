@@ -4,10 +4,8 @@ Imports MySql.Data.MySqlClient
 Public Class Frm_purchased
 
     Private Sub Frm_purchased_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        mod_purchase.getloadCategory()
-
-        mod_purchase.getLoad(DataGrid_Parts.CurrentCell.Value)
-
+        RadioButton1.Checked = True
+        ' filtering()
         Me.KeyPreview = True
     End Sub
 
@@ -20,35 +18,23 @@ Public Class Frm_purchased
         getLoad(DataGrid_Parts.CurrentCell.Value)
     End Sub
 
-    Private Sub GunaComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs)
-
-
-    End Sub
 
     Private Sub GunaAdvenceButton1_Click(sender As Object, e As EventArgs) Handles GunaAdvenceButton1.Click
         Frm_PurchAdd.TopMost = True
         Frm_PurchAdd.Show()
     End Sub
 
-    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cmb_Category.SelectedIndexChanged
-        loadPartTypes()
-    End Sub
+
 
     Private Sub GunaDataGridView2_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles DataGrid_Parts.CellEnter
         getLoad(DataGrid_Parts.CurrentCell.Value)
     End Sub
 
     Private Sub Txt_TextSearch_TextChanged(sender As Object, e As EventArgs) Handles Txt_TextSearch.TextChanged
-        filterParts()
+        FileFilter(RadioButton1.Checked)
     End Sub
 
-    Private Sub ComboBox1_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
-        If ComboBox1.SelectedIndex = 0 Then
-            getAllParts()
-        Else
-            getAllfiles()
-        End If
-    End Sub
+
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
@@ -123,7 +109,7 @@ Public Class Frm_purchased
         GunaProgressBar1.Maximum = max
         Do
             GunaLabel4.Text = GunaDataGridView3.Item(0, 0).Value
-            allFile(GunaDataGridView3.Item(0, 0).Value)
+            AllFile(GunaDataGridView3.Item(0, 0).Value)
             GunaDataGridView3.Rows.RemoveAt(0)
             min += 1
 
@@ -185,7 +171,7 @@ Public Class Frm_purchased
 
     Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
         Try
-            QuickDownload(DataGrid_Files.CurrentCell.Value)
+            QuickDownload(DataGrid_Files.CurrentCell.Value, RadioButton1.Checked)
         Catch
         End Try
     End Sub
@@ -210,7 +196,7 @@ Public Class Frm_purchased
     'Preview Background Process
     Private Sub BackgroundWorker3_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles Wrkr_PreviewFile.DoWork
         Try
-            previewFile(DataGrid_Files.CurrentCell.Value)
+            PreviewFile(DataGrid_Files.CurrentCell.Value, RadioButton1.Checked, CheckBox1.Checked)
         Catch
         End Try
     End Sub
@@ -242,25 +228,37 @@ Public Class Frm_purchased
         End If
 
     End Sub
+
+    Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
+        LoadPartTypes(RadioButton1.Text)
+
+    End Sub
+
+    Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
+        LoadPartTypes(RadioButton2.Text)
+
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        If CheckBox1.Checked = True Then
+            DataGrid_Parts.Enabled = False
+            RadioButton1.Enabled = False
+            RadioButton2.Enabled = False
+            Txt_TextSearch.Text = ""
+            LoadAll()
+        Else
+            getLoad(DataGrid_Parts.CurrentCell.Value)
+            DataGrid_Parts.Enabled = True
+            RadioButton1.Enabled = True
+            RadioButton2.Enabled = True
+            Txt_TextSearch.Text = ""
+        End If
+    End Sub
+
+
+
+
     '##################################################################
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 End Class

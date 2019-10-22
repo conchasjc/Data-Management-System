@@ -9,6 +9,7 @@
             MessageBox.Show("Login Successful", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
             frm_char.MdiParent = Frm_Main
             frm_char.Show()
+            My.Settings.Login_Status = "online"
 
         Else
             Txt_Pass.Text = ""
@@ -29,6 +30,7 @@
         Frm_Main.ToolStripMenuItem1.Visible = False
         Frm_Main.Tsb_Char.Enabled = False
         Frm_Main.Tsb_Purchase.Enabled = False
+        Me.KeyPreview = True
     End Sub
 
     Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
@@ -47,4 +49,9 @@
         End If
     End Sub
 
+    Private Sub frm_desk_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            GunaAdvenceButton1.PerformClick()
+        End If
+    End Sub
 End Class

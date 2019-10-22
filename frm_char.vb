@@ -1,4 +1,4 @@
-﻿Public Class frm_char
+﻿Public Class Frm_Char
     Private Sub Frm_char_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Frm_Main.Mts_Logout.Visible = True
         Frm_Main.Mts_Login.Visible = False

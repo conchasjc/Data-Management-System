@@ -9,7 +9,7 @@
 
             Timer1.Stop()
             Me.Hide()
-            Timer2.Start()
+
             Frm_Main.Show()
 
         End If
@@ -66,4 +66,6 @@
             My.Settings.Login_Status = "offline"
         End If
     End Sub
+
+
 End Class

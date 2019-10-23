@@ -36,7 +36,6 @@ Partial Class frm_splash
         Me.Cms_Notify = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.MaximizedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Cms_Notify.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -151,7 +150,6 @@ Partial Class frm_splash
     Friend WithEvents GunaWinCircleProgressIndicator1 As Guna.UI.WinForms.GunaWinCircleProgressIndicator
     Friend WithEvents BackgroundWorker3 As System.ComponentModel.BackgroundWorker
     Friend WithEvents NotifyIcon3 As NotifyIcon
-    Friend WithEvents Timer2 As Timer
     Friend WithEvents Cms_Notify As ContextMenuStrip
     Friend WithEvents MaximizedToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem1 As ToolStripMenuItem

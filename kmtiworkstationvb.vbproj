@@ -94,6 +94,12 @@
     <Compile Include="frm_desk.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Frm_Help.Designer.vb">
+      <DependentUpon>Frm_Help.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Help.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_main.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,8 @@
     <Compile Include="frm_splash.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Module\Database.vb" />
+    <Compile Include="Module\FileAccess.vb" />
     <Compile Include="Module\loadPurchasedParts.vb" />
     <Compile Include="Module\mod_login.vb" />
     <Compile Include="Module\mod_purchase.vb" />
@@ -150,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_desk.resx">
       <DependentUpon>frm_desk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Help.resx">
+      <DependentUpon>Frm_Help.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_main.resx">
       <DependentUpon>frm_main.vb</DependentUpon>

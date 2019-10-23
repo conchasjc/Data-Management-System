@@ -44,6 +44,7 @@ Partial Class Frm_Main
         Me.TimeWorker = New System.ComponentModel.BackgroundWorker()
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.Wrkr_LoadPurch = New System.ComponentModel.BackgroundWorker()
+        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Mst_Main.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.Ts_Menubar.SuspendLayout()
@@ -52,7 +53,7 @@ Partial Class Frm_Main
         'Mst_Main
         '
         Me.Mst_Main.BackColor = System.Drawing.SystemColors.Menu
-        Me.Mst_Main.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.SettingsToolStripMenuItem, Me.MdilistToolStripMenuItem})
+        Me.Mst_Main.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.SettingsToolStripMenuItem, Me.MdilistToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.Mst_Main.Location = New System.Drawing.Point(0, 0)
         Me.Mst_Main.MdiWindowListItem = Me.MdilistToolStripMenuItem
         Me.Mst_Main.Name = "Mst_Main"
@@ -83,7 +84,7 @@ Partial Class Frm_Main
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(165, 22)
         Me.ToolStripMenuItem1.Text = "ICAD Find Action"
         Me.ToolStripMenuItem1.Visible = False
         '
@@ -201,6 +202,12 @@ Partial Class Frm_Main
         Me.NotifyIcon1.Icon = CType(resources.GetObject("NotifyIcon1.Icon"), System.Drawing.Icon)
         Me.NotifyIcon1.Text = "KMTI DATA MANAGEMENT SYSTEM"
         '
+        'HelpToolStripMenuItem
+        '
+        Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
+        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
+        Me.HelpToolStripMenuItem.Text = "&Help"
+        '
         'Frm_Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -246,4 +253,5 @@ Partial Class Frm_Main
     Friend WithEvents ToolStripProgressBar1 As ToolStripProgressBar
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents Wrkr_LoadPurch As System.ComponentModel.BackgroundWorker
+    Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
 End Class

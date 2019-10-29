@@ -54,7 +54,8 @@ Public Class Frm_Main
         frm_desk.MdiParent = Me
         frm_desk.Show()
         My.Settings.Login_Status = "offline"
-
+        frm_splash.TSMenu_Login.Visible = True
+        frm_splash.TSMenu_Logout.Visible = False
     End Sub
 
 
@@ -67,9 +68,7 @@ Public Class Frm_Main
         Tsb_Char.CheckState = CheckState.Unchecked
     End Sub
 
-    Private Sub NotifyIcon1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles NotifyIcon1.MouseDoubleClick
 
-    End Sub
 
 
     Private Sub Frm_Main_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
@@ -85,4 +84,16 @@ Public Class Frm_Main
         System.Diagnostics.Process.Start(My.Settings.sett_actpath)
     End Sub
 
+    Private Sub HelpToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HelpToolStripMenuItem.Click
+        Dim rm As Resources.ResourceManager
+        rm = New Resources.ResourceManager("kmtiworkstationvb.Resources", System.Reflection.Assembly.GetExecutingAssembly)
+        Dim b As Byte()
+        b = rm.GetObject("User_s_Manual")
+        System.IO.File.WriteAllBytes(My.Application.Info.DirectoryPath + "/User-s-Manual.chm", b)
+        System.Diagnostics.Process.Start(My.Application.Info.DirectoryPath + "/User-s-Manual.chm")
+    End Sub
+
+    Private Sub Ts_Menubar_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles Ts_Menubar.ItemClicked
+
+    End Sub
 End Class

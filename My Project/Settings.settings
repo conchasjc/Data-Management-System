@@ -29,5 +29,8 @@
     <Setting Name="Login_Status" Type="System.String" Scope="User">
       <Value Profile="(Default)">offline</Value>
     </Setting>
+    <Setting Name="settings_notSet" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

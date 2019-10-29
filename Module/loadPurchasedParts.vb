@@ -32,7 +32,6 @@ Module loadPurchasedParts
             MachineSource.RemoveFilter()
             MachineSource.Filter = "file Like '" + DownloadFile + "'"
             If MachineSource.Count = 1 Then
-
                 DataFileBinary = MachineSource(0)(3)
             Else
                 OutfittingSource.RemoveFilter()
@@ -91,7 +90,6 @@ Module loadPurchasedParts
             End If
         Dim File As New IcadFileAccess
         File.ICADDownload(downloadFile, DataFileBinary)
-
         MachineSource.RemoveFilter()
         OutfittingSource.RemoveFilter()
 

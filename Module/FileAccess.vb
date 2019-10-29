@@ -1,5 +1,7 @@
 ﻿Imports System.IO
+
 Public Class IcadFileAccess
+
     Dim LineOfText As String
 
     Public Sub ICADWrite(NameOfFile As String, BinaryDataFile() As Byte)

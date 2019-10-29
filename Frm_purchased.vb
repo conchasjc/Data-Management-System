@@ -255,6 +255,18 @@ Public Class Frm_purchased
         End If
     End Sub
 
+    Private Sub Button1_MouseHover(sender As Object, e As EventArgs) Handles Button1.MouseHover
+        ToolTip1.Show("ADD TO DOWNLOAD LIST", Button1)
+    End Sub
+
+    Private Sub Btn_PrevFile_MouseHover(sender As Object, e As EventArgs) Handles Btn_PrevFile.MouseHover
+        ToolTip1.Show("PREVIEW ICAD FILE", Btn_PrevFile)
+    End Sub
+
+    Private Sub Btn_QuickDownload_MouseHover(sender As Object, e As EventArgs) Handles Btn_QuickDownload.MouseHover
+        ToolTip1.Show("DOWNLOAD FILE NOW", Btn_QuickDownload)
+    End Sub
+
 
 
 

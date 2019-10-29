@@ -7,7 +7,7 @@ Public Class Database
         Dim conn As New MySqlConnection("host=" + My.Settings.sett_dbSource + "; username = " + My.Settings.sett_dbUsername + "; password=" + My.Settings.sett_dbPass + "; database=" + My.Settings.sett_dbName + ";character set=utf8;")
         Try
             conn.Open()
-
+            My.Settings.dbConnected = True
             command = New MySqlCommand(query, conn) With {
             .CommandTimeout = 0
             }
@@ -16,7 +16,8 @@ Public Class Database
             sql_adapter.Fill(QueryTable)
             conn.Close()
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show(ex.Message, "DATABASE ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            My.Settings.dbConnected = False
         End Try
 
     End Sub

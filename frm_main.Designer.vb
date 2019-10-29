@@ -32,6 +32,7 @@ Partial Class Frm_Main
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MdilistToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Tsl_Hover = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripProgressBar1 = New System.Windows.Forms.ToolStripProgressBar()
@@ -44,7 +45,6 @@ Partial Class Frm_Main
         Me.TimeWorker = New System.ComponentModel.BackgroundWorker()
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.Wrkr_LoadPurch = New System.ComponentModel.BackgroundWorker()
-        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Mst_Main.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.Ts_Menubar.SuspendLayout()
@@ -106,6 +106,12 @@ Partial Class Frm_Main
         Me.MdilistToolStripMenuItem.Size = New System.Drawing.Size(55, 20)
         Me.MdilistToolStripMenuItem.Text = "mdilist"
         Me.MdilistToolStripMenuItem.Visible = False
+        '
+        'HelpToolStripMenuItem
+        '
+        Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
+        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
+        Me.HelpToolStripMenuItem.Text = "&Help"
         '
         'StatusStrip1
         '
@@ -201,12 +207,6 @@ Partial Class Frm_Main
         Me.NotifyIcon1.BalloonTipTitle = "KMTI DATA  MANAGEMENT SYSTEM"
         Me.NotifyIcon1.Icon = CType(resources.GetObject("NotifyIcon1.Icon"), System.Drawing.Icon)
         Me.NotifyIcon1.Text = "KMTI DATA MANAGEMENT SYSTEM"
-        '
-        'HelpToolStripMenuItem
-        '
-        Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
-        Me.HelpToolStripMenuItem.Text = "&Help"
         '
         'Frm_Main
         '

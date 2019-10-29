@@ -34,7 +34,8 @@ Partial Class frm_splash
         Me.BackgroundWorker3 = New System.ComponentModel.BackgroundWorker()
         Me.NotifyIcon3 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.Cms_Notify = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.MaximizedToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSMenu_Logout = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TSMenu_Login = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Cms_Notify.SuspendLayout()
         Me.SuspendLayout()
@@ -104,20 +105,27 @@ Partial Class frm_splash
         '
         'Cms_Notify
         '
-        Me.Cms_Notify.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MaximizedToolStripMenuItem, Me.ExitToolStripMenuItem1})
+        Me.Cms_Notify.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSMenu_Logout, Me.TSMenu_Login, Me.ExitToolStripMenuItem1})
         Me.Cms_Notify.Name = "cms_notify"
-        Me.Cms_Notify.Size = New System.Drawing.Size(132, 48)
+        Me.Cms_Notify.Size = New System.Drawing.Size(161, 70)
         '
-        'MaximizedToolStripMenuItem
+        'TSMenu_Logout
         '
-        Me.MaximizedToolStripMenuItem.Name = "MaximizedToolStripMenuItem"
-        Me.MaximizedToolStripMenuItem.Size = New System.Drawing.Size(131, 22)
-        Me.MaximizedToolStripMenuItem.Text = "Maximized"
+        Me.TSMenu_Logout.Name = "TSMenu_Logout"
+        Me.TSMenu_Logout.Size = New System.Drawing.Size(160, 22)
+        Me.TSMenu_Logout.Text = "Logout Account"
+        Me.TSMenu_Logout.Visible = False
+        '
+        'TSMenu_Login
+        '
+        Me.TSMenu_Login.Name = "TSMenu_Login"
+        Me.TSMenu_Login.Size = New System.Drawing.Size(160, 22)
+        Me.TSMenu_Login.Text = "Login Account"
         '
         'ExitToolStripMenuItem1
         '
         Me.ExitToolStripMenuItem1.Name = "ExitToolStripMenuItem1"
-        Me.ExitToolStripMenuItem1.Size = New System.Drawing.Size(131, 22)
+        Me.ExitToolStripMenuItem1.Size = New System.Drawing.Size(160, 22)
         Me.ExitToolStripMenuItem1.Text = "Exit"
         '
         'frm_splash
@@ -151,6 +159,7 @@ Partial Class frm_splash
     Friend WithEvents BackgroundWorker3 As System.ComponentModel.BackgroundWorker
     Friend WithEvents NotifyIcon3 As NotifyIcon
     Friend WithEvents Cms_Notify As ContextMenuStrip
-    Friend WithEvents MaximizedToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TSMenu_Logout As ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents TSMenu_Login As ToolStripMenuItem
 End Class

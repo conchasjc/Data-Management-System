@@ -161,6 +161,18 @@ Namespace My
                 Me("Login_Status") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property settings_notSet() As Boolean
+            Get
+                Return CType(Me("settings_notSet"),Boolean)
+            End Get
+            Set
+                Me("settings_notSet") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

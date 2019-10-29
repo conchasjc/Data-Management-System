@@ -231,7 +231,6 @@
     </None>
     <None Include="App.config" />
     <None Include="Resources\User-s-Manual.chm" />
-    <None Include="User-s-Manual.chm" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="kmtioriglogo1.ico" />

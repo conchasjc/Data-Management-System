@@ -626,7 +626,7 @@ Partial Class Frm_Char
         Me.GunaDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(54, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -642,6 +642,7 @@ Partial Class Frm_Char
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.GunaDataGridView1.DefaultCellStyle = DataGridViewCellStyle3
+        Me.GunaDataGridView1.EnableHeadersVisualStyles = False
         Me.GunaDataGridView1.GridColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(184, Byte), Integer))
         Me.GunaDataGridView1.Location = New System.Drawing.Point(51, 121)
         Me.GunaDataGridView1.MultiSelect = False
@@ -690,9 +691,9 @@ Partial Class Frm_Char
         '
         'GunaTextBox1
         '
+        Me.GunaTextBox1.BackColor = System.Drawing.Color.Transparent
         Me.GunaTextBox1.BaseColor = System.Drawing.Color.White
         Me.GunaTextBox1.BorderColor = System.Drawing.Color.LightSteelBlue
-        Me.GunaTextBox1.BorderSize = 2
         Me.GunaTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.GunaTextBox1.FocusedBaseColor = System.Drawing.Color.White
         Me.GunaTextBox1.FocusedBorderColor = System.Drawing.Color.Salmon

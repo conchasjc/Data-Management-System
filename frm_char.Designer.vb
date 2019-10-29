@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class frm_char
+Partial Class Frm_Char
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -23,11 +23,12 @@ Partial Class frm_char
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_char))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_Char))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GunaPanel1 = New Guna.UI.WinForms.GunaPanel()
         Me.GunaLabel1 = New Guna.UI.WinForms.GunaLabel()
         Me.pnl_char = New Guna.UI.WinForms.GunaPanel()
@@ -625,7 +626,7 @@ Partial Class frm_char
         Me.GunaDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(54, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("MS UI Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -641,7 +642,6 @@ Partial Class frm_char
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.GunaDataGridView1.DefaultCellStyle = DataGridViewCellStyle3
-        Me.GunaDataGridView1.EnableHeadersVisualStyles = False
         Me.GunaDataGridView1.GridColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(184, Byte), Integer))
         Me.GunaDataGridView1.Location = New System.Drawing.Point(51, 121)
         Me.GunaDataGridView1.MultiSelect = False
@@ -658,6 +658,8 @@ Partial Class frm_char
         Me.GunaDataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.GunaDataGridView1.RowHeadersVisible = False
         Me.GunaDataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaDataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle5
         Me.GunaDataGridView1.RowTemplate.Height = 21
         Me.GunaDataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.GunaDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
@@ -1118,7 +1120,7 @@ Partial Class frm_char
         Me.GunaElipse1.Radius = 5
         Me.GunaElipse1.TargetControl = Me.GunaPanel5
         '
-        'frm_char
+        'Frm_Char
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -1130,7 +1132,7 @@ Partial Class frm_char
         Me.Controls.Add(Me.pnl_char)
         Me.Controls.Add(Me.GunaPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "frm_char"
+        Me.Name = "Frm_Char"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Work Station"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

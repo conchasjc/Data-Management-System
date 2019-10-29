@@ -9,7 +9,7 @@
 
             Timer1.Stop()
             Me.Hide()
-            Timer2.Start()
+
             Frm_Main.Show()
 
         End If
@@ -38,8 +38,19 @@
     End Sub
 
     Private Sub Frm_Splash_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Timer1.Start()
-        Lbl_SplashNotifier.Text = "Starting Application"
+        If My.Settings.settings_notSet = True Then
+            Me.Hide()
+            Dim res = MessageBox.Show("Database Not Connected,Connect Now?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
+            If res = vbYes Then
+                frm_settings.Show()
+            Else
+                Me.Close()
+            End If
+        Else
+                Timer1.Start()
+            Lbl_SplashNotifier.Text = "Starting Application"
+        End If
+
     End Sub
 
     Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
@@ -66,4 +77,17 @@
             My.Settings.Login_Status = "offline"
         End If
     End Sub
+
+    Private Sub MaximizedToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TSMenu_Logout.Click
+        Frm_Main.Mts_Logout.PerformClick()
+        TSMenu_Logout.Visible = False
+        TSMenu_Login.Visible = True
+    End Sub
+
+    Private Sub TSMenu_Login_Click(sender As Object, e As EventArgs) Handles TSMenu_Login.Click
+        Frm_Main.Show()
+
+    End Sub
+
+
 End Class

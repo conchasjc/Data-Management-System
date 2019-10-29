@@ -32,6 +32,7 @@ Partial Class Frm_Main
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MdilistToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Tsl_Hover = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripProgressBar1 = New System.Windows.Forms.ToolStripProgressBar()
@@ -52,7 +53,7 @@ Partial Class Frm_Main
         'Mst_Main
         '
         Me.Mst_Main.BackColor = System.Drawing.SystemColors.Menu
-        Me.Mst_Main.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.SettingsToolStripMenuItem, Me.MdilistToolStripMenuItem})
+        Me.Mst_Main.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.SettingsToolStripMenuItem, Me.MdilistToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.Mst_Main.Location = New System.Drawing.Point(0, 0)
         Me.Mst_Main.MdiWindowListItem = Me.MdilistToolStripMenuItem
         Me.Mst_Main.Name = "Mst_Main"
@@ -83,7 +84,7 @@ Partial Class Frm_Main
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(165, 22)
         Me.ToolStripMenuItem1.Text = "ICAD Find Action"
         Me.ToolStripMenuItem1.Visible = False
         '
@@ -105,6 +106,12 @@ Partial Class Frm_Main
         Me.MdilistToolStripMenuItem.Size = New System.Drawing.Size(55, 20)
         Me.MdilistToolStripMenuItem.Text = "mdilist"
         Me.MdilistToolStripMenuItem.Visible = False
+        '
+        'HelpToolStripMenuItem
+        '
+        Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
+        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
+        Me.HelpToolStripMenuItem.Text = "&Help"
         '
         'StatusStrip1
         '
@@ -246,4 +253,5 @@ Partial Class Frm_Main
     Friend WithEvents ToolStripProgressBar1 As ToolStripProgressBar
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents Wrkr_LoadPurch As System.ComponentModel.BackgroundWorker
+    Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -112,7 +112,7 @@ Public Class Frm_purchased
             AllFile(GunaDataGridView3.Item(0, 0).Value)
             GunaDataGridView3.Rows.RemoveAt(0)
             min += 1
-
+            System.Threading.Thread.Sleep(400)
         Loop Until min = max
         GunaLabel4.Text = ""
     End Sub
@@ -171,7 +171,7 @@ Public Class Frm_purchased
 
     Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
         Try
-            QuickDownload(DataGrid_Files.CurrentCell.Value, RadioButton1.Checked)
+            QuickDownload(DataGrid_Files.CurrentCell.Value, RadioButton1.Checked, CheckBox1.Checked)
         Catch
         End Try
     End Sub
@@ -253,6 +253,18 @@ Public Class Frm_purchased
             RadioButton2.Enabled = True
             Txt_TextSearch.Text = ""
         End If
+    End Sub
+
+    Private Sub Button1_MouseHover(sender As Object, e As EventArgs) Handles Button1.MouseHover
+        ToolTip1.Show("ADD TO DOWNLOAD LIST", Button1)
+    End Sub
+
+    Private Sub Btn_PrevFile_MouseHover(sender As Object, e As EventArgs) Handles Btn_PrevFile.MouseHover
+        ToolTip1.Show("PREVIEW ICAD FILE", Btn_PrevFile)
+    End Sub
+
+    Private Sub Btn_QuickDownload_MouseHover(sender As Object, e As EventArgs) Handles Btn_QuickDownload.MouseHover
+        ToolTip1.Show("DOWNLOAD FILE NOW", Btn_QuickDownload)
     End Sub
 
 

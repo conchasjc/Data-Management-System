@@ -28,6 +28,7 @@
         My.Settings.sett_dbName = txt_dbName.Text
         My.Settings.sett_dbUsername = txt_dbUsername.Text
         My.Settings.sett_dbPass = txt_dbPassword.Text
+        My.Settings.settings_notSet = False
         My.Settings.Save()
     End Sub
 
@@ -98,6 +99,7 @@
             Else
                 My.Settings.sett_autoDel = False
             End If
+            My.Settings.settings_notSet = False
             My.Settings.Save()
             MessageBox.Show("Settings Applied Successfully.", "Settings Applied", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Me.Close()

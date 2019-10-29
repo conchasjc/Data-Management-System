@@ -44,10 +44,10 @@ Module mod_login
             Dim query As String
             Dim com As MySqlCommand
             If material = "" Then
-                query = "select eng_char as English_Character,jp_char as Japanese_Character from char_search"
+                query = "select eng_char as ENGLISH,jp_char as JAPANESE from char_search"
             Else
 
-                query = "select eng_char as English_Character,jp_char as Japanese_Character from heat_trmnt where category='" + material + "'"
+                query = "select eng_char as ENGLISH,jp_char as JAPANESE from heat_trmnt where category='" + material + "'"
 
             End If
             com = New MySqlCommand(query, conn)
@@ -67,7 +67,7 @@ Module mod_login
 
 
     Public Function GetCharFilter()
-        bSource.Filter = "English_Character like '%" & Frm_Char.GunaTextBox1.Text & "%' or Japanese_Character like '%" & Frm_Char.GunaTextBox1.Text & "%'"
+        bSource.Filter = "ENGLISH like '%" & Frm_Char.GunaTextBox1.Text & "%' or JAPANESE like '%" & Frm_Char.GunaTextBox1.Text & "%'"
         Return 0
     End Function
 

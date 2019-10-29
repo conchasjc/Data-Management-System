@@ -10,7 +10,8 @@
             frm_char.MdiParent = Frm_Main
             frm_char.Show()
             My.Settings.Login_Status = "online"
-
+            frm_splash.TSMenu_Login.Visible = False
+            frm_splash.TSMenu_Logout.Visible = True
         Else
             Txt_Pass.Text = ""
             Txt_User.Text = ""

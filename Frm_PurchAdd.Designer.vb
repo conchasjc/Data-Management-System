@@ -27,13 +27,11 @@ Partial Class Frm_PurchAdd
         Me.GunaPanel1 = New Guna.UI.WinForms.GunaPanel()
         Me.GunaLabel3 = New Guna.UI.WinForms.GunaLabel()
         Me.GunaControlBox1 = New Guna.UI.WinForms.GunaControlBox()
-        Me.GunaTextBox1 = New Guna.UI.WinForms.GunaTextBox()
         Me.GunaTextBox2 = New Guna.UI.WinForms.GunaTextBox()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.GunaAdvenceButton2 = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.GunaAdvenceButton1 = New Guna.UI.WinForms.GunaAdvenceButton()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.Cmb_PartsType = New System.Windows.Forms.ComboBox()
         Me.GunaDragControl1 = New Guna.UI.WinForms.GunaDragControl(Me.components)
         Me.GunaLabel1 = New Guna.UI.WinForms.GunaLabel()
         Me.GunaLabel2 = New Guna.UI.WinForms.GunaLabel()
@@ -41,8 +39,12 @@ Partial Class Frm_PurchAdd
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.GunaElipsePanel1 = New Guna.UI.WinForms.GunaElipsePanel()
         Me.GunaWinCircleProgressIndicator1 = New Guna.UI.WinForms.GunaWinCircleProgressIndicator()
+        Me.Radio_Outfit = New System.Windows.Forms.RadioButton()
+        Me.Radio_Machine = New System.Windows.Forms.RadioButton()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GunaPanel1.SuspendLayout()
         Me.GunaElipsePanel1.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GunaPanel1
@@ -76,46 +78,27 @@ Partial Class Frm_PurchAdd
         Me.GunaControlBox1.IconSize = 15.0!
         Me.GunaControlBox1.Location = New System.Drawing.Point(623, 3)
         Me.GunaControlBox1.Name = "GunaControlBox1"
-        Me.GunaControlBox1.OnHoverBackColor = System.Drawing.Color.FromArgb(CType(CType(103, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(183, Byte), Integer))
+        Me.GunaControlBox1.OnHoverBackColor = System.Drawing.Color.Maroon
         Me.GunaControlBox1.OnHoverIconColor = System.Drawing.Color.White
         Me.GunaControlBox1.OnPressedColor = System.Drawing.Color.Black
         Me.GunaControlBox1.Size = New System.Drawing.Size(30, 30)
         Me.GunaControlBox1.TabIndex = 0
         '
-        'GunaTextBox1
-        '
-        Me.GunaTextBox1.BaseColor = System.Drawing.Color.White
-        Me.GunaTextBox1.BorderColor = System.Drawing.Color.LightSteelBlue
-        Me.GunaTextBox1.BorderSize = 2
-        Me.GunaTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.GunaTextBox1.Enabled = False
-        Me.GunaTextBox1.FocusedBaseColor = System.Drawing.Color.White
-        Me.GunaTextBox1.FocusedBorderColor = System.Drawing.Color.Salmon
-        Me.GunaTextBox1.FocusedForeColor = System.Drawing.SystemColors.ControlText
-        Me.GunaTextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.GunaTextBox1.Location = New System.Drawing.Point(106, 147)
-        Me.GunaTextBox1.Name = "GunaTextBox1"
-        Me.GunaTextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.GunaTextBox1.Radius = 10
-        Me.GunaTextBox1.Size = New System.Drawing.Size(508, 26)
-        Me.GunaTextBox1.TabIndex = 6
-        '
         'GunaTextBox2
         '
+        Me.GunaTextBox2.BackColor = System.Drawing.Color.Transparent
         Me.GunaTextBox2.BaseColor = System.Drawing.Color.White
         Me.GunaTextBox2.BorderColor = System.Drawing.Color.LightSteelBlue
-        Me.GunaTextBox2.BorderSize = 2
         Me.GunaTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.GunaTextBox2.Enabled = False
         Me.GunaTextBox2.FocusedBaseColor = System.Drawing.Color.White
         Me.GunaTextBox2.FocusedBorderColor = System.Drawing.Color.Salmon
         Me.GunaTextBox2.FocusedForeColor = System.Drawing.SystemColors.ControlText
         Me.GunaTextBox2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.GunaTextBox2.Location = New System.Drawing.Point(106, 241)
+        Me.GunaTextBox2.Location = New System.Drawing.Point(6, 18)
         Me.GunaTextBox2.Name = "GunaTextBox2"
         Me.GunaTextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.GunaTextBox2.Radius = 10
-        Me.GunaTextBox2.Size = New System.Drawing.Size(508, 26)
+        Me.GunaTextBox2.Size = New System.Drawing.Size(584, 26)
         Me.GunaTextBox2.TabIndex = 7
         '
         'ListBox1
@@ -124,9 +107,9 @@ Partial Class Frm_PurchAdd
         Me.ListBox1.FormattingEnabled = True
         Me.ListBox1.HorizontalScrollbar = True
         Me.ListBox1.ItemHeight = 12
-        Me.ListBox1.Location = New System.Drawing.Point(52, 302)
+        Me.ListBox1.Location = New System.Drawing.Point(28, 249)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(562, 280)
+        Me.ListBox1.Size = New System.Drawing.Size(596, 304)
         Me.ListBox1.TabIndex = 9
         '
         'GunaAdvenceButton2
@@ -147,7 +130,7 @@ Partial Class Frm_PurchAdd
         Me.GunaAdvenceButton2.Image = Nothing
         Me.GunaAdvenceButton2.ImageSize = New System.Drawing.Size(20, 20)
         Me.GunaAdvenceButton2.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.GunaAdvenceButton2.Location = New System.Drawing.Point(504, 627)
+        Me.GunaAdvenceButton2.Location = New System.Drawing.Point(515, 572)
         Me.GunaAdvenceButton2.Name = "GunaAdvenceButton2"
         Me.GunaAdvenceButton2.OnHoverBaseColor = System.Drawing.Color.IndianRed
         Me.GunaAdvenceButton2.OnHoverBorderColor = System.Drawing.Color.Black
@@ -179,7 +162,7 @@ Partial Class Frm_PurchAdd
         Me.GunaAdvenceButton1.Image = Nothing
         Me.GunaAdvenceButton1.ImageSize = New System.Drawing.Size(20, 20)
         Me.GunaAdvenceButton1.LineColor = System.Drawing.Color.DarkGreen
-        Me.GunaAdvenceButton1.Location = New System.Drawing.Point(388, 627)
+        Me.GunaAdvenceButton1.Location = New System.Drawing.Point(399, 572)
         Me.GunaAdvenceButton1.Name = "GunaAdvenceButton1"
         Me.GunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.MediumSeaGreen
         Me.GunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.MediumSeaGreen
@@ -192,21 +175,14 @@ Partial Class Frm_PurchAdd
         Me.GunaAdvenceButton1.Text = "ADD FILE"
         Me.GunaAdvenceButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'ComboBox1
+        'Cmb_PartsType
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(106, 121)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(507, 20)
-        Me.ComboBox1.TabIndex = 1
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(106, 215)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(507, 20)
-        Me.ComboBox2.TabIndex = 2
+        Me.Cmb_PartsType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Cmb_PartsType.FormattingEnabled = True
+        Me.Cmb_PartsType.Location = New System.Drawing.Point(106, 157)
+        Me.Cmb_PartsType.Name = "Cmb_PartsType"
+        Me.Cmb_PartsType.Size = New System.Drawing.Size(519, 20)
+        Me.Cmb_PartsType.TabIndex = 2
         '
         'GunaDragControl1
         '
@@ -216,7 +192,7 @@ Partial Class Frm_PurchAdd
         '
         Me.GunaLabel1.AutoSize = True
         Me.GunaLabel1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.GunaLabel1.Location = New System.Drawing.Point(30, 122)
+        Me.GunaLabel1.Location = New System.Drawing.Point(25, 122)
         Me.GunaLabel1.Name = "GunaLabel1"
         Me.GunaLabel1.Size = New System.Drawing.Size(70, 15)
         Me.GunaLabel1.TabIndex = 14
@@ -226,7 +202,7 @@ Partial Class Frm_PurchAdd
         '
         Me.GunaLabel2.AutoSize = True
         Me.GunaLabel2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.GunaLabel2.Location = New System.Drawing.Point(25, 216)
+        Me.GunaLabel2.Location = New System.Drawing.Point(25, 158)
         Me.GunaLabel2.Name = "GunaLabel2"
         Me.GunaLabel2.Size = New System.Drawing.Size(75, 15)
         Me.GunaLabel2.TabIndex = 15
@@ -238,11 +214,12 @@ Partial Class Frm_PurchAdd
         '
         'GunaElipsePanel1
         '
+        Me.GunaElipsePanel1.BackColor = System.Drawing.Color.Transparent
         Me.GunaElipsePanel1.BaseColor = System.Drawing.Color.White
         Me.GunaElipsePanel1.Controls.Add(Me.GunaWinCircleProgressIndicator1)
-        Me.GunaElipsePanel1.Location = New System.Drawing.Point(52, 302)
+        Me.GunaElipsePanel1.Location = New System.Drawing.Point(29, 308)
         Me.GunaElipsePanel1.Name = "GunaElipsePanel1"
-        Me.GunaElipsePanel1.Size = New System.Drawing.Size(562, 280)
+        Me.GunaElipsePanel1.Size = New System.Drawing.Size(596, 227)
         Me.GunaElipsePanel1.TabIndex = 16
         Me.GunaElipsePanel1.Visible = False
         '
@@ -250,27 +227,67 @@ Partial Class Frm_PurchAdd
         '
         Me.GunaWinCircleProgressIndicator1.BackColor = System.Drawing.Color.Transparent
         Me.GunaWinCircleProgressIndicator1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.GunaWinCircleProgressIndicator1.Location = New System.Drawing.Point(248, 90)
+        Me.GunaWinCircleProgressIndicator1.Location = New System.Drawing.Point(262, 94)
         Me.GunaWinCircleProgressIndicator1.Name = "GunaWinCircleProgressIndicator1"
         Me.GunaWinCircleProgressIndicator1.ProgressColor = System.Drawing.Color.DodgerBlue
         Me.GunaWinCircleProgressIndicator1.Size = New System.Drawing.Size(79, 75)
         Me.GunaWinCircleProgressIndicator1.TabIndex = 0
         '
+        'Radio_Outfit
+        '
+        Me.Radio_Outfit.AutoSize = True
+        Me.Radio_Outfit.BackColor = System.Drawing.Color.Transparent
+        Me.Radio_Outfit.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Radio_Outfit.Font = New System.Drawing.Font("MS UI Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Radio_Outfit.ForeColor = System.Drawing.Color.Black
+        Me.Radio_Outfit.Location = New System.Drawing.Point(332, 119)
+        Me.Radio_Outfit.Name = "Radio_Outfit"
+        Me.Radio_Outfit.Size = New System.Drawing.Size(195, 19)
+        Me.Radio_Outfit.TabIndex = 23
+        Me.Radio_Outfit.Text = "Outfitting Purchased Parts"
+        Me.Radio_Outfit.UseVisualStyleBackColor = False
+        '
+        'Radio_Machine
+        '
+        Me.Radio_Machine.AutoSize = True
+        Me.Radio_Machine.BackColor = System.Drawing.Color.Transparent
+        Me.Radio_Machine.Checked = True
+        Me.Radio_Machine.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Radio_Machine.Font = New System.Drawing.Font("MS UI Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Radio_Machine.ForeColor = System.Drawing.Color.Black
+        Me.Radio_Machine.Location = New System.Drawing.Point(119, 119)
+        Me.Radio_Machine.Name = "Radio_Machine"
+        Me.Radio_Machine.Size = New System.Drawing.Size(188, 19)
+        Me.Radio_Machine.TabIndex = 22
+        Me.Radio_Machine.TabStop = True
+        Me.Radio_Machine.Text = "Machine Purchased Parts"
+        Me.Radio_Machine.UseVisualStyleBackColor = False
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.GunaTextBox2)
+        Me.GroupBox1.Location = New System.Drawing.Point(28, 183)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(596, 57)
+        Me.GroupBox1.TabIndex = 24
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "INSERT NEW PARTS TYPE"
+        '
         'Frm_PurchAdd
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(656, 681)
+        Me.ClientSize = New System.Drawing.Size(656, 621)
+        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.Radio_Outfit)
+        Me.Controls.Add(Me.Radio_Machine)
         Me.Controls.Add(Me.GunaElipsePanel1)
         Me.Controls.Add(Me.GunaLabel2)
         Me.Controls.Add(Me.GunaLabel1)
-        Me.Controls.Add(Me.ComboBox2)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.Cmb_PartsType)
         Me.Controls.Add(Me.GunaAdvenceButton2)
         Me.Controls.Add(Me.GunaAdvenceButton1)
         Me.Controls.Add(Me.ListBox1)
-        Me.Controls.Add(Me.GunaTextBox2)
-        Me.Controls.Add(Me.GunaTextBox1)
         Me.Controls.Add(Me.GunaPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Frm_PurchAdd"
@@ -280,6 +297,7 @@ Partial Class Frm_PurchAdd
         Me.GunaPanel1.ResumeLayout(False)
         Me.GunaPanel1.PerformLayout()
         Me.GunaElipsePanel1.ResumeLayout(False)
+        Me.GroupBox1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -287,13 +305,11 @@ Partial Class Frm_PurchAdd
 
     Friend WithEvents GunaPanel1 As Guna.UI.WinForms.GunaPanel
     Friend WithEvents GunaControlBox1 As Guna.UI.WinForms.GunaControlBox
-    Friend WithEvents GunaTextBox1 As Guna.UI.WinForms.GunaTextBox
     Friend WithEvents GunaTextBox2 As Guna.UI.WinForms.GunaTextBox
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents GunaAdvenceButton2 As Guna.UI.WinForms.GunaAdvenceButton
     Friend WithEvents GunaAdvenceButton1 As Guna.UI.WinForms.GunaAdvenceButton
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents Cmb_PartsType As ComboBox
     Friend WithEvents GunaDragControl1 As Guna.UI.WinForms.GunaDragControl
     Friend WithEvents GunaLabel3 As Guna.UI.WinForms.GunaLabel
     Friend WithEvents GunaLabel1 As Guna.UI.WinForms.GunaLabel
@@ -302,4 +318,7 @@ Partial Class Frm_PurchAdd
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents GunaElipsePanel1 As Guna.UI.WinForms.GunaElipsePanel
     Friend WithEvents GunaWinCircleProgressIndicator1 As Guna.UI.WinForms.GunaWinCircleProgressIndicator
+    Friend WithEvents Radio_Outfit As RadioButton
+    Friend WithEvents Radio_Machine As RadioButton
+    Friend WithEvents GroupBox1 As GroupBox
 End Class

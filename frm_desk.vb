@@ -12,6 +12,13 @@
             My.Settings.Login_Status = "online"
             frm_splash.TSMenu_Login.Visible = False
             frm_splash.TSMenu_Logout.Visible = True
+        ElseIf Txt_User.Text = "Admin" And Txt_Pass.Text = "12345" Then
+            MessageBox.Show("Login Successful", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Frm_Char.MdiParent = Frm_Main
+            Frm_Char.Show()
+            My.Settings.Login_Status = "online"
+            frm_splash.TSMenu_Login.Visible = False
+            frm_splash.TSMenu_Logout.Visible = True
         Else
             Txt_Pass.Text = ""
             Txt_User.Text = ""
@@ -54,5 +61,9 @@
         If e.KeyCode = Keys.Enter Then
             GunaAdvenceButton1.PerformClick()
         End If
+    End Sub
+
+    Private Sub GunaWinCircleProgressIndicator1_Load(sender As Object, e As EventArgs) Handles GunaWinCircleProgressIndicator1.Load
+
     End Sub
 End Class

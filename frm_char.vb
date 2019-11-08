@@ -1,9 +1,22 @@
-﻿Public Class Frm_Char
+﻿Imports Microsoft.Office.Interop
+
+Public Class Frm_Char
+    ReadOnly dataText As New Character
     Private Sub Frm_char_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If My.Settings.accPriv = "userAccount" Then
+            UserPriv()
+            Me.MdiParent = Frm_Main
+            Me.Show()
+        Else
+            AdminPriv()
+            Me.MdiParent = Frm_Main
+            Me.Show()
+        End If
         Frm_Main.Mts_Logout.Visible = True
         Frm_Main.Mts_Login.Visible = False
-        frm_desk.Close()
-        getDbChar("")
+        Frm_Desk.Close()
+        dataText.GetCharacterDatabase("")
+        GunaDataGridView1.DataSource = dataText.TextBind
         Frm_Main.ToolStripMenuItem1.Visible = True
         Frm_Main.Tsb_Char.Enabled = True
         Frm_Main.Tsb_Purchase.Enabled = True
@@ -21,14 +34,17 @@
     End Sub
 
     Private Sub GunaTextBox1_TextChanged(sender As Object, e As EventArgs) Handles GunaTextBox1.TextChanged
-        getCharFilter()
+
+        dataText.FindCharacter()
 
     End Sub
 
     Private Sub GunaAdvenceButton1_Click(sender As Object, e As EventArgs) Handles GunaAdvenceButton1.Click
+        Dim dataTexts As New Character
         If GunaAdvenceButton1.Checked = True Then
             GunaAdvenceButton1.Checked = False
-            getDbChar("")
+            dataText.GetCharacterDatabase("")
+            GunaDataGridView1.DataSource = dataText.TextBind
             GunaTextBox1.Text = ""
         Else
             GunaAdvenceButton1.Checked = True
@@ -46,7 +62,8 @@
             GunaAdvenceButton13.Checked = False
             GunaAdvenceButton14.Checked = False
             GunaAdvenceButton15.Checked = False
-            getDbChar("S35C&S45C")
+            dataText.GetCharacterDatabase("S35C&S45C")
+            GunaDataGridView1.DataSource = dataText.TextBind
             GunaTextBox1.Text = ""
         End If
 
@@ -55,7 +72,8 @@
     Private Sub GunaAdvenceButton2_Click(sender As Object, e As EventArgs) Handles GunaAdvenceButton2.Click
         If GunaAdvenceButton2.Checked = True Then
             GunaAdvenceButton2.Checked = False
-            getDbChar("")
+            dataText.GetCharacterDatabase("")
+            GunaDataGridView1.DataSource = dataText.TextBind
             GunaTextBox1.Text = ""
         Else
             GunaAdvenceButton1.Checked = False
@@ -73,7 +91,8 @@
             GunaAdvenceButton13.Checked = False
             GunaAdvenceButton14.Checked = False
             GunaAdvenceButton15.Checked = False
-            getDbChar("S50C")
+            dataText.GetCharacterDatabase("S50C")
+            GunaDataGridView1.DataSource = dataText.TextBind
             GunaTextBox1.Text = ""
         End If
     End Sub
@@ -81,7 +100,8 @@
     Private Sub GunaAdvenceButton3_Click(sender As Object, e As EventArgs) Handles GunaAdvenceButton3.Click
         If GunaAdvenceButton3.Checked = True Then
             GunaAdvenceButton3.Checked = False
-            getDbChar("")
+            dataText.GetCharacterDatabase("")
+            GunaDataGridView1.DataSource = dataText.TextBind
             GunaTextBox1.Text = ""
         Else
             GunaAdvenceButton1.Checked = False
@@ -99,7 +119,9 @@
             GunaAdvenceButton13.Checked = False
             GunaAdvenceButton14.Checked = False
             GunaAdvenceButton15.Checked = False
-            getDbChar("S55C")
+
+            dataText.GetCharacterDatabase("S55C")
+            GunaDataGridView1.DataSource = dataText.TextBind
             GunaTextBox1.Text = ""
         End If
     End Sub
@@ -107,7 +129,8 @@
     Private Sub GunaAdvenceButton4_Click(sender As Object, e As EventArgs) Handles GunaAdvenceButton4.Click
         If GunaAdvenceButton4.Checked = True Then
             GunaAdvenceButton4.Checked = False
-            getDbChar("")
+            dataText.GetCharacterDatabase("")
+            GunaDataGridView1.DataSource = dataText.TextBind
             GunaTextBox1.Text = ""
         Else
             GunaAdvenceButton1.Checked = False
@@ -125,7 +148,9 @@
             GunaAdvenceButton13.Checked = False
             GunaAdvenceButton14.Checked = False
             GunaAdvenceButton15.Checked = False
-            getDbChar("SCM435")
+
+            dataText.GetCharacterDatabase("SCM435")
+            GunaDataGridView1.DataSource = dataText.TextBind
             GunaTextBox1.Text = ""
         End If
     End Sub
@@ -133,7 +158,8 @@
     Private Sub GunaAdvenceButton5_Click(sender As Object, e As EventArgs) Handles GunaAdvenceButton5.Click
         If GunaAdvenceButton5.Checked = True Then
             GunaAdvenceButton5.Checked = False
-            getDbChar("")
+            dataText.GetCharacterDatabase("")
+            GunaDataGridView1.DataSource = dataText.TextBind
             GunaTextBox1.Text = ""
         Else
             GunaAdvenceButton1.Checked = False
@@ -151,7 +177,9 @@
             GunaAdvenceButton13.Checked = False
             GunaAdvenceButton14.Checked = False
             GunaAdvenceButton15.Checked = False
-            getDbChar("SCM440")
+
+            dataText.GetCharacterDatabase("SCM440")
+            GunaDataGridView1.DataSource = dataText.TextBind
             GunaTextBox1.Text = ""
         End If
     End Sub
@@ -159,7 +187,8 @@
     Private Sub GunaAdvenceButton10_Click(sender As Object, e As EventArgs) Handles GunaAdvenceButton10.Click
         If GunaAdvenceButton10.Checked = True Then
             GunaAdvenceButton10.Checked = False
-            getDbChar("")
+            dataText.GetCharacterDatabase("")
+            GunaDataGridView1.DataSource = dataText.TextBind
             GunaTextBox1.Text = ""
         Else
             GunaAdvenceButton1.Checked = False
@@ -177,7 +206,9 @@
             GunaAdvenceButton13.Checked = False
             GunaAdvenceButton14.Checked = False
             GunaAdvenceButton15.Checked = False
-            getDbChar("SKD11")
+
+            dataText.GetCharacterDatabase("SKD11")
+            GunaDataGridView1.DataSource = dataText.TextBind
             GunaTextBox1.Text = ""
         End If
     End Sub
@@ -185,7 +216,8 @@
     Private Sub GunaAdvenceButton9_Click(sender As Object, e As EventArgs) Handles GunaAdvenceButton9.Click
         If GunaAdvenceButton9.Checked = True Then
             GunaAdvenceButton9.Checked = False
-            getDbChar("")
+            dataText.GetCharacterDatabase("")
+            GunaDataGridView1.DataSource = dataText.TextBind
             GunaTextBox1.Text = ""
         Else
             GunaAdvenceButton1.Checked = False
@@ -203,7 +235,9 @@
             GunaAdvenceButton13.Checked = False
             GunaAdvenceButton14.Checked = False
             GunaAdvenceButton15.Checked = False
-            getDbChar("SNC631")
+
+            dataText.GetCharacterDatabase("SNC631")
+            GunaDataGridView1.DataSource = dataText.TextBind
             GunaTextBox1.Text = ""
         End If
     End Sub
@@ -211,7 +245,8 @@
     Private Sub GunaAdvenceButton8_Click(sender As Object, e As EventArgs) Handles GunaAdvenceButton8.Click
         If GunaAdvenceButton8.Checked = True Then
             GunaAdvenceButton8.Checked = False
-            getDbChar("")
+            dataText.GetCharacterDatabase("")
+            GunaDataGridView1.DataSource = dataText.TextBind
             GunaTextBox1.Text = ""
         Else
             GunaAdvenceButton1.Checked = False
@@ -229,7 +264,9 @@
             GunaAdvenceButton13.Checked = False
             GunaAdvenceButton14.Checked = False
             GunaAdvenceButton15.Checked = False
-            getDbChar("SNCM439")
+
+            dataText.GetCharacterDatabase("SNCM439")
+            GunaDataGridView1.DataSource = dataText.TextBind
             GunaTextBox1.Text = ""
         End If
     End Sub
@@ -237,7 +274,8 @@
     Private Sub GunaAdvenceButton7_Click(sender As Object, e As EventArgs) Handles GunaAdvenceButton7.Click
         If GunaAdvenceButton7.Checked = True Then
             GunaAdvenceButton7.Checked = False
-            getDbChar("")
+            dataText.GetCharacterDatabase("")
+            GunaDataGridView1.DataSource = dataText.TextBind
             GunaTextBox1.Text = ""
         Else
             GunaAdvenceButton1.Checked = False
@@ -255,7 +293,9 @@
             GunaAdvenceButton13.Checked = False
             GunaAdvenceButton14.Checked = False
             GunaAdvenceButton15.Checked = False
-            getDbChar("SNCM447")
+
+            dataText.GetCharacterDatabase("SNCM447")
+            GunaDataGridView1.DataSource = dataText.TextBind
             GunaTextBox1.Text = ""
         End If
     End Sub
@@ -263,7 +303,8 @@
     Private Sub GunaAdvenceButton6_Click(sender As Object, e As EventArgs) Handles GunaAdvenceButton6.Click
         If GunaAdvenceButton6.Checked = True Then
             GunaAdvenceButton6.Checked = False
-            getDbChar("")
+            dataText.GetCharacterDatabase("")
+            GunaDataGridView1.DataSource = dataText.TextBind
             GunaTextBox1.Text = ""
         Else
             GunaAdvenceButton1.Checked = False
@@ -281,7 +322,9 @@
             GunaAdvenceButton13.Checked = False
             GunaAdvenceButton14.Checked = False
             GunaAdvenceButton15.Checked = False
-            getDbChar("SS400")
+
+            dataText.GetCharacterDatabase("SS400")
+            GunaDataGridView1.DataSource = dataText.TextBind
             GunaTextBox1.Text = ""
         End If
     End Sub
@@ -289,7 +332,8 @@
     Private Sub GunaAdvenceButton15_Click(sender As Object, e As EventArgs) Handles GunaAdvenceButton15.Click
         If GunaAdvenceButton15.Checked = True Then
             GunaAdvenceButton15.Checked = False
-            getDbChar("")
+            dataText.GetCharacterDatabase("")
+            GunaDataGridView1.DataSource = dataText.TextBind
             GunaTextBox1.Text = ""
         Else
             GunaAdvenceButton1.Checked = False
@@ -307,7 +351,9 @@
             GunaAdvenceButton13.Checked = False
             GunaAdvenceButton14.Checked = False
             GunaAdvenceButton15.Checked = True
-            getDbChar("SUJ2")
+
+            dataText.GetCharacterDatabase("SUJ2")
+            GunaDataGridView1.DataSource = dataText.TextBind
             GunaTextBox1.Text = ""
         End If
     End Sub
@@ -315,7 +361,8 @@
     Private Sub GunaAdvenceButton14_Click(sender As Object, e As EventArgs) Handles GunaAdvenceButton14.Click
         If GunaAdvenceButton14.Checked = True Then
             GunaAdvenceButton14.Checked = False
-            getDbChar("")
+            dataText.GetCharacterDatabase("")
+            GunaDataGridView1.DataSource = dataText.TextBind
             GunaTextBox1.Text = ""
         Else
             GunaAdvenceButton1.Checked = False
@@ -333,7 +380,9 @@
             GunaAdvenceButton13.Checked = False
             GunaAdvenceButton14.Checked = True
             GunaAdvenceButton15.Checked = False
-            getDbChar("SUS304")
+
+            dataText.GetCharacterDatabase("SUS304")
+            GunaDataGridView1.DataSource = dataText.TextBind
             GunaTextBox1.Text = ""
         End If
     End Sub
@@ -341,7 +390,8 @@
     Private Sub GunaAdvenceButton13_Click(sender As Object, e As EventArgs) Handles GunaAdvenceButton13.Click
         If GunaAdvenceButton13.Checked = True Then
             GunaAdvenceButton13.Checked = False
-            getDbChar("")
+            dataText.GetCharacterDatabase("")
+            GunaDataGridView1.DataSource = dataText.TextBind
             GunaTextBox1.Text = ""
         Else
             GunaAdvenceButton1.Checked = False
@@ -359,7 +409,9 @@
             GunaAdvenceButton13.Checked = True
             GunaAdvenceButton14.Checked = False
             GunaAdvenceButton15.Checked = False
-            getDbChar("FCD500")
+
+            dataText.GetCharacterDatabase("FCD500")
+            GunaDataGridView1.DataSource = dataText.TextBind
             GunaTextBox1.Text = ""
         End If
     End Sub
@@ -367,7 +419,8 @@
     Private Sub GunaAdvenceButton12_Click(sender As Object, e As EventArgs) Handles GunaAdvenceButton12.Click
         If GunaAdvenceButton12.Checked = True Then
             GunaAdvenceButton12.Checked = False
-            getDbChar("")
+            dataText.GetCharacterDatabase("")
+            GunaDataGridView1.DataSource = dataText.TextBind
             GunaTextBox1.Text = ""
         Else
             GunaAdvenceButton1.Checked = False
@@ -385,7 +438,9 @@
             GunaAdvenceButton13.Checked = False
             GunaAdvenceButton14.Checked = False
             GunaAdvenceButton15.Checked = False
-            getDbChar("MFGC")
+
+            dataText.GetCharacterDatabase("MFGC")
+            GunaDataGridView1.DataSource = dataText.TextBind
             GunaTextBox1.Text = ""
         End If
     End Sub
@@ -393,7 +448,8 @@
     Private Sub GunaAdvenceButton11_Click(sender As Object, e As EventArgs) Handles GunaAdvenceButton11.Click
         If GunaAdvenceButton11.Checked = True Then
             GunaAdvenceButton11.Checked = False
-            getDbChar("")
+            dataText.GetCharacterDatabase("")
+            GunaDataGridView1.DataSource = dataText.TextBind
             GunaTextBox1.Text = ""
         Else
             GunaAdvenceButton1.Checked = False
@@ -411,18 +467,54 @@
             GunaAdvenceButton13.Checked = False
             GunaAdvenceButton14.Checked = False
             GunaAdvenceButton15.Checked = False
-            getDbChar("OTHER")
+
+            dataText.GetCharacterDatabase("OTHER")
+            GunaDataGridView1.DataSource = dataText.TextBind
             GunaTextBox1.Text = ""
         End If
     End Sub
 
-    Private Sub GunaButton1_Click(sender As Object, e As EventArgs) Handles GunaButton1.Click
+
+    Dim ExcelApp As New Microsoft.Office.Interop.Excel.Application
+    Dim xlBook
+    Dim xlsheet As Excel.Worksheet
+    Dim material() As String
+
+
+    Public Function GetResults(text)
+
         Try
-            Clipboard.SetText(TextBox2.Text)
+            material = text.ToString.Split(vbTab)
+            Dim materialResult As Double
+            xlsheet = xlBook.Sheets("RM Calculator")
+            With xlsheet
+                .Range("A15").Value = material(0)
+                .Range("B15").Value = material(1)
+                .Range("C15").Value = material(2)
+            End With
+            materialResult = xlsheet.Range("D15").Value
+            TextBox2.AppendText(Math.Round(materialResult, 2, MidpointRounding.AwayFromZero).ToString + vbNewLine)
+
         Catch ex As Exception
-            MessageBox.Show("Result is Empty", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            TextBox2.AppendText("" + vbNewLine)
+            'MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
         End Try
 
+
+    End Function
+
+    Private Sub GunaButton1_Click(sender As Object, e As EventArgs) Handles GunaButton1.Click
+        TextBox2.Text = ""
+        ExcelApp.Visible = False
+        xlBook = ExcelApp.Workbooks.Open(My.Application.Info.DirectoryPath + "\calc.xlsx") 'My.Application.Info.DirectoryPath + "\calc.xlsx" C:\Users\KMTI-Admin\Desktop\calc.xlsx
+
+        For Each txtLine As String In TextBox1.Lines
+            GetResults(txtLine)
+        Next
+        xlBook.close(True)
+        ExcelApp.Quit()
+        Clipboard.SetText(TextBox2.Text)
     End Sub
 
     Private Sub GunaButton2_Click(sender As Object, e As EventArgs) Handles GunaButton2.Click
@@ -455,4 +547,7 @@
     Private Sub GunaAdvenceButton21_Click_1(sender As Object, e As EventArgs) Handles GunaAdvenceButton21.Click
         Clipboard.SetText(GunaAdvenceButton21.Text)
     End Sub
+
+
+
 End Class

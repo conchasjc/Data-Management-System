@@ -69,9 +69,10 @@ Partial Class Frm_purchased
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Wrkr_PreviewFile = New System.ComponentModel.BackgroundWorker()
         Me.Tmr_PreviewFile = New System.Windows.Forms.Timer(Me.components)
-        Me.GunaAdvenceButton2 = New Guna.UI.WinForms.GunaAdvenceButton()
+        Me.Btn_DeletePart = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.GunaAdvenceButton1 = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Worker_Delete = New System.ComponentModel.BackgroundWorker()
         Me.pnl_purch.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.GunaDataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -595,37 +596,37 @@ Partial Class Frm_purchased
         '
         Me.Tmr_PreviewFile.Interval = 60
         '
-        'GunaAdvenceButton2
+        'Btn_DeletePart
         '
-        Me.GunaAdvenceButton2.Animated = True
-        Me.GunaAdvenceButton2.AnimationHoverSpeed = 0.07!
-        Me.GunaAdvenceButton2.AnimationSpeed = 0.03!
-        Me.GunaAdvenceButton2.BaseColor = System.Drawing.Color.Maroon
-        Me.GunaAdvenceButton2.BorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton2.CheckedBaseColor = System.Drawing.Color.Gray
-        Me.GunaAdvenceButton2.CheckedBorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton2.CheckedForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton2.CheckedImage = CType(resources.GetObject("GunaAdvenceButton2.CheckedImage"), System.Drawing.Image)
-        Me.GunaAdvenceButton2.CheckedLineColor = System.Drawing.Color.DimGray
-        Me.GunaAdvenceButton2.FocusedColor = System.Drawing.Color.Empty
-        Me.GunaAdvenceButton2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.GunaAdvenceButton2.ForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton2.Image = Nothing
-        Me.GunaAdvenceButton2.ImageSize = New System.Drawing.Size(20, 20)
-        Me.GunaAdvenceButton2.LineColor = System.Drawing.Color.Maroon
-        Me.GunaAdvenceButton2.Location = New System.Drawing.Point(30, 275)
-        Me.GunaAdvenceButton2.Name = "GunaAdvenceButton2"
-        Me.GunaAdvenceButton2.OnHoverBaseColor = System.Drawing.Color.Firebrick
-        Me.GunaAdvenceButton2.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton2.OnHoverForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton2.OnHoverImage = Nothing
-        Me.GunaAdvenceButton2.OnHoverLineColor = System.Drawing.Color.Firebrick
-        Me.GunaAdvenceButton2.OnPressedColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton2.Size = New System.Drawing.Size(167, 90)
-        Me.GunaAdvenceButton2.TabIndex = 13
-        Me.GunaAdvenceButton2.Text = "DELETE PARTS"
-        Me.GunaAdvenceButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.GunaAdvenceButton2.Visible = False
+        Me.Btn_DeletePart.Animated = True
+        Me.Btn_DeletePart.AnimationHoverSpeed = 0.07!
+        Me.Btn_DeletePart.AnimationSpeed = 0.03!
+        Me.Btn_DeletePart.BaseColor = System.Drawing.Color.Maroon
+        Me.Btn_DeletePart.BorderColor = System.Drawing.Color.Black
+        Me.Btn_DeletePart.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.Btn_DeletePart.CheckedBorderColor = System.Drawing.Color.Black
+        Me.Btn_DeletePart.CheckedForeColor = System.Drawing.Color.White
+        Me.Btn_DeletePart.CheckedImage = CType(resources.GetObject("Btn_DeletePart.CheckedImage"), System.Drawing.Image)
+        Me.Btn_DeletePart.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.Btn_DeletePart.FocusedColor = System.Drawing.Color.Empty
+        Me.Btn_DeletePart.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Btn_DeletePart.ForeColor = System.Drawing.Color.White
+        Me.Btn_DeletePart.Image = Nothing
+        Me.Btn_DeletePart.ImageSize = New System.Drawing.Size(20, 20)
+        Me.Btn_DeletePart.LineColor = System.Drawing.Color.Maroon
+        Me.Btn_DeletePart.Location = New System.Drawing.Point(30, 275)
+        Me.Btn_DeletePart.Name = "Btn_DeletePart"
+        Me.Btn_DeletePart.OnHoverBaseColor = System.Drawing.Color.Firebrick
+        Me.Btn_DeletePart.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.Btn_DeletePart.OnHoverForeColor = System.Drawing.Color.White
+        Me.Btn_DeletePart.OnHoverImage = Nothing
+        Me.Btn_DeletePart.OnHoverLineColor = System.Drawing.Color.Firebrick
+        Me.Btn_DeletePart.OnPressedColor = System.Drawing.Color.Black
+        Me.Btn_DeletePart.Size = New System.Drawing.Size(167, 90)
+        Me.Btn_DeletePart.TabIndex = 13
+        Me.Btn_DeletePart.Text = "DELETE PARTS"
+        Me.Btn_DeletePart.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Btn_DeletePart.Visible = False
         '
         'GunaAdvenceButton1
         '
@@ -659,14 +660,18 @@ Partial Class Frm_purchased
         Me.GunaAdvenceButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.GunaAdvenceButton1.Visible = False
         '
+        'Worker_Delete
+        '
+        '
         'Frm_purchased
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.SlateGray
         Me.ClientSize = New System.Drawing.Size(1897, 918)
         Me.ControlBox = False
-        Me.Controls.Add(Me.GunaAdvenceButton2)
+        Me.Controls.Add(Me.Btn_DeletePart)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GunaPanel1)
         Me.Controls.Add(Me.GunaAdvenceButton1)
@@ -718,9 +723,10 @@ Partial Class Frm_purchased
     Friend WithEvents GunaLabel4 As Guna.UI.WinForms.GunaLabel
     Friend WithEvents Wrkr_PreviewFile As System.ComponentModel.BackgroundWorker
     Friend WithEvents Tmr_PreviewFile As Timer
-    Friend WithEvents GunaAdvenceButton2 As Guna.UI.WinForms.GunaAdvenceButton
+    Friend WithEvents Btn_DeletePart As Guna.UI.WinForms.GunaAdvenceButton
     Friend WithEvents RadioButton2 As RadioButton
     Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents Worker_Delete As System.ComponentModel.BackgroundWorker
 End Class

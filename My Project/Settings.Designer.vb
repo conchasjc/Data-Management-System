@@ -173,6 +173,18 @@ Namespace My
                 Me("settings_notSet") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property accPriv() As String
+            Get
+                Return CType(Me("accPriv"),String)
+            End Get
+            Set
+                Me("accPriv") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

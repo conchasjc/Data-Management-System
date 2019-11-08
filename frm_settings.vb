@@ -33,7 +33,8 @@
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btn_test.Click
-        testConnect()
+        Dim test As New Database
+        test.TestConnect()
     End Sub
 
 
@@ -110,5 +111,10 @@
 
     Private Sub Frm_settings_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Frm_Main.Enabled = True
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        My.Settings.Reset()
+
     End Sub
 End Class

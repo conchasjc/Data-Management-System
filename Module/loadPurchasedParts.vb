@@ -5,8 +5,8 @@ Module loadPurchasedParts
 
 
     Dim DataFileBinary() As Byte
-    Dim MachineSource As New BindingSource
-    Dim OutfittingSource As New BindingSource
+    ReadOnly MachineSource As New BindingSource
+    ReadOnly OutfittingSource As New BindingSource
 
     Public Function LoadMachinePurchasedParts()
         Dim DbConnect As New Database

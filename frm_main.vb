@@ -4,11 +4,20 @@ Public Class Frm_Main
     Private Sub Frm_main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CheckForIllegalCrossThreadCalls = False
         If My.Settings.Login_Status = "offline" Then
-            frm_desk.MdiParent = Me
-            frm_desk.Show()
+            Frm_Desk.MdiParent = Me
+            Frm_Desk.Show()
+            Frm_Char.Close()
         Else
-            frm_char.MdiParent = Me
-            frm_char.Show()
+            If My.Settings.accPriv = "userAccount" Then
+                UserPriv()
+                Frm_Char.MdiParent = Me
+                Frm_Char.Show()
+            ElseIf My.Settings.accPriv = "adminAccount" Then
+                AdminPriv()
+                Frm_Char.MdiParent = Me
+                Frm_Char.Show()
+            End If
+
         End If
         Tsl_Hover.Text = ""
         Tsb_Char.Text = "Work" + vbNewLine + "Station"
@@ -22,11 +31,9 @@ Public Class Frm_Main
                 System.IO.Directory.Delete(My.Settings.sett_locpath + "/DownloadedParts", True)
             Catch ex As Exception
             End Try
-
         End If
         If (Not System.IO.Directory.Exists(My.Settings.sett_locpath + "/DownloadedParts")) Then
             System.IO.Directory.CreateDirectory(My.Settings.sett_locpath + "/DownloadedParts")
-
         End If
         frm_splash.NotifyIcon3.Visible = False
     End Sub
@@ -42,17 +49,18 @@ Public Class Frm_Main
     End Sub
 
     Private Sub Tsb_char_Click(sender As Object, e As EventArgs) Handles Tsb_Char.Click
-        frm_char.MdiParent = Me
-        frm_char.Show()
+
+        Frm_Char.MdiParent = Me
+        Frm_Char.Show()
 
         Tsb_Char.CheckState = CheckState.Checked
         Tsb_Purchase.CheckState = CheckState.Unchecked
     End Sub
 
     Private Sub LoginAccountToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Mts_Logout.Click
-        frm_char.Close()
-        frm_desk.MdiParent = Me
-        frm_desk.Show()
+        Frm_Char.Close()
+        Frm_Desk.MdiParent = Me
+        Frm_Desk.Show()
         My.Settings.Login_Status = "offline"
         frm_splash.TSMenu_Login.Visible = True
         frm_splash.TSMenu_Logout.Visible = False
@@ -60,7 +68,7 @@ Public Class Frm_Main
 
 
     Private Sub Tsb_purchase_Click(sender As Object, e As EventArgs) Handles Tsb_Purchase.Click
-        frm_char.Close()
+        Frm_Char.Close()
         Frm_purchased.MdiParent = Me
         Frm_purchased.Show()
         Frm_purchased.WindowState = FormWindowState.Maximized
@@ -93,7 +101,5 @@ Public Class Frm_Main
         System.Diagnostics.Process.Start(My.Application.Info.DirectoryPath + "/User-s-Manual.chm")
     End Sub
 
-    Private Sub Ts_Menubar_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles Ts_Menubar.ItemClicked
 
-    End Sub
 End Class

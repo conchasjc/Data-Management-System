@@ -100,6 +100,7 @@ Partial Class Frm_PurchAdd
         Me.GunaTextBox2.Radius = 10
         Me.GunaTextBox2.Size = New System.Drawing.Size(584, 26)
         Me.GunaTextBox2.TabIndex = 7
+        Me.GunaTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'ListBox1
         '
@@ -216,10 +217,11 @@ Partial Class Frm_PurchAdd
         '
         Me.GunaElipsePanel1.BackColor = System.Drawing.Color.Transparent
         Me.GunaElipsePanel1.BaseColor = System.Drawing.Color.White
+        Me.GunaElipsePanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.GunaElipsePanel1.Controls.Add(Me.GunaWinCircleProgressIndicator1)
-        Me.GunaElipsePanel1.Location = New System.Drawing.Point(29, 308)
+        Me.GunaElipsePanel1.Location = New System.Drawing.Point(28, 249)
         Me.GunaElipsePanel1.Name = "GunaElipsePanel1"
-        Me.GunaElipsePanel1.Size = New System.Drawing.Size(596, 227)
+        Me.GunaElipsePanel1.Size = New System.Drawing.Size(596, 304)
         Me.GunaElipsePanel1.TabIndex = 16
         Me.GunaElipsePanel1.Visible = False
         '
@@ -227,9 +229,9 @@ Partial Class Frm_PurchAdd
         '
         Me.GunaWinCircleProgressIndicator1.BackColor = System.Drawing.Color.Transparent
         Me.GunaWinCircleProgressIndicator1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.GunaWinCircleProgressIndicator1.Location = New System.Drawing.Point(262, 94)
+        Me.GunaWinCircleProgressIndicator1.Location = New System.Drawing.Point(260, 104)
         Me.GunaWinCircleProgressIndicator1.Name = "GunaWinCircleProgressIndicator1"
-        Me.GunaWinCircleProgressIndicator1.ProgressColor = System.Drawing.Color.DodgerBlue
+        Me.GunaWinCircleProgressIndicator1.ProgressColor = System.Drawing.Color.Brown
         Me.GunaWinCircleProgressIndicator1.Size = New System.Drawing.Size(79, 75)
         Me.GunaWinCircleProgressIndicator1.TabIndex = 0
         '
@@ -240,7 +242,7 @@ Partial Class Frm_PurchAdd
         Me.Radio_Outfit.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Radio_Outfit.Font = New System.Drawing.Font("MS UI Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Radio_Outfit.ForeColor = System.Drawing.Color.Black
-        Me.Radio_Outfit.Location = New System.Drawing.Point(332, 119)
+        Me.Radio_Outfit.Location = New System.Drawing.Point(314, 118)
         Me.Radio_Outfit.Name = "Radio_Outfit"
         Me.Radio_Outfit.Size = New System.Drawing.Size(195, 19)
         Me.Radio_Outfit.TabIndex = 23
@@ -255,7 +257,7 @@ Partial Class Frm_PurchAdd
         Me.Radio_Machine.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Radio_Machine.Font = New System.Drawing.Font("MS UI Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Radio_Machine.ForeColor = System.Drawing.Color.Black
-        Me.Radio_Machine.Location = New System.Drawing.Point(119, 119)
+        Me.Radio_Machine.Location = New System.Drawing.Point(106, 119)
         Me.Radio_Machine.Name = "Radio_Machine"
         Me.Radio_Machine.Size = New System.Drawing.Size(188, 19)
         Me.Radio_Machine.TabIndex = 22

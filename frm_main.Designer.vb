@@ -72,26 +72,26 @@ Partial Class Frm_Main
         'Mts_Logout
         '
         Me.Mts_Logout.Name = "Mts_Logout"
-        Me.Mts_Logout.Size = New System.Drawing.Size(165, 22)
+        Me.Mts_Logout.Size = New System.Drawing.Size(180, 22)
         Me.Mts_Logout.Text = "Logout Account"
         '
         'Mts_Login
         '
         Me.Mts_Login.Name = "Mts_Login"
-        Me.Mts_Login.Size = New System.Drawing.Size(165, 22)
+        Me.Mts_Login.Size = New System.Drawing.Size(180, 22)
         Me.Mts_Login.Text = "Login Account"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(165, 22)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.ToolStripMenuItem1.Text = "ICAD Find Action"
         Me.ToolStripMenuItem1.Visible = False
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'SettingsToolStripMenuItem

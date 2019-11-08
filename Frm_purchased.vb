@@ -5,7 +5,6 @@ Public Class Frm_purchased
 
     Private Sub Frm_purchased_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         RadioButton1.Checked = True
-        ' filtering()
         Me.KeyPreview = True
     End Sub
 
@@ -13,9 +12,10 @@ Public Class Frm_purchased
 
 
     Private Sub GunaDataGridView2_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGrid_Parts.CellClick
+        Dim purchasedFiles As New PurchasedParts
+        purchasedFiles.LoadFiles(DataGrid_Parts.CurrentCell.Value)
 
 
-        getLoad(DataGrid_Parts.CurrentCell.Value)
     End Sub
 
 
@@ -27,11 +27,20 @@ Public Class Frm_purchased
 
 
     Private Sub GunaDataGridView2_CellEnter(sender As Object, e As DataGridViewCellEventArgs) Handles DataGrid_Parts.CellEnter
-        getLoad(DataGrid_Parts.CurrentCell.Value)
+        Dim purchasedFiles As New PurchasedParts
+        purchasedFiles.LoadFiles(DataGrid_Parts.CurrentCell.Value)
+
+
     End Sub
 
     Private Sub Txt_TextSearch_TextChanged(sender As Object, e As EventArgs) Handles Txt_TextSearch.TextChanged
-        FileFilter(RadioButton1.Checked)
+        Dim searchFile As New PurchasedParts
+        If CheckBox1.Checked = True Then
+            searchFile.LoadAll()
+        Else
+            searchFile.LoadFiles(DataGrid_Parts.CurrentCell.Value)
+        End If
+        searchFile.FilterFile(RadioButton1.Checked)
     End Sub
 
 
@@ -230,24 +239,29 @@ Public Class Frm_purchased
     End Sub
 
     Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
-        LoadPartTypes(RadioButton1.Text)
+        Dim machineParts As New PurchasedParts
+        machineParts.LoadParts(RadioButton1.Text)
 
     End Sub
 
     Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
-        LoadPartTypes(RadioButton2.Text)
-
+        Dim outfittingParts As New PurchasedParts
+        outfittingParts.LoadParts(RadioButton2.Text)
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        Dim purchasedFiles As New PurchasedParts
         If CheckBox1.Checked = True Then
             DataGrid_Parts.Enabled = False
             RadioButton1.Enabled = False
             RadioButton2.Enabled = False
             Txt_TextSearch.Text = ""
-            LoadAll()
+          purchasedFiles.LoadAll
         Else
-            getLoad(DataGrid_Parts.CurrentCell.Value)
+
+            purchasedFiles.LoadFiles(DataGrid_Parts.CurrentCell.Value)
+
+
             DataGrid_Parts.Enabled = True
             RadioButton1.Enabled = True
             RadioButton2.Enabled = True
@@ -265,6 +279,16 @@ Public Class Frm_purchased
 
     Private Sub Btn_QuickDownload_MouseHover(sender As Object, e As EventArgs) Handles Btn_QuickDownload.MouseHover
         ToolTip1.Show("DOWNLOAD FILE NOW", Btn_QuickDownload)
+    End Sub
+
+    Private Sub Btn_DeletePart_Click(sender As Object, e As EventArgs) Handles Btn_DeletePart.Click
+        Dim delFile As New PurchasedParts
+        delFile.DeleteParts(DataGrid_Files.CurrentCell.Value)
+
+    End Sub
+
+    Private Sub Worker_Delete_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles Worker_Delete.DoWork
+
     End Sub
 
 

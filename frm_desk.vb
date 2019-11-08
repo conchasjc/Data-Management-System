@@ -1,4 +1,5 @@
-﻿Public Class frm_desk
+﻿Public Class Frm_Desk
+    ReadOnly db As New Database
     Private Sub GunaAdvenceButton1_Click(sender As Object, e As EventArgs) Handles GunaAdvenceButton1.Click
         CheckForIllegalCrossThreadCalls = False
 
@@ -6,19 +7,17 @@
 
 
         If Txt_User.Text = "User" And Txt_Pass.Text = "1234" Then
+            My.Settings.accPriv = "userAccount"
             MessageBox.Show("Login Successful", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            frm_char.MdiParent = Frm_Main
-            frm_char.Show()
-            My.Settings.Login_Status = "online"
-            frm_splash.TSMenu_Login.Visible = False
-            frm_splash.TSMenu_Logout.Visible = True
-        ElseIf Txt_User.Text = "Admin" And Txt_Pass.Text = "12345" Then
-            MessageBox.Show("Login Successful", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            UserPriv()
             Frm_Char.MdiParent = Frm_Main
             Frm_Char.Show()
-            My.Settings.Login_Status = "online"
-            frm_splash.TSMenu_Login.Visible = False
-            frm_splash.TSMenu_Logout.Visible = True
+        ElseIf Txt_User.Text = "Admin" And Txt_Pass.Text = "12345" Then
+            My.Settings.accPriv = "adminAccount"
+            MessageBox.Show("Login Successful", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            AdminPriv()
+            Frm_Char.MdiParent = Frm_Main
+            Frm_Char.Show()
         Else
             Txt_Pass.Text = ""
             Txt_User.Text = ""
@@ -42,7 +41,8 @@
     End Sub
 
     Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
-        getDbConnect()
+
+        db.Notification()
     End Sub
 
     Private Sub Tmr_connStatus_Tick(sender As Object, e As EventArgs) Handles tmr_connStatus.Tick
@@ -57,13 +57,10 @@
         End If
     End Sub
 
-    Private Sub frm_desk_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+    Private Sub Frm_Desk_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = Keys.Enter Then
             GunaAdvenceButton1.PerformClick()
         End If
     End Sub
 
-    Private Sub GunaWinCircleProgressIndicator1_Load(sender As Object, e As EventArgs) Handles GunaWinCircleProgressIndicator1.Load
-
-    End Sub
 End Class

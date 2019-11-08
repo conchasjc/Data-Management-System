@@ -20,7 +20,7 @@
         ElseIf ProgressBar1.Value < 30 Then
             ProgressBar1.Increment(1)
             Lbl_SplashNotifier.Text = "Connecting Database"
-            System.Threading.Thread.Sleep(1000)
+            System.Threading.Thread.Sleep(100)
         ElseIf ProgressBar1.Value < 60 Then
             ProgressBar1.Increment(1)
             Lbl_SplashNotifier.Text = "Importing ICD Files"
@@ -28,7 +28,7 @@
         ElseIf ProgressBar1.Value < 80 Then
             ProgressBar1.Increment(2)
             Lbl_SplashNotifier.Text = "Importing DLL Files"
-            System.Threading.Thread.Sleep(2000)
+            System.Threading.Thread.Sleep(50)
         ElseIf ProgressBar1.Value < 100 Then
             ProgressBar1.Increment(2)
             Lbl_SplashNotifier.Text = "Application Getting Ready"
@@ -50,7 +50,7 @@
                 Timer1.Start()
             Lbl_SplashNotifier.Text = "Starting Application"
         End If
-
+        Timer2.Enabled = True
     End Sub
 
     Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
@@ -89,5 +89,38 @@
 
     End Sub
 
+    Private Sub frm_splash_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
 
+    End Sub
+    Declare Function SetProcessWorkingSetSize Lib "kernel32.dll" (ByVal process As IntPtr, ByVal minimumWorkingSetSize As Integer, ByVal maximumWorkingSetSize As Integer) As Integer
+
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+        Try
+            GC.Collect()
+            GC.WaitForPendingFinalizers()
+            If (Environment.OSVersion.Platform = PlatformID.Win32NT) Then
+                SetProcessWorkingSetSize(Process.GetCurrentProcess().Handle, -1, -1)
+                Dim myProcesses As Process() = Process.GetProcessesByName("ApplicationName")
+                Dim myProcess As Process
+                For Each myProcess In myProcesses
+                    SetProcessWorkingSetSize(myProcess.Handle, -1, -1)
+                Next myProcess
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub frm_splash_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        My.Settings.Login_Status = "offline"
+        Dim pListofProcessess() As Process
+        Dim pExcelProcess As System.Diagnostics.Process
+        pListofProcessess = pExcelProcess.GetProcesses
+        For Each pExcelProcess In pListofProcessess
+            If pExcelProcess.ProcessName.ToUpper = "EXCEL" Then
+                pExcelProcess.Kill()
+            End If
+        Next
+
+    End Sub
 End Class

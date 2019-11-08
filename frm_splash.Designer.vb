@@ -37,6 +37,7 @@ Partial Class frm_splash
         Me.TSMenu_Logout = New System.Windows.Forms.ToolStripMenuItem()
         Me.TSMenu_Login = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.Cms_Notify.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -128,6 +129,10 @@ Partial Class frm_splash
         Me.ExitToolStripMenuItem1.Size = New System.Drawing.Size(160, 22)
         Me.ExitToolStripMenuItem1.Text = "Exit"
         '
+        'Timer2
+        '
+        Me.Timer2.Interval = 10000
+        '
         'frm_splash
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -162,4 +167,5 @@ Partial Class frm_splash
     Friend WithEvents TSMenu_Logout As ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents TSMenu_Login As ToolStripMenuItem
+    Friend WithEvents Timer2 As Timer
 End Class

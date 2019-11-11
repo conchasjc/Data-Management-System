@@ -239,6 +239,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="kmtioriglogo1.ico" />
+    <None Include="Resources\icon.png" />
     <None Include="Resources\Untitled-1.jpg" />
     <None Include="Resources\preview.png" />
     <None Include="Resources\51iJjNPb07L.png" />

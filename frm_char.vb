@@ -474,15 +474,12 @@ Public Class Frm_Char
         End If
     End Sub
 
-
     Dim ExcelApp As New Microsoft.Office.Interop.Excel.Application
     Dim xlBook
     Dim xlsheet As Excel.Worksheet
     Dim material() As String
 
-
     Public Function GetResults(text)
-
         Try
             material = text.ToString.Split(vbTab)
             Dim materialResult As Double
@@ -500,8 +497,7 @@ Public Class Frm_Char
             'MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
         End Try
-
-
+        Return 0
     End Function
 
     Private Sub GunaButton1_Click(sender As Object, e As EventArgs) Handles GunaButton1.Click
@@ -547,7 +543,66 @@ Public Class Frm_Char
     Private Sub GunaAdvenceButton21_Click_1(sender As Object, e As EventArgs) Handles GunaAdvenceButton21.Click
         Clipboard.SetText(GunaAdvenceButton21.Text)
     End Sub
+    Dim ext = True
 
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
 
+        If ext = True Then
+            Dim i = 256
 
+            GunaAdvenceButton22.Visible = False
+            GunaAdvenceButton23.Visible = False
+            GunaAdvenceButton24.Visible = False
+
+            Do Until i = 45
+                GunaPanel7.Size = New Size(221, i)
+
+                i -= 1
+
+            Loop
+            GunaPanel9.Location = New Point(49, 146)
+
+            ext = False
+        Else
+            Dim i = 46
+            Do Until i = 256
+                GunaPanel7.Size = New Size(221, i)
+                i += 1
+            Loop
+            GunaPanel9.Location = New Point(49, 356)
+            GunaAdvenceButton22.Visible = True
+            GunaAdvenceButton23.Visible = True
+            GunaAdvenceButton24.Visible = True
+            ext = True
+        End If
+    End Sub
+    Dim exts = True
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+
+        If exts = True Then
+            Dim i = 256
+            GunaAdvenceButton28.Visible = False
+            GunaAdvenceButton29.Visible = False
+            GunaAdvenceButton30.Visible = False
+
+            Do Until i = 45
+                GunaPanel9.Size = New Size(221, i)
+
+                i -= 1
+
+            Loop
+            exts = False
+        Else
+            Dim i = 46
+            Do Until i = 256
+                GunaPanel9.Size = New Size(221, i)
+                i += 1
+            Loop
+            GunaAdvenceButton28.Visible = True
+            GunaAdvenceButton29.Visible = True
+            GunaAdvenceButton30.Visible = True
+            exts = True
+        End If
+
+    End Sub
 End Class

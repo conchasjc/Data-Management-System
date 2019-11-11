@@ -30,6 +30,7 @@
         My.Settings.sett_dbPass = txt_dbPassword.Text
         My.Settings.settings_notSet = False
         My.Settings.Save()
+        MessageBox.Show("Database Settings Save Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btn_test.Click

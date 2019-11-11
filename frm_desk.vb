@@ -12,7 +12,7 @@
             UserPriv()
             Frm_Char.MdiParent = Frm_Main
             Frm_Char.Show()
-        ElseIf Txt_User.Text = "Admin" And Txt_Pass.Text = "12345" Then
+        ElseIf Txt_User.Text = "Admin" And Txt_Pass.Text = "AdminIcadRs2018" Then
             My.Settings.accPriv = "adminAccount"
             MessageBox.Show("Login Successful", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
             AdminPriv()

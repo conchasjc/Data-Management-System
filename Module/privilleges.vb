@@ -1,7 +1,7 @@
 ﻿Module privilleges
     Public Sub UserPriv()
         Frm_Char.GunaPanel7.Visible = False
-
+        Frm_Char.GunaPanel9.Visible = False
         Frm_purchased.GunaAdvenceButton1.Visible = False
         Frm_purchased.Btn_DeletePart.Visible = False
         My.Settings.Login_Status = "online"

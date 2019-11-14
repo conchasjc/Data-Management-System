@@ -474,16 +474,21 @@ Public Class Frm_Char
         End If
     End Sub
 
-    Dim ExcelApp As New Microsoft.Office.Interop.Excel.Application
+
     Dim xlBook
     Dim xlsheet As Excel.Worksheet
     Dim material() As String
 
     Public Function GetResults(text)
         Try
-            material = text.ToString.Split(vbTab)
+            If text.ToString.Contains(vbTab) = True Then
+                material = text.ToString.Split(vbTab)
+            Else
+
+                material = text.ToString.Split(" ")
+            End If
             Dim materialResult As Double
-            xlsheet = xlBook.Sheets("RM Calculator")
+                xlsheet = xlBook.Sheets("RM Calculator")
             With xlsheet
                 .Range("A15").Value = material(0)
                 .Range("B15").Value = material(1)
@@ -501,22 +506,38 @@ Public Class Frm_Char
     End Function
 
     Private Sub GunaButton1_Click(sender As Object, e As EventArgs) Handles GunaButton1.Click
-        TextBox2.Text = ""
-        ExcelApp.Visible = False
-        xlBook = ExcelApp.Workbooks.Open(My.Application.Info.DirectoryPath + "\calc.xlsx") 'My.Application.Info.DirectoryPath + "\calc.xlsx" C:\Users\KMTI-Admin\Desktop\calc.xlsx
+        Try
+            If Not My.Computer.FileSystem.FileExists(My.Application.Info.DirectoryPath + "\calc.xlsx") Then
 
-        For Each txtLine As String In TextBox1.Lines
-            GetResults(txtLine)
-        Next
-        xlBook.close(True)
-        ExcelApp.Quit()
-        Clipboard.SetText(TextBox2.Text)
+                Dim rm As Resources.ResourceManager
+                rm = New Resources.ResourceManager("kmtiworkstationvb.Resources", System.Reflection.Assembly.GetExecutingAssembly)
+                Dim b As Byte()
+                b = rm.GetObject("calc")
+                System.IO.File.WriteAllBytes(My.Application.Info.DirectoryPath + "/calc.xlsx", b)
+            End If
+            Dim ExcelApp As New Microsoft.Office.Interop.Excel.Application
+            TextBox2.Text = ""
+            ExcelApp.Visible = False
+            xlBook = ExcelApp.Workbooks.Open(My.Application.Info.DirectoryPath + "\calc.xlsx") 'My.Application.Info.DirectoryPath + "\calc.xlsx" C:\Users\KMTI-Admin\Desktop\calc.xlsx
+
+            For Each txtLine As String In TextBox1.Lines
+                GetResults(txtLine)
+            Next
+            xlBook.close(SaveChanges:=False)
+            ExcelApp.Quit()
+
+            Clipboard.SetText(TextBox2.Text)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+        End Try
+
     End Sub
 
     Private Sub GunaButton2_Click(sender As Object, e As EventArgs) Handles GunaButton2.Click
         TextBox1.Text = ""
         TextBox2.Text = ""
-        Clipboard.Clear()
+
     End Sub
 
     Private Sub GunaAdvenceButton16_Click(sender As Object, e As EventArgs) Handles GunaAdvenceButton16.Click
@@ -603,6 +624,10 @@ Public Class Frm_Char
             GunaAdvenceButton30.Visible = True
             exts = True
         End If
+
+    End Sub
+
+    Private Sub GunaAdvenceButton22_Click(sender As Object, e As EventArgs) Handles GunaAdvenceButton22.Click
 
     End Sub
 End Class

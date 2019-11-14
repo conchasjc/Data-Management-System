@@ -1,5 +1,14 @@
-﻿Public Class frm_splash
+﻿Imports System.Deployment.Application
+Imports System
+Imports System.Drawing
+Imports System.Windows.Forms
+Imports System.Drawing.Imaging
+
+Public Class frm_splash
+
+
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+
 
         If ProgressBar1.Value = 5 Then
             BackgroundWorker1.RunWorkerAsync()
@@ -8,9 +17,9 @@
         If ProgressBar1.Value = 100 Then
 
             Timer1.Stop()
-            Me.Hide()
 
-            Frm_Main.Show()
+
+            SplashScreenTimer.Enabled = True
 
         End If
         Lbl_SplashPercentage.Text = ProgressBar1.Value.ToString + "%"
@@ -36,8 +45,29 @@
         End If
 
     End Sub
+    Private Sub Refresh()
+        Try
+            Lbl_SplashPercentage.Parent = PictureBox1
+            Lbl_SplashNotifier.Parent = PictureBox1
+            GunaWinCircleProgressIndicator1.Parent = PictureBox1
 
+            MyBase.Hide()
+            Dim bitmap As New Bitmap(MyBase.Width, MyBase.Height, PixelFormat.Format32bppArgb)
+            Dim graphics As Graphics = Graphics.FromImage(bitmap)
+            graphics.CopyFromScreen(MyBase.Location.X, MyBase.Location.Y, 0, 0, MyBase.Size, CopyPixelOperation.SourceCopy)
+            bitmap.Save("spls.bin", ImageFormat.Png)
+            Me.BackgroundImage = bitmap
+            MyBase.Show()
+        Catch ex As Exception
+
+        End Try
+    End Sub
     Private Sub Frm_Splash_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Opacity = 0.0
+        SplashScreenTimer.Start()
+        Refresh()
+
         If My.Settings.settings_notSet = True Then
             Me.Hide()
             Dim res = MessageBox.Show("Database Not Connected,Connect Now?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
@@ -47,19 +77,21 @@
                 Me.Close()
             End If
         Else
-                Timer1.Start()
+            Timer1.Start()
             Lbl_SplashNotifier.Text = "Starting Application"
         End If
         Timer2.Enabled = True
+
+
     End Sub
 
     Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
-        loadMachinePurchasedParts()
+        LoadMachinePurchasedParts()
 
     End Sub
 
     Private Sub BackgroundWorker2_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker2.DoWork
-        loadOutfittingPurchasedParts()
+        LoadOutfittingPurchasedParts()
     End Sub
 
     Private Sub BackgroundWorker3_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker3.DoWork
@@ -122,5 +154,32 @@
             End If
         Next
 
+    End Sub
+
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        Refresh()
+    End Sub
+
+    Dim appeared As Boolean = False
+    Private Sub SplashScreenTimer_Tick(sender As Object, e As EventArgs) Handles SplashScreenTimer.Tick
+        If Not appeared Then
+            Opacity += 0.05
+            If Opacity >= 1.0 Then
+
+                SplashScreenTimer.Interval = 100
+                appeared = True
+                SplashScreenTimer.Enabled = False
+            End If
+        End If
+        If ProgressBar1.Value >= 90 Then
+
+            Opacity -= 0.05
+            If Opacity = 0.0 Then
+                Me.Hide()
+                Frm_Main.Show()
+                SplashScreenTimer.Enabled = False
+            End If
+        End If
     End Sub
 End Class

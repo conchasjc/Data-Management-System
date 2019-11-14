@@ -15,7 +15,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>Y:\KMTIDATAMANAGEMENTSYSTEM\</PublishUrl>
+    <PublishUrl>\\KMTI-NAS\Database\KMTIDATAMANAGEMENTSYSTEM\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -28,7 +28,7 @@
     <InstallUrl>\\kmti-nas\database\KMTIDATAMANAGEMENTSYSTEM\</InstallUrl>
     <UpdateUrl>\\kmti-nas\database\KMTIDATAMANAGEMENTSYSTEM\</UpdateUrl>
     <MinimumRequiredVersion>2.0.0.0</MinimumRequiredVersion>
-    <ApplicationRevision>10</ApplicationRevision>
+    <ApplicationRevision>14</ApplicationRevision>
     <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -127,6 +127,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddTreatment.Designer.vb">
+      <DependentUpon>AddTreatment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddTreatment.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_char.Designer.vb">
       <DependentUpon>frm_char.vb</DependentUpon>
     </Compile>
@@ -193,6 +199,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddTreatment.resx">
+      <DependentUpon>AddTreatment.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_char.resx">
       <DependentUpon>frm_char.vb</DependentUpon>
     </EmbeddedResource>
@@ -239,6 +248,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="kmtioriglogo1.ico" />
+    <None Include="Resources\othersplash.png" />
+    <None Include="Resources\splashpsd4.png" />
+    <None Include="Resources\splashpsd3.png" />
+    <None Include="Resources\splashpsd2.png" />
+    <None Include="Resources\splashpsd1.png" />
+    <None Include="Resources\splashpsd.png" />
     <None Include="Resources\icon.png" />
     <None Include="Resources\Untitled-1.jpg" />
     <None Include="Resources\preview.png" />

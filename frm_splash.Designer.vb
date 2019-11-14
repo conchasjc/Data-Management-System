@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frm_splash
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frm_splash
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_splash))
@@ -38,7 +38,10 @@ Partial Class frm_splash
         Me.TSMenu_Login = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.SplashScreenTimer = New System.Windows.Forms.Timer(Me.components)
         Me.Cms_Notify.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Timer1
@@ -47,7 +50,7 @@ Partial Class frm_splash
         '
         'ProgressBar1
         '
-        Me.ProgressBar1.Location = New System.Drawing.Point(0, 351)
+        Me.ProgressBar1.Location = New System.Drawing.Point(49, 455)
         Me.ProgressBar1.Name = "ProgressBar1"
         Me.ProgressBar1.Size = New System.Drawing.Size(777, 24)
         Me.ProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous
@@ -65,7 +68,7 @@ Partial Class frm_splash
         Me.Lbl_SplashNotifier.BackColor = System.Drawing.Color.Transparent
         Me.Lbl_SplashNotifier.Font = New System.Drawing.Font("MS UI Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Lbl_SplashNotifier.ForeColor = System.Drawing.Color.White
-        Me.Lbl_SplashNotifier.Location = New System.Drawing.Point(43, 387)
+        Me.Lbl_SplashNotifier.Location = New System.Drawing.Point(55, 267)
         Me.Lbl_SplashNotifier.Name = "Lbl_SplashNotifier"
         Me.Lbl_SplashNotifier.Size = New System.Drawing.Size(138, 16)
         Me.Lbl_SplashNotifier.TabIndex = 2
@@ -76,9 +79,9 @@ Partial Class frm_splash
         Me.Lbl_SplashPercentage.BackColor = System.Drawing.Color.Transparent
         Me.Lbl_SplashPercentage.Font = New System.Drawing.Font("MS UI Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Lbl_SplashPercentage.ForeColor = System.Drawing.Color.White
-        Me.Lbl_SplashPercentage.Location = New System.Drawing.Point(364, 387)
+        Me.Lbl_SplashPercentage.Location = New System.Drawing.Point(363, 265)
         Me.Lbl_SplashPercentage.Name = "Lbl_SplashPercentage"
-        Me.Lbl_SplashPercentage.Size = New System.Drawing.Size(401, 19)
+        Me.Lbl_SplashPercentage.Size = New System.Drawing.Size(51, 21)
         Me.Lbl_SplashPercentage.TabIndex = 3
         Me.Lbl_SplashPercentage.Text = "0%"
         Me.Lbl_SplashPercentage.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -87,10 +90,10 @@ Partial Class frm_splash
         '
         Me.GunaWinCircleProgressIndicator1.BackColor = System.Drawing.Color.Transparent
         Me.GunaWinCircleProgressIndicator1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.GunaWinCircleProgressIndicator1.Location = New System.Drawing.Point(9, 378)
+        Me.GunaWinCircleProgressIndicator1.Location = New System.Drawing.Point(27, 261)
         Me.GunaWinCircleProgressIndicator1.Name = "GunaWinCircleProgressIndicator1"
         Me.GunaWinCircleProgressIndicator1.ProgressColor = System.Drawing.Color.Yellow
-        Me.GunaWinCircleProgressIndicator1.Size = New System.Drawing.Size(28, 34)
+        Me.GunaWinCircleProgressIndicator1.Size = New System.Drawing.Size(26, 26)
         Me.GunaWinCircleProgressIndicator1.TabIndex = 4
         '
         'BackgroundWorker3
@@ -133,23 +136,40 @@ Partial Class frm_splash
         '
         Me.Timer2.Interval = 10000
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = Global.kmtiworkstationvb.My.Resources.Resources.othersplash
+        Me.PictureBox1.Location = New System.Drawing.Point(0, -2)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(840, 372)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 5
+        Me.PictureBox1.TabStop = False
+        '
+        'SplashScreenTimer
+        '
+        '
         'frm_splash
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.kmtiworkstationvb.My.Resources.Resources.Untitled_14
+        Me.BackColor = System.Drawing.SystemColors.WindowText
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(777, 416)
+        Me.ClientSize = New System.Drawing.Size(840, 372)
         Me.Controls.Add(Me.GunaWinCircleProgressIndicator1)
-        Me.Controls.Add(Me.Lbl_SplashPercentage)
         Me.Controls.Add(Me.Lbl_SplashNotifier)
+        Me.Controls.Add(Me.Lbl_SplashPercentage)
         Me.Controls.Add(Me.ProgressBar1)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frm_splash"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frm_splash"
         Me.Cms_Notify.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -159,7 +179,6 @@ Partial Class frm_splash
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents BackgroundWorker2 As System.ComponentModel.BackgroundWorker
     Friend WithEvents Lbl_SplashNotifier As Label
-    Friend WithEvents Lbl_SplashPercentage As Label
     Friend WithEvents GunaWinCircleProgressIndicator1 As Guna.UI.WinForms.GunaWinCircleProgressIndicator
     Friend WithEvents BackgroundWorker3 As System.ComponentModel.BackgroundWorker
     Friend WithEvents NotifyIcon3 As NotifyIcon
@@ -168,4 +187,7 @@ Partial Class frm_splash
     Friend WithEvents ExitToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents TSMenu_Login As ToolStripMenuItem
     Friend WithEvents Timer2 As Timer
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Lbl_SplashPercentage As Label
+    Friend WithEvents SplashScreenTimer As Timer
 End Class

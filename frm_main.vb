@@ -35,7 +35,7 @@ Public Class Frm_Main
         If (Not System.IO.Directory.Exists(My.Settings.sett_locpath + "/DownloadedParts")) Then
             System.IO.Directory.CreateDirectory(My.Settings.sett_locpath + "/DownloadedParts")
         End If
-        frm_splash.NotifyIcon3.Visible = False
+        Frm_Splash.NotifyIcon3.Visible = False
     End Sub
 
     Private Sub SettingsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SettingsToolStripMenuItem.Click
@@ -62,8 +62,8 @@ Public Class Frm_Main
         Frm_Desk.MdiParent = Me
         Frm_Desk.Show()
         My.Settings.Login_Status = "offline"
-        frm_splash.TSMenu_Login.Visible = True
-        frm_splash.TSMenu_Logout.Visible = False
+        Frm_Splash.TSMenu_Login.Visible = True
+        Frm_Splash.TSMenu_Logout.Visible = False
     End Sub
 
 
@@ -83,7 +83,7 @@ Public Class Frm_Main
         If (System.IO.Directory.Exists(My.Application.Info.DirectoryPath + "/Temp")) Then
             System.IO.Directory.Delete(My.Application.Info.DirectoryPath + "/Temp", True)
         End If
-        frm_splash.NotifyIcon3.Visible = True
+        Frm_Splash.NotifyIcon3.Visible = True
 
 
     End Sub
@@ -101,5 +101,10 @@ Public Class Frm_Main
         System.Diagnostics.Process.Start(My.Application.Info.DirectoryPath + "/User-s-Manual.chm")
     End Sub
 
-
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        Dim res = MessageBox.Show("Close Program?", "EXIT?", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If res = vbYes Then
+            Application.Exit()
+        End If
+    End Sub
 End Class

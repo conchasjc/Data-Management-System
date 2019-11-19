@@ -3,8 +3,8 @@ Imports System
 Imports System.Drawing
 Imports System.Windows.Forms
 Imports System.Drawing.Imaging
-
-Public Class frm_splash
+Imports System.Diagnostics
+Public Class Frm_Splash
 
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -45,7 +45,7 @@ Public Class frm_splash
         End If
 
     End Sub
-    Private Sub Refresh()
+    Overrides Sub Refresh()
         Try
             Lbl_SplashPercentage.Parent = PictureBox1
             Lbl_SplashNotifier.Parent = PictureBox1
@@ -73,7 +73,9 @@ Public Class frm_splash
             Dim res = MessageBox.Show("Database Not Connected,Connect Now?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
             If res = vbYes Then
                 frm_settings.Show()
+
             Else
+
                 Me.Close()
             End If
         Else
@@ -121,9 +123,7 @@ Public Class frm_splash
 
     End Sub
 
-    Private Sub frm_splash_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
 
-    End Sub
     Declare Function SetProcessWorkingSetSize Lib "kernel32.dll" (ByVal process As IntPtr, ByVal minimumWorkingSetSize As Integer, ByVal maximumWorkingSetSize As Integer) As Integer
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
@@ -143,10 +143,10 @@ Public Class frm_splash
         End Try
     End Sub
 
-    Private Sub frm_splash_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+    Private Sub Frm_Splash_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         My.Settings.Login_Status = "offline"
         Dim pListofProcessess() As Process
-        Dim pExcelProcess As System.Diagnostics.Process
+        Dim pExcelProcess As Diagnostics.Process
         pListofProcessess = pExcelProcess.GetProcesses
         For Each pExcelProcess In pListofProcessess
             If pExcelProcess.ProcessName.ToUpper = "EXCEL" Then

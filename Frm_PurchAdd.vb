@@ -44,7 +44,11 @@ Public Class Frm_PurchAdd
 
     Private Sub GunaAdvenceButton1_Click(sender As Object, e As EventArgs) Handles GunaAdvenceButton1.Click
         Dim parts As New PurchasedParts
-        parts.AddNewParts("Machine Purchased Parts", GunaTextBox2.Text)
+        If Radio_Machine.Checked = True Then
+            parts.AddNewParts("Machine Purchased Parts", GunaTextBox2.Text)
+        Else
+            parts.AddNewParts("Outfitting Purchased Parts", GunaTextBox2.Text)
+        End If
     End Sub
 
     Private Sub GunaLabel1_Click(sender As Object, e As EventArgs) Handles GunaLabel1.Click

@@ -31,8 +31,11 @@ Partial Class AddTreatment
         Me.GunaTextBox1 = New Guna.UI.WinForms.GunaTextBox()
         Me.GunaTextBox2 = New Guna.UI.WinForms.GunaTextBox()
         Me.GunaComboBox1 = New Guna.UI.WinForms.GunaComboBox()
-        Me.GunaAdvenceButton1 = New Guna.UI.WinForms.GunaAdvenceButton()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.GunaAdvenceButton2 = New Guna.UI.WinForms.GunaAdvenceButton()
+        Me.GunaAdvenceButton1 = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -80,11 +83,11 @@ Partial Class AddTreatment
         Me.GunaTextBox1.FocusedBorderColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.GunaTextBox1.FocusedForeColor = System.Drawing.SystemColors.ControlText
         Me.GunaTextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.GunaTextBox1.Location = New System.Drawing.Point(110, 146)
+        Me.GunaTextBox1.Location = New System.Drawing.Point(142, 135)
         Me.GunaTextBox1.Name = "GunaTextBox1"
         Me.GunaTextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.GunaTextBox1.Radius = 3
-        Me.GunaTextBox1.Size = New System.Drawing.Size(393, 29)
+        Me.GunaTextBox1.Size = New System.Drawing.Size(361, 29)
         Me.GunaTextBox1.TabIndex = 2
         '
         'GunaTextBox2
@@ -97,11 +100,11 @@ Partial Class AddTreatment
         Me.GunaTextBox2.FocusedBorderColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.GunaTextBox2.FocusedForeColor = System.Drawing.SystemColors.ControlText
         Me.GunaTextBox2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.GunaTextBox2.Location = New System.Drawing.Point(110, 193)
+        Me.GunaTextBox2.Location = New System.Drawing.Point(142, 170)
         Me.GunaTextBox2.Name = "GunaTextBox2"
         Me.GunaTextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.GunaTextBox2.Radius = 3
-        Me.GunaTextBox2.Size = New System.Drawing.Size(393, 29)
+        Me.GunaTextBox2.Size = New System.Drawing.Size(361, 29)
         Me.GunaTextBox2.TabIndex = 3
         '
         'GunaComboBox1
@@ -116,48 +119,48 @@ Partial Class AddTreatment
         Me.GunaComboBox1.ForeColor = System.Drawing.Color.Black
         Me.GunaComboBox1.FormattingEnabled = True
         Me.GunaComboBox1.Items.AddRange(New Object() {"S35C&S45C", "S50C", "S55C", "SCM435", "SCM440", "SKD11", "SNC631", "SNCM439", "SNCM447", "SS400", "SUJ2", "SUS304", "FCD500", "MFGC", "OTHER"})
-        Me.GunaComboBox1.Location = New System.Drawing.Point(110, 103)
+        Me.GunaComboBox1.Location = New System.Drawing.Point(142, 103)
         Me.GunaComboBox1.Name = "GunaComboBox1"
         Me.GunaComboBox1.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.GunaComboBox1.OnHoverItemForeColor = System.Drawing.Color.White
         Me.GunaComboBox1.Radius = 3
-        Me.GunaComboBox1.Size = New System.Drawing.Size(393, 26)
+        Me.GunaComboBox1.Size = New System.Drawing.Size(361, 26)
         Me.GunaComboBox1.TabIndex = 4
         '
-        'GunaAdvenceButton1
+        'Label1
         '
-        Me.GunaAdvenceButton1.AnimationHoverSpeed = 0.07!
-        Me.GunaAdvenceButton1.AnimationSpeed = 0.03!
-        Me.GunaAdvenceButton1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.GunaAdvenceButton1.BorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray
-        Me.GunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton1.CheckedImage = CType(resources.GetObject("GunaAdvenceButton1.CheckedImage"), System.Drawing.Image)
-        Me.GunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray
-        Me.GunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty
-        Me.GunaAdvenceButton1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.GunaAdvenceButton1.ForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton1.Image = CType(resources.GetObject("GunaAdvenceButton1.Image"), System.Drawing.Image)
-        Me.GunaAdvenceButton1.ImageSize = New System.Drawing.Size(20, 20)
-        Me.GunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.GunaAdvenceButton1.Location = New System.Drawing.Point(279, 242)
-        Me.GunaAdvenceButton1.Name = "GunaAdvenceButton1"
-        Me.GunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.GunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton1.OnHoverImage = Nothing
-        Me.GunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.GunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton1.Size = New System.Drawing.Size(102, 42)
-        Me.GunaAdvenceButton1.TabIndex = 5
-        Me.GunaAdvenceButton1.Text = "GunaAdvenceButton1"
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(35, 110)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(96, 12)
+        Me.Label1.TabIndex = 7
+        Me.Label1.Text = "Material Category"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(35, 144)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(96, 12)
+        Me.Label2.TabIndex = 8
+        Me.Label2.Text = "English Character"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(23, 179)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(108, 12)
+        Me.Label3.TabIndex = 9
+        Me.Label3.Text = "Japanese Character"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'GunaAdvenceButton2
         '
         Me.GunaAdvenceButton2.AnimationHoverSpeed = 0.07!
         Me.GunaAdvenceButton2.AnimationSpeed = 0.03!
-        Me.GunaAdvenceButton2.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton2.BaseColor = System.Drawing.Color.Brown
         Me.GunaAdvenceButton2.BorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton2.CheckedBaseColor = System.Drawing.Color.Gray
         Me.GunaAdvenceButton2.CheckedBorderColor = System.Drawing.Color.Black
@@ -167,10 +170,10 @@ Partial Class AddTreatment
         Me.GunaAdvenceButton2.FocusedColor = System.Drawing.Color.Empty
         Me.GunaAdvenceButton2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.GunaAdvenceButton2.ForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton2.Image = CType(resources.GetObject("GunaAdvenceButton2.Image"), System.Drawing.Image)
+        Me.GunaAdvenceButton2.Image = Nothing
         Me.GunaAdvenceButton2.ImageSize = New System.Drawing.Size(20, 20)
         Me.GunaAdvenceButton2.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.GunaAdvenceButton2.Location = New System.Drawing.Point(401, 242)
+        Me.GunaAdvenceButton2.Location = New System.Drawing.Point(401, 222)
         Me.GunaAdvenceButton2.Name = "GunaAdvenceButton2"
         Me.GunaAdvenceButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.GunaAdvenceButton2.OnHoverBorderColor = System.Drawing.Color.Black
@@ -180,13 +183,47 @@ Partial Class AddTreatment
         Me.GunaAdvenceButton2.OnPressedColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton2.Size = New System.Drawing.Size(102, 42)
         Me.GunaAdvenceButton2.TabIndex = 6
-        Me.GunaAdvenceButton2.Text = "GunaAdvenceButton2"
+        Me.GunaAdvenceButton2.Text = "Cancel"
+        Me.GunaAdvenceButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'GunaAdvenceButton1
+        '
+        Me.GunaAdvenceButton1.AnimationHoverSpeed = 0.07!
+        Me.GunaAdvenceButton1.AnimationSpeed = 0.03!
+        Me.GunaAdvenceButton1.BaseColor = System.Drawing.Color.Green
+        Me.GunaAdvenceButton1.BorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.GunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton1.CheckedImage = CType(resources.GetObject("GunaAdvenceButton1.CheckedImage"), System.Drawing.Image)
+        Me.GunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.GunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty
+        Me.GunaAdvenceButton1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.GunaAdvenceButton1.ForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton1.Image = Nothing
+        Me.GunaAdvenceButton1.ImageSize = New System.Drawing.Size(20, 20)
+        Me.GunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.GunaAdvenceButton1.Location = New System.Drawing.Point(293, 222)
+        Me.GunaAdvenceButton1.Name = "GunaAdvenceButton1"
+        Me.GunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton1.OnHoverImage = Nothing
+        Me.GunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.GunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton1.Size = New System.Drawing.Size(102, 42)
+        Me.GunaAdvenceButton1.TabIndex = 5
+        Me.GunaAdvenceButton1.Text = "Add Character"
+        Me.GunaAdvenceButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'AddTreatment
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(541, 296)
+        Me.ClientSize = New System.Drawing.Size(541, 288)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GunaAdvenceButton2)
         Me.Controls.Add(Me.GunaAdvenceButton1)
         Me.Controls.Add(Me.GunaComboBox1)
@@ -199,6 +236,7 @@ Partial Class AddTreatment
         Me.Text = "AddTreatment"
         Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -211,4 +249,7 @@ Partial Class AddTreatment
     Friend WithEvents GunaTextBox1 As Guna.UI.WinForms.GunaTextBox
     Friend WithEvents GunaAdvenceButton2 As Guna.UI.WinForms.GunaAdvenceButton
     Friend WithEvents GunaAdvenceButton1 As Guna.UI.WinForms.GunaAdvenceButton
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
 End Class

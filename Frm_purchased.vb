@@ -54,9 +54,6 @@ Public Class Frm_purchased
 
 
 
-
-
-
     Private Sub Frm_purchased_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         If e.Control AndAlso (e.KeyCode = Keys.D) Then
             Btn_QuickDownload.PerformClick()
@@ -65,17 +62,8 @@ Public Class Frm_purchased
 
 
 
-
-
-
-
-
-
-
-
-
     '#################  DOWNLOAD ALL BUTTON FUNCTION ################
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Btn_DownloadAll.Click
 
 
         Timer2.Start()
@@ -100,6 +88,7 @@ Public Class Frm_purchased
 
         If GunaProgressBar1.Value = 100 Then
             Timer2.Stop()
+            Btn_DownloadAll.Enabled = False
             MessageBox.Show("File Downloaded Successfully.", "", MessageBoxButtons.OK, MessageBoxIcon.Information)
             GunaProgressBar1.Value = 0
             Panel1.Visible = False
@@ -241,7 +230,6 @@ Public Class Frm_purchased
     Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
         Dim machineParts As New PurchasedParts
         machineParts.LoadParts(RadioButton1.Text)
-
     End Sub
 
     Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
@@ -256,12 +244,9 @@ Public Class Frm_purchased
             RadioButton1.Enabled = False
             RadioButton2.Enabled = False
             Txt_TextSearch.Text = ""
-          purchasedFiles.LoadAll
+            purchasedFiles.LoadAll
         Else
-
             purchasedFiles.LoadFiles(DataGrid_Parts.CurrentCell.Value)
-
-
             DataGrid_Parts.Enabled = True
             RadioButton1.Enabled = True
             RadioButton2.Enabled = True
@@ -287,9 +272,14 @@ Public Class Frm_purchased
 
     End Sub
 
-    Private Sub Worker_Delete_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles Worker_Delete.DoWork
 
+
+
+    Private Sub GunaDataGridView3_RowsAdded(sender As Object, e As DataGridViewRowsAddedEventArgs) Handles GunaDataGridView3.RowsAdded
+        Btn_DownloadAll.Enabled = True
     End Sub
+
+
 
 
 

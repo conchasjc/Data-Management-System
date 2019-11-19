@@ -24,6 +24,7 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_save.Click
+
         My.Settings.sett_dbSource = txt_dbSource.Text
         My.Settings.sett_dbName = txt_dbName.Text
         My.Settings.sett_dbUsername = txt_dbUsername.Text
@@ -31,6 +32,10 @@
         My.Settings.settings_notSet = False
         My.Settings.Save()
         MessageBox.Show("Database Settings Save Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Dim messageRes = MessageBox.Show("Restart Program Now?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If messageRes = vbYes Then
+            Application.Restart()
+        End If
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btn_test.Click
@@ -115,7 +120,9 @@
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        My.Settings.Reset()
-
+        Dim res = MessageBox.Show("Reset All Setting?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If res = vbYes Then
+            My.Settings.Reset()
+        End If
     End Sub
 End Class

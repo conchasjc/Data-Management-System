@@ -27,14 +27,11 @@ Partial Class frm_settings
         Me.GunaPanel1 = New Guna.UI.WinForms.GunaPanel()
         Me.lbl_purch = New System.Windows.Forms.Label()
         Me.lbl_dtbase = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GunaControlBox1 = New Guna.UI.WinForms.GunaControlBox()
         Me.GunaDragControl1 = New Guna.UI.WinForms.GunaDragControl(Me.components)
         Me.pnl_database = New System.Windows.Forms.Panel()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.pb_showeye = New System.Windows.Forms.PictureBox()
         Me.btn_test = New System.Windows.Forms.Button()
         Me.txt_dbPassword = New Guna.UI.WinForms.GunaLineTextBox()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -51,10 +48,6 @@ Partial Class frm_settings
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.pnl_purchSett = New System.Windows.Forms.Panel()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.GunaCheckBox2 = New Guna.UI.WinForms.GunaCheckBox()
         Me.Txt_ActionPath = New Guna.UI.WinForms.GunaLineTextBox()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -68,15 +61,22 @@ Partial Class frm_settings
         Me.GunaDragControl3 = New Guna.UI.WinForms.GunaDragControl(Me.components)
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.pb_showeye = New System.Windows.Forms.PictureBox()
         Me.GunaPanel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl_database.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pb_showeye, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.pnl_purchSett.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pb_showeye, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GunaElipse1
@@ -122,16 +122,6 @@ Partial Class frm_settings
         Me.lbl_dtbase.Size = New System.Drawing.Size(129, 30)
         Me.lbl_dtbase.TabIndex = 3
         Me.lbl_dtbase.Text = "Database"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackgroundImage = Global.kmtiworkstationvb.My.Resources.Resources.setting
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 6)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(73, 78)
-        Me.PictureBox1.TabIndex = 2
-        Me.PictureBox1.TabStop = False
         '
         'Label2
         '
@@ -194,33 +184,10 @@ Partial Class frm_settings
         Me.pnl_database.Controls.Add(Me.btn_save)
         Me.pnl_database.Controls.Add(Me.Label3)
         Me.pnl_database.Cursor = System.Windows.Forms.Cursors.Default
-        Me.pnl_database.Location = New System.Drawing.Point(18, 320)
+        Me.pnl_database.Location = New System.Drawing.Point(21, 308)
         Me.pnl_database.Name = "pnl_database"
         Me.pnl_database.Size = New System.Drawing.Size(606, 447)
         Me.pnl_database.TabIndex = 0
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.BackgroundImage = Global.kmtiworkstationvb.My.Resources.Resources.view
-        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox2.Location = New System.Drawing.Point(497, 460)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(33, 32)
-        Me.PictureBox2.TabIndex = 15
-        Me.PictureBox2.TabStop = False
-        Me.PictureBox2.Visible = False
-        '
-        'pb_showeye
-        '
-        Me.pb_showeye.BackgroundImage = Global.kmtiworkstationvb.My.Resources.Resources.view_png_image_6
-        Me.pb_showeye.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pb_showeye.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pb_showeye.Location = New System.Drawing.Point(497, 460)
-        Me.pb_showeye.Name = "pb_showeye"
-        Me.pb_showeye.Size = New System.Drawing.Size(33, 32)
-        Me.pb_showeye.TabIndex = 14
-        Me.pb_showeye.TabStop = False
         '
         'btn_test
         '
@@ -354,11 +321,14 @@ Partial Class frm_settings
         '
         'btn_save
         '
+        Me.btn_save.Image = Global.kmtiworkstationvb.My.Resources.Resources.save1
         Me.btn_save.Location = New System.Drawing.Point(580, 566)
         Me.btn_save.Name = "btn_save"
         Me.btn_save.Size = New System.Drawing.Size(154, 41)
         Me.btn_save.TabIndex = 1
         Me.btn_save.Text = "SAVE SETTINGS"
+        Me.btn_save.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btn_save.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btn_save.UseVisualStyleBackColor = True
         '
         'Label3
@@ -402,49 +372,11 @@ Partial Class frm_settings
         Me.pnl_purchSett.Size = New System.Drawing.Size(767, 632)
         Me.pnl_purchSett.TabIndex = 19
         '
-        'PictureBox6
-        '
-        Me.PictureBox6.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox6.Image = Global.kmtiworkstationvb.My.Resources.Resources.Papirus_Team_Papirus_Places_Folder_yellow_activities
-        Me.PictureBox6.Location = New System.Drawing.Point(673, 388)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(37, 33)
-        Me.PictureBox6.TabIndex = 20
-        Me.PictureBox6.TabStop = False
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox5.Image = Global.kmtiworkstationvb.My.Resources.Resources.Papirus_Team_Papirus_Places_Folder_yellow_activities
-        Me.PictureBox5.Location = New System.Drawing.Point(673, 215)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(37, 33)
-        Me.PictureBox5.TabIndex = 19
-        Me.PictureBox5.TabStop = False
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(600, 555)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(154, 41)
-        Me.Button3.TabIndex = 17
-        Me.Button3.Text = "RESET"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(440, 555)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(154, 41)
-        Me.Button4.TabIndex = 16
-        Me.Button4.Text = "SAVE "
-        Me.Button4.UseVisualStyleBackColor = True
-        '
         'GunaCheckBox2
         '
         Me.GunaCheckBox2.BaseColor = System.Drawing.Color.White
         Me.GunaCheckBox2.CheckedOffColor = System.Drawing.Color.Gray
-        Me.GunaCheckBox2.CheckedOnColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaCheckBox2.CheckedOnColor = System.Drawing.Color.FromArgb(CType(CType(179, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(48, Byte), Integer))
         Me.GunaCheckBox2.FillColor = System.Drawing.Color.White
         Me.GunaCheckBox2.Location = New System.Drawing.Point(36, 460)
         Me.GunaCheckBox2.Name = "GunaCheckBox2"
@@ -554,6 +486,83 @@ Partial Class frm_settings
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImage = Global.kmtiworkstationvb.My.Resources.Resources.setting
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 6)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(73, 78)
+        Me.PictureBox1.TabIndex = 2
+        Me.PictureBox1.TabStop = False
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox6.Image = Global.kmtiworkstationvb.My.Resources.Resources.Papirus_Team_Papirus_Places_Folder_yellow_activities
+        Me.PictureBox6.Location = New System.Drawing.Point(673, 388)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(37, 33)
+        Me.PictureBox6.TabIndex = 20
+        Me.PictureBox6.TabStop = False
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox5.Image = Global.kmtiworkstationvb.My.Resources.Resources.Papirus_Team_Papirus_Places_Folder_yellow_activities
+        Me.PictureBox5.Location = New System.Drawing.Point(673, 215)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(37, 33)
+        Me.PictureBox5.TabIndex = 19
+        Me.PictureBox5.TabStop = False
+        '
+        'Button3
+        '
+        Me.Button3.Image = Global.kmtiworkstationvb.My.Resources.Resources.reset
+        Me.Button3.Location = New System.Drawing.Point(600, 555)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(154, 41)
+        Me.Button3.TabIndex = 17
+        Me.Button3.Text = "RESET"
+        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Image = Global.kmtiworkstationvb.My.Resources.Resources.save1
+        Me.Button4.Location = New System.Drawing.Point(440, 555)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(154, 41)
+        Me.Button4.TabIndex = 16
+        Me.Button4.Text = "SAVE "
+        Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackgroundImage = Global.kmtiworkstationvb.My.Resources.Resources.view
+        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox2.Location = New System.Drawing.Point(497, 460)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(33, 32)
+        Me.PictureBox2.TabIndex = 15
+        Me.PictureBox2.TabStop = False
+        Me.PictureBox2.Visible = False
+        '
+        'pb_showeye
+        '
+        Me.pb_showeye.BackgroundImage = Global.kmtiworkstationvb.My.Resources.Resources.view_png_image_6
+        Me.pb_showeye.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.pb_showeye.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pb_showeye.Location = New System.Drawing.Point(497, 460)
+        Me.pb_showeye.Name = "pb_showeye"
+        Me.pb_showeye.Size = New System.Drawing.Size(33, 32)
+        Me.pb_showeye.TabIndex = 14
+        Me.pb_showeye.TabStop = False
+        '
         'frm_settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -568,16 +577,16 @@ Partial Class frm_settings
         Me.TopMost = True
         Me.GunaPanel1.ResumeLayout(False)
         Me.GunaPanel1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_database.ResumeLayout(False)
         Me.pnl_database.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pb_showeye, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.pnl_purchSett.ResumeLayout(False)
         Me.pnl_purchSett.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pb_showeye, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

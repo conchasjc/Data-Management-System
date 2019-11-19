@@ -39,7 +39,7 @@ Partial Class Frm_purchased
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_purchased))
         Me.pnl_purch = New Guna.UI.WinForms.GunaPanel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Btn_DownloadAll = New System.Windows.Forms.Button()
         Me.GunaLabel3 = New Guna.UI.WinForms.GunaLabel()
         Me.GunaDataGridView3 = New Guna.UI.WinForms.GunaDataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -95,7 +95,7 @@ Partial Class Frm_purchased
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Button4)
+        Me.GroupBox1.Controls.Add(Me.Btn_DownloadAll)
         Me.GroupBox1.Controls.Add(Me.GunaLabel3)
         Me.GroupBox1.Controls.Add(Me.GunaDataGridView3)
         Me.GroupBox1.Location = New System.Drawing.Point(926, 22)
@@ -104,14 +104,15 @@ Partial Class Frm_purchased
         Me.GroupBox1.TabIndex = 15
         Me.GroupBox1.TabStop = False
         '
-        'Button4
+        'Btn_DownloadAll
         '
-        Me.Button4.Location = New System.Drawing.Point(436, 663)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(113, 34)
-        Me.Button4.TabIndex = 14
-        Me.Button4.Text = "DOWNLOAD FILES"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.Btn_DownloadAll.Enabled = False
+        Me.Btn_DownloadAll.Location = New System.Drawing.Point(393, 663)
+        Me.Btn_DownloadAll.Name = "Btn_DownloadAll"
+        Me.Btn_DownloadAll.Size = New System.Drawing.Size(156, 40)
+        Me.Btn_DownloadAll.TabIndex = 14
+        Me.Btn_DownloadAll.Text = "DOWNLOAD FILES"
+        Me.Btn_DownloadAll.UseVisualStyleBackColor = True
         '
         'GunaLabel3
         '
@@ -713,7 +714,7 @@ Partial Class Frm_purchased
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Tmr_QuickDownload As Timer
     Friend WithEvents BackgroundWorker2 As System.ComponentModel.BackgroundWorker
-    Friend WithEvents Button4 As Button
+    Friend WithEvents Btn_DownloadAll As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents GunaProgressBar1 As Guna.UI.WinForms.GunaProgressBar
     Friend WithEvents GunaLabel2 As Guna.UI.WinForms.GunaLabel

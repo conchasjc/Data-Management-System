@@ -46,8 +46,10 @@ Public Class Frm_PurchAdd
         Dim parts As New PurchasedParts
         If Radio_Machine.Checked = True Then
             parts.AddNewParts("Machine Purchased Parts", GunaTextBox2.Text)
-        Else
+        ElseIf Radio_Outfit.Checked = True Then
             parts.AddNewParts("Outfitting Purchased Parts", GunaTextBox2.Text)
+        Else
+            parts.AddNewParts("Standard Parts", GunaTextBox2.Text)
         End If
     End Sub
 
@@ -99,7 +101,7 @@ Public Class Frm_PurchAdd
             GunaElipsePanel1.Location = New Point(28, 249)
             GunaElipsePanel1.Height = 304
         Else
-            GunaTextBox2.Text = ""
+            GunaTextBox2.Text = Cmb_PartsType.Text
             GroupBox1.Visible = False
             ListBox1.Location = New Point(28, 189)
             ListBox1.Height = 364
@@ -114,5 +116,22 @@ Public Class Frm_PurchAdd
 
     Private Sub Frm_PurchAdd_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
         Frm_Main.Enabled = True
+    End Sub
+
+    Private Sub Radio_Standard_CheckedChanged(sender As Object, e As EventArgs) Handles Radio_Standard.CheckedChanged
+        Cmb_PartsType.Items.Clear()
+        GroupBox1.Visible = False
+        GunaTextBox2.Text = ""
+
+        ListBox1.Location = New Point(28, 189)
+        ListBox1.Height = 364
+        GunaElipsePanel1.Location = New Point(28, 189)
+        GunaElipsePanel1.Height = 364
+        Dim db As New Database
+        db.Connect("select distinct Parts_type from tblfile where category='Standard Parts'")
+        Cmb_PartsType.Items.Add("NEW PART TYPE")
+        For i = 0 To db.QueryTable.Rows.Count - 1
+            Cmb_PartsType.Items.Add(db.QueryTable.Rows(i).Item(0).ToString)
+        Next
     End Sub
 End Class

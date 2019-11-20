@@ -34,12 +34,14 @@ Partial Class AddCharacter
         Me.GunaTextBox1 = New Guna.UI.WinForms.GunaTextBox()
         Me.GunaAdvenceButton2 = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.GunaAdvenceButton1 = New Guna.UI.WinForms.GunaAdvenceButton()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Firebrick
+        Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.GunaControlBox1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
@@ -98,7 +100,7 @@ Partial Class AddCharacter
         Me.GunaTextBox2.BorderColor = System.Drawing.Color.Silver
         Me.GunaTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.GunaTextBox2.FocusedBaseColor = System.Drawing.Color.White
-        Me.GunaTextBox2.FocusedBorderColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaTextBox2.FocusedBorderColor = System.Drawing.Color.Salmon
         Me.GunaTextBox2.FocusedForeColor = System.Drawing.SystemColors.ControlText
         Me.GunaTextBox2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.GunaTextBox2.Location = New System.Drawing.Point(150, 136)
@@ -115,7 +117,7 @@ Partial Class AddCharacter
         Me.GunaTextBox1.BorderColor = System.Drawing.Color.Silver
         Me.GunaTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.GunaTextBox1.FocusedBaseColor = System.Drawing.Color.White
-        Me.GunaTextBox1.FocusedBorderColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaTextBox1.FocusedBorderColor = System.Drawing.Color.Salmon
         Me.GunaTextBox1.FocusedForeColor = System.Drawing.SystemColors.ControlText
         Me.GunaTextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.GunaTextBox1.Location = New System.Drawing.Point(150, 101)
@@ -144,7 +146,7 @@ Partial Class AddCharacter
         Me.GunaAdvenceButton2.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.GunaAdvenceButton2.Location = New System.Drawing.Point(409, 188)
         Me.GunaAdvenceButton2.Name = "GunaAdvenceButton2"
-        Me.GunaAdvenceButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton2.OnHoverBaseColor = System.Drawing.Color.DarkRed
         Me.GunaAdvenceButton2.OnHoverBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton2.OnHoverForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton2.OnHoverImage = Nothing
@@ -174,7 +176,7 @@ Partial Class AddCharacter
         Me.GunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.GunaAdvenceButton1.Location = New System.Drawing.Point(301, 188)
         Me.GunaAdvenceButton1.Name = "GunaAdvenceButton1"
-        Me.GunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.DarkGreen
         Me.GunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton1.OnHoverImage = Nothing
@@ -184,6 +186,17 @@ Partial Class AddCharacter
         Me.GunaAdvenceButton1.TabIndex = 14
         Me.GunaAdvenceButton1.Text = "Add Character"
         Me.GunaAdvenceButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("MS UI Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.LightCoral
+        Me.Label1.Location = New System.Drawing.Point(12, 20)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(140, 19)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Add Character"
         '
         'AddCharacter
         '
@@ -202,6 +215,7 @@ Partial Class AddCharacter
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "AddCharacter"
         Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -217,4 +231,5 @@ Partial Class AddCharacter
     Friend WithEvents GunaTextBox2 As Guna.UI.WinForms.GunaTextBox
     Friend WithEvents GunaTextBox1 As Guna.UI.WinForms.GunaTextBox
     Friend WithEvents GunaDragControl1 As Guna.UI.WinForms.GunaDragControl
+    Friend WithEvents Label1 As Label
 End Class

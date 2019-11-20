@@ -19,5 +19,4 @@ Public Class AddTreatment
         End Try
     End Sub
 
-
 End Class

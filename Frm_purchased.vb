@@ -2,7 +2,7 @@
 Imports System.IO
 Imports MySql.Data.MySqlClient
 Public Class Frm_purchased
-
+    Dim choice As String
     Private Sub Frm_purchased_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         RadioButton1.Checked = True
         Me.KeyPreview = True
@@ -169,7 +169,7 @@ Public Class Frm_purchased
 
     Private Sub BackgroundWorker1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker1.DoWork
         Try
-            QuickDownload(DataGrid_Files.CurrentCell.Value, RadioButton1.Checked, CheckBox1.Checked)
+            QuickDownload(DataGrid_Files.CurrentCell.Value, choice, CheckBox1.Checked)
         Catch
         End Try
     End Sub
@@ -194,7 +194,10 @@ Public Class Frm_purchased
     'Preview Background Process
     Private Sub BackgroundWorker3_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles Wrkr_PreviewFile.DoWork
         Try
-            PreviewFile(DataGrid_Files.CurrentCell.Value, RadioButton1.Checked, CheckBox1.Checked)
+
+            PreviewFile(DataGrid_Files.CurrentCell.Value, choice, CheckBox1.Checked)
+
+
         Catch
         End Try
     End Sub
@@ -230,11 +233,14 @@ Public Class Frm_purchased
     Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
         Dim machineParts As New PurchasedParts
         machineParts.LoadParts(RadioButton1.Text)
+        choice = "Machine"
+
     End Sub
 
     Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
         Dim outfittingParts As New PurchasedParts
         outfittingParts.LoadParts(RadioButton2.Text)
+        choice = "Outfitting"
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
@@ -243,6 +249,7 @@ Public Class Frm_purchased
             DataGrid_Parts.Enabled = False
             RadioButton1.Enabled = False
             RadioButton2.Enabled = False
+            RadioButton3.Enabled = False
             Txt_TextSearch.Text = ""
             purchasedFiles.LoadAll
         Else
@@ -250,6 +257,7 @@ Public Class Frm_purchased
             DataGrid_Parts.Enabled = True
             RadioButton1.Enabled = True
             RadioButton2.Enabled = True
+            RadioButton3.Enabled = True
             Txt_TextSearch.Text = ""
         End If
     End Sub
@@ -273,12 +281,15 @@ Public Class Frm_purchased
     End Sub
 
 
-
-
     Private Sub GunaDataGridView3_RowsAdded(sender As Object, e As DataGridViewRowsAddedEventArgs) Handles GunaDataGridView3.RowsAdded
         Btn_DownloadAll.Enabled = True
     End Sub
 
+    Private Sub RadioButton3_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton3.CheckedChanged
+        Dim standardParts As New PurchasedParts
+        standardParts.LoadParts(RadioButton3.Text)
+        choice = "Standard"
+    End Sub
 
 
 

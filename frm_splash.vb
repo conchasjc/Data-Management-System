@@ -13,14 +13,11 @@ Public Class Frm_Splash
         If ProgressBar1.Value = 5 Then
             BackgroundWorker1.RunWorkerAsync()
             BackgroundWorker2.RunWorkerAsync()
+            BackgroundWorker3.RunWorkerAsync()
         End If
         If ProgressBar1.Value = 100 Then
-
             Timer1.Stop()
-
-
             SplashScreenTimer.Enabled = True
-
         End If
         Lbl_SplashPercentage.Text = ProgressBar1.Value.ToString + "%"
         If ProgressBar1.Value < 20 Then
@@ -97,7 +94,7 @@ Public Class Frm_Splash
     End Sub
 
     Private Sub BackgroundWorker3_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker3.DoWork
-
+        LoadStandardParts()
     End Sub
 
     Private Sub NotifyIcon3_DoubleClick(sender As Object, e As EventArgs) Handles NotifyIcon3.DoubleClick

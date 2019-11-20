@@ -25,6 +25,7 @@ Partial Class AddTreatment
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AddTreatment))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.GunaControlBox1 = New Guna.UI.WinForms.GunaControlBox()
         Me.GunaElipse1 = New Guna.UI.WinForms.GunaElipse(Me.components)
         Me.GunaDragControl1 = New Guna.UI.WinForms.GunaDragControl(Me.components)
@@ -42,12 +43,24 @@ Partial Class AddTreatment
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Firebrick
+        Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.GunaControlBox1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(541, 62)
         Me.Panel1.TabIndex = 0
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("MS UI Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.LightCoral
+        Me.Label4.Location = New System.Drawing.Point(12, 23)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(290, 19)
+        Me.Label4.TabIndex = 2
+        Me.Label4.Text = "Add Heat Treatment Character"
         '
         'GunaControlBox1
         '
@@ -80,7 +93,7 @@ Partial Class AddTreatment
         Me.GunaTextBox1.BorderColor = System.Drawing.Color.Silver
         Me.GunaTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.GunaTextBox1.FocusedBaseColor = System.Drawing.Color.White
-        Me.GunaTextBox1.FocusedBorderColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaTextBox1.FocusedBorderColor = System.Drawing.Color.Salmon
         Me.GunaTextBox1.FocusedForeColor = System.Drawing.SystemColors.ControlText
         Me.GunaTextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.GunaTextBox1.Location = New System.Drawing.Point(142, 135)
@@ -97,7 +110,7 @@ Partial Class AddTreatment
         Me.GunaTextBox2.BorderColor = System.Drawing.Color.Silver
         Me.GunaTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.GunaTextBox2.FocusedBaseColor = System.Drawing.Color.White
-        Me.GunaTextBox2.FocusedBorderColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaTextBox2.FocusedBorderColor = System.Drawing.Color.Salmon
         Me.GunaTextBox2.FocusedForeColor = System.Drawing.SystemColors.ControlText
         Me.GunaTextBox2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.GunaTextBox2.Location = New System.Drawing.Point(142, 170)
@@ -114,7 +127,7 @@ Partial Class AddTreatment
         Me.GunaComboBox1.BorderColor = System.Drawing.Color.Silver
         Me.GunaComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
         Me.GunaComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.GunaComboBox1.FocusedColor = System.Drawing.Color.Empty
+        Me.GunaComboBox1.FocusedColor = System.Drawing.Color.Salmon
         Me.GunaComboBox1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.GunaComboBox1.ForeColor = System.Drawing.Color.Black
         Me.GunaComboBox1.FormattingEnabled = True
@@ -175,7 +188,7 @@ Partial Class AddTreatment
         Me.GunaAdvenceButton2.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.GunaAdvenceButton2.Location = New System.Drawing.Point(401, 222)
         Me.GunaAdvenceButton2.Name = "GunaAdvenceButton2"
-        Me.GunaAdvenceButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton2.OnHoverBaseColor = System.Drawing.Color.DarkRed
         Me.GunaAdvenceButton2.OnHoverBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton2.OnHoverForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton2.OnHoverImage = Nothing
@@ -205,7 +218,7 @@ Partial Class AddTreatment
         Me.GunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.GunaAdvenceButton1.Location = New System.Drawing.Point(293, 222)
         Me.GunaAdvenceButton1.Name = "GunaAdvenceButton1"
-        Me.GunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.GunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.DarkGreen
         Me.GunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White
         Me.GunaAdvenceButton1.OnHoverImage = Nothing
@@ -235,6 +248,7 @@ Partial Class AddTreatment
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "AddTreatment"
         Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -252,4 +266,5 @@ Partial Class AddTreatment
     Friend WithEvents Label1 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents Label4 As Label
 End Class

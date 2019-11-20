@@ -73,6 +73,7 @@ Partial Class Frm_purchased
         Me.GunaAdvenceButton1 = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Worker_Delete = New System.ComponentModel.BackgroundWorker()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
         Me.pnl_purch.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.GunaDataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -221,6 +222,7 @@ Partial Class Frm_purchased
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.RadioButton3)
         Me.GroupBox2.Controls.Add(Me.CheckBox1)
         Me.GroupBox2.Controls.Add(Me.RadioButton2)
         Me.GroupBox2.Controls.Add(Me.RadioButton1)
@@ -661,8 +663,20 @@ Partial Class Frm_purchased
         Me.GunaAdvenceButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.GunaAdvenceButton1.Visible = False
         '
-        'Worker_Delete
+        'RadioButton3
         '
+        Me.RadioButton3.AutoSize = True
+        Me.RadioButton3.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.RadioButton3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.RadioButton3.Font = New System.Drawing.Font("MS UI Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.RadioButton3.ForeColor = System.Drawing.Color.Black
+        Me.RadioButton3.Location = New System.Drawing.Point(520, 78)
+        Me.RadioButton3.Name = "RadioButton3"
+        Me.RadioButton3.Size = New System.Drawing.Size(118, 19)
+        Me.RadioButton3.TabIndex = 23
+        Me.RadioButton3.TabStop = True
+        Me.RadioButton3.Text = "Standard Parts"
+        Me.RadioButton3.UseVisualStyleBackColor = False
         '
         'Frm_purchased
         '
@@ -730,4 +744,5 @@ Partial Class Frm_purchased
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents Worker_Delete As System.ComponentModel.BackgroundWorker
+    Friend WithEvents RadioButton3 As RadioButton
 End Class

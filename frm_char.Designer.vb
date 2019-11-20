@@ -1036,8 +1036,9 @@ Partial Class Frm_Char
         Me.GunaAdvenceButton28.FocusedColor = System.Drawing.Color.Empty
         Me.GunaAdvenceButton28.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaAdvenceButton28.ForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton28.Image = Nothing
-        Me.GunaAdvenceButton28.ImageSize = New System.Drawing.Size(20, 20)
+        Me.GunaAdvenceButton28.Image = Global.kmtiworkstationvb.My.Resources.Resources.update
+        Me.GunaAdvenceButton28.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.GunaAdvenceButton28.ImageSize = New System.Drawing.Size(50, 50)
         Me.GunaAdvenceButton28.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.GunaAdvenceButton28.Location = New System.Drawing.Point(17, 161)
         Me.GunaAdvenceButton28.Name = "GunaAdvenceButton28"
@@ -1049,7 +1050,6 @@ Partial Class Frm_Char
         Me.GunaAdvenceButton28.OnPressedColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton28.Size = New System.Drawing.Size(83, 71)
         Me.GunaAdvenceButton28.TabIndex = 19
-        Me.GunaAdvenceButton28.Text = "UPDATE"
         Me.GunaAdvenceButton28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'GunaAdvenceButton29
@@ -1143,8 +1143,9 @@ Partial Class Frm_Char
         Me.GunaAdvenceButton24.FocusedColor = System.Drawing.Color.Empty
         Me.GunaAdvenceButton24.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaAdvenceButton24.ForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton24.Image = Nothing
-        Me.GunaAdvenceButton24.ImageSize = New System.Drawing.Size(20, 20)
+        Me.GunaAdvenceButton24.Image = Global.kmtiworkstationvb.My.Resources.Resources.update
+        Me.GunaAdvenceButton24.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.GunaAdvenceButton24.ImageSize = New System.Drawing.Size(50, 50)
         Me.GunaAdvenceButton24.LineColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.GunaAdvenceButton24.Location = New System.Drawing.Point(17, 161)
         Me.GunaAdvenceButton24.Name = "GunaAdvenceButton24"
@@ -1156,7 +1157,6 @@ Partial Class Frm_Char
         Me.GunaAdvenceButton24.OnPressedColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton24.Size = New System.Drawing.Size(83, 71)
         Me.GunaAdvenceButton24.TabIndex = 19
-        Me.GunaAdvenceButton24.Text = "UPDATE"
         Me.GunaAdvenceButton24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'GunaAdvenceButton23

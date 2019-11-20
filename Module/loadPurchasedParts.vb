@@ -7,7 +7,7 @@ Module loadPurchasedParts
     Dim DataFileBinary() As Byte
     ReadOnly MachineSource As New BindingSource
     ReadOnly OutfittingSource As New BindingSource
-
+    ReadOnly standardSource As New BindingSource
     Public Function LoadMachinePurchasedParts()
         Dim DbConnect As New Database
         DbConnect.Connect("select * from tblfile where category='Machine Purchased Parts'")
@@ -21,22 +21,36 @@ Module loadPurchasedParts
         OutfittingSource.DataSource = DbConnect.QueryTable
         Return 0
     End Function
+
+    Public Function LoadStandardParts()
+        Dim DbConnect As New Database
+        DbConnect.Connect("select * from tblfile where category='Standard Parts'")
+        standardSource.DataSource = DbConnect.QueryTable
+        Return 0
+    End Function
     Public Function PreviewFile(DownloadFile, Choice, AllFiles)
-        If Choice = True And AllFiles = False Then
+        If Choice = "Machine" And AllFiles = False Then
             MachineSource.Filter = "file Like '" + DownloadFile + "'"
             DataFileBinary = MachineSource(0)(3)
-        ElseIf Choice = False And AllFiles = False Then
+        ElseIf Choice = "Outfitting" And AllFiles = False Then
             OutfittingSource.Filter = "file Like '" + DownloadFile + "'"
             DataFileBinary = OutfittingSource(0)(3)
+        ElseIf Choice = "Standard" And AllFiles = False Then
+            standardSource.Filter = "file Like '" + DownloadFile + "'"
+            DataFileBinary = standardSource(0)(3)
         ElseIf AllFiles = True Then
             MachineSource.RemoveFilter()
             MachineSource.Filter = "file Like '" + DownloadFile + "'"
             If MachineSource.Count = 1 Then
                 DataFileBinary = MachineSource(0)(3)
-            Else
+            ElseIf OutfittingSource.Count = 1 Then
                 OutfittingSource.RemoveFilter()
                 OutfittingSource.Filter = "file Like '" + DownloadFile + "'"
                 DataFileBinary = OutfittingSource(0)(3)
+            Else
+                standardSource.RemoveFilter()
+                standardSource.Filter = "file Like '" + DownloadFile + "'"
+                DataFileBinary = standardSource(0)(3)
             End If
         End If
         Dim File As New IcadFileAccess
@@ -50,22 +64,28 @@ Module loadPurchasedParts
 
     Public Function QuickDownload(DownloadFile, Choice, AllFiles)
 
-        If Choice = True And AllFiles = False Then
+        If Choice = "Machine" And AllFiles = False Then
             MachineSource.Filter = "file Like '" + DownloadFile + "'"
             DataFileBinary = MachineSource(0)(3)
-        ElseIf Choice = False And AllFiles = False Then
+        ElseIf Choice = "Outfitting" And AllFiles = False Then
             OutfittingSource.Filter = "file Like '" + DownloadFile + "'"
             DataFileBinary = OutfittingSource(0)(3)
+        ElseIf Choice = "Standard" And AllFiles = False Then
+            standardSource.Filter = "file Like '" + DownloadFile + "'"
+            DataFileBinary = standardSource(0)(3)
         ElseIf AllFiles = True Then
             MachineSource.RemoveFilter()
             MachineSource.Filter = "file Like '" + DownloadFile + "'"
             If MachineSource.Count = 1 Then
-
                 DataFileBinary = MachineSource(0)(3)
-            Else
+            ElseIf OutfittingSource.Count = 1 Then
                 OutfittingSource.RemoveFilter()
                 OutfittingSource.Filter = "file Like '" + DownloadFile + "'"
                 DataFileBinary = OutfittingSource(0)(3)
+            Else
+                standardSource.RemoveFilter()
+                standardSource.Filter = "file Like '" + DownloadFile + "'"
+                DataFileBinary = standardSource(0)(3)
             End If
         End If
         Dim File As New IcadFileAccess
@@ -73,7 +93,7 @@ Module loadPurchasedParts
 
         MachineSource.RemoveFilter()
         OutfittingSource.RemoveFilter()
-
+        standardSource.RemoveFilter()
         Return 0
     End Function
 
@@ -81,18 +101,21 @@ Module loadPurchasedParts
     Public Function AllFile(downloadFile)
 
         MachineSource.Filter = "file Like '" + downloadFile + "'"
-            If MachineSource.Count = 1 Then
+        If MachineSource.Count = 1 Then
 
-                DataFileBinary = MachineSource(0)(3)
-            Else
-                OutfittingSource.Filter = "file Like '" + downloadFile + "'"
-                DataFileBinary = OutfittingSource(0)(3)
-            End If
+            DataFileBinary = MachineSource(0)(3)
+        ElseIf OutfittingSource.Count = 1 Then
+            OutfittingSource.Filter = "file Like '" + downloadFile + "'"
+            DataFileBinary = OutfittingSource(0)(3)
+        Else
+            standardSource.Filter = "file Like '" + downloadFile + "'"
+            DataFileBinary = standardSource(0)(3)
+        End If
         Dim File As New IcadFileAccess
         File.ICADDownload(downloadFile, DataFileBinary)
         MachineSource.RemoveFilter()
         OutfittingSource.RemoveFilter()
-
+        standardSource.RemoveFilter()
 
 
         Return 0

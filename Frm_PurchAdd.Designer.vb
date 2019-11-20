@@ -42,6 +42,7 @@ Partial Class Frm_PurchAdd
         Me.Radio_Outfit = New System.Windows.Forms.RadioButton()
         Me.Radio_Machine = New System.Windows.Forms.RadioButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Radio_Standard = New System.Windows.Forms.RadioButton()
         Me.GunaPanel1.SuspendLayout()
         Me.GunaElipsePanel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -242,7 +243,7 @@ Partial Class Frm_PurchAdd
         Me.Radio_Outfit.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Radio_Outfit.Font = New System.Drawing.Font("MS UI Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Radio_Outfit.ForeColor = System.Drawing.Color.Black
-        Me.Radio_Outfit.Location = New System.Drawing.Point(314, 118)
+        Me.Radio_Outfit.Location = New System.Drawing.Point(300, 119)
         Me.Radio_Outfit.Name = "Radio_Outfit"
         Me.Radio_Outfit.Size = New System.Drawing.Size(195, 19)
         Me.Radio_Outfit.TabIndex = 23
@@ -275,11 +276,26 @@ Partial Class Frm_PurchAdd
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "INSERT NEW PARTS TYPE"
         '
+        'Radio_Standard
+        '
+        Me.Radio_Standard.AutoSize = True
+        Me.Radio_Standard.BackColor = System.Drawing.Color.Transparent
+        Me.Radio_Standard.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Radio_Standard.Font = New System.Drawing.Font("MS UI Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Radio_Standard.ForeColor = System.Drawing.Color.Black
+        Me.Radio_Standard.Location = New System.Drawing.Point(501, 119)
+        Me.Radio_Standard.Name = "Radio_Standard"
+        Me.Radio_Standard.Size = New System.Drawing.Size(118, 19)
+        Me.Radio_Standard.TabIndex = 25
+        Me.Radio_Standard.Text = "Standard Parts"
+        Me.Radio_Standard.UseVisualStyleBackColor = False
+        '
         'Frm_PurchAdd
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(656, 621)
+        Me.Controls.Add(Me.Radio_Standard)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Radio_Outfit)
         Me.Controls.Add(Me.Radio_Machine)
@@ -323,4 +339,5 @@ Partial Class Frm_PurchAdd
     Friend WithEvents Radio_Outfit As RadioButton
     Friend WithEvents Radio_Machine As RadioButton
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Radio_Standard As RadioButton
 End Class
